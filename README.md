@@ -6,6 +6,7 @@ rules
   * [JS on Rails](#jsonrails)
 * [Rails](#rails)
 * [Ruby](#ruby)
+* [Projects in general](#projects)
 
 ## <a href="#devops"></a>1. Dev Ops
 
@@ -19,3 +20,6 @@ rules
 
 ## <a href="#ruby"></a>4. Ruby
 
+## <a href="#projects"></a>5. Projects in general
+
+* prepare maintenance screens for server errors and configure http servers / proxies
