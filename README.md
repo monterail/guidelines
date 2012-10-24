@@ -1,12 +1,5 @@
-rules
+The Monterail's Rules
 =====
-
-* [Dev Ops](#devops)
-* [JavaScript](#javascript)
-  * [JS on Rails](#jsonrails)
-* [Rails](#rails)
-* [Ruby](#ruby)
-* [Projects in general](#projects)
 
 ## <a href="#devops"></a>1. Dev Ops
 
