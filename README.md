@@ -18,8 +18,11 @@ rules
 
 ## <a href="#rails"></a>3. Rails
 
+* add [miniprofiler](http://railscasts.com/episodes/368-miniprofiler) to the `Gemfile` when using `RDBMS`
+
 ## <a href="#ruby"></a>4. Ruby
 
 ## <a href="#projects"></a>5. Projects in general
 
 * prepare maintenance screens for server errors and configure http servers / proxies
+
