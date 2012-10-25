@@ -12,7 +12,7 @@ rules
 
 ## <a href="#javascript"></a>2. JavaScript
 
-* [classes are for designers and data-behavior for javascript developers](http://blog.bigbinary.com/2012/10/10/data-behavior.html) - stop scoping with `ids` and `classes`, use only `data-*` attributes instead
+* "classes are for designers", so don't scope with `ids` and `classes` in js. JavaScript developers should use [data-* attributes](http://roytomeij.com/2012/dont-use-class-names-to-find-HTML-elements-with-JS.html), [js-* prefix for classes](http://coderwall.com/p/qktuzw) or [role attribute](https://github.com/kossnocorp/role)
 
 ### <a href="#jsonrails"></a>2.1. JS on Rails
 
