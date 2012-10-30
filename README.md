@@ -1,7 +1,20 @@
 The Monterail's Rules
 =====
 
-## 1. Dev Ops
+## 1. Git
+
+### Use [`git up`](https://github.com/aanand/git-up) tool
+
+especially if you're not experienced with git. It keeps the commit history clean.
+
+```bash
+gem install git-up
+git config --global git-up.bundler.check true
+git config --global git-up.bundler.autoinstall true
+git config --global git-up.fetch.all true
+```
+
+If you're comfortable with Git commands, use [`git config --global branch.autosetuprebase always`](http://blog.aplikacja.info/2010/11/git-pull-rebase-by-default/)
 
 ## 2. JavaScript
 
