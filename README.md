@@ -29,6 +29,26 @@ If you're comfortable with Git commands, use [`git config --global branch.autose
 
 * add [miniprofiler](http://railscasts.com/episodes/368-miniprofiler) to the `Gemfile` when using `RDBMS` (go to [discussion](https://github.com/monterail/rules/pull/3))
 
+
+### Useful gems
+
+#### General
+
+* [devise](https://github.com/plataformatec/devise) - auth & more
+* [devise-async](https://github.com/mhfs/devise-async) - sending devise emails in background
+* [friendly_id](https://github.com/norman/friendly_id) - slug generation
+* [carrierwave](https://github.com/jnicklas/carrierwave) - file uploads
+* [activeadmin](http://activeadmin.io) - admin panel for free
+* [rails_config](https://github.com/railsjedi/rails_config) - miscallanous settings for different stages
+* [sidekiq](http://mperham.github.com/sidekiq/) - threaded background queue
+
+#### Development
+
+* [pry-rails](https://github.com/rweng/pry-rails) - better `rails console`
+* [rack-livereload](https://github.com/johnbintz/rack-livereload) - autoreload assets & views
+* [guard-livereload](https://github.com/guard/guard-livereload)
+* [letter_opener](https://github.com/ryanb/letter_opener) - see sent emails in browser
+
 ## 4. Ruby
 
 ## 5. Projects in general
