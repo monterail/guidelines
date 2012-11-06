@@ -73,3 +73,7 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 
 * prepare maintenance screens for server errors and configure http servers / proxies
 
+## 6. Coding / development enrivonments
+
+* use [livereload](https://gist.github.com/653bb4d039adcf7f35b3)
+
