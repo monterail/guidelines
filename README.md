@@ -41,7 +41,6 @@ Follow the rules described in our [Git flow](GIT.md)
 * When making time-based statistic use the midnight of next day as upper limit
 
 * Split upload path into subdirectories
-
 ```ruby
 # partition_uid("1234567890")
 # => "123/456/789/0"
@@ -55,7 +54,6 @@ end
 * Use honeybadger or airbrake
 
 * If using whenever, set absolute paths
-*
 ```ruby
 set :output, File.join("log", "cron.log")
 job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec rake :task :output"
