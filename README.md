@@ -1,6 +1,10 @@
 The Monterail's Rules
 =====
 
+## 0. General
+
+1. Leave the campground cleaner than you found it.
+
 ## 1. Git
 
 ### Use [`git up`](https://github.com/aanand/git-up) tool
