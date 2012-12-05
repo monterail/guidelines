@@ -97,7 +97,7 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 
 ## 5. Projects in general
 
-* prepare maintenance screens for server errors and configure http servers / proxies
+* [prepare maintenance screens for server errors and configure http servers / proxies](http://codetunes.com/2012/11/21/custom-maintenance-page-for-nginx)
 
 ## 6. Coding / development enrivonments
 
