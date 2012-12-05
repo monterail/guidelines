@@ -88,6 +88,11 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 * [guard-livereload](https://github.com/guard/guard-livereload)
 * [letter_opener](https://github.com/ryanb/letter_opener) - see sent emails in browser
 
+#### Frontend
+
+* [active_link_to](https://github.com/twg/active_link_to.git) - easy way to handle active links
+* [select2-rails](https://github.com/argerim/select2-rails.git) - fancy select and autocomplete
+
 ## 4. Ruby
 
 ## 5. Projects in general
