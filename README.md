@@ -1,11 +1,11 @@
 The Monterail's Rules
 =====
 
-## 0. General
+## General
 
 1. Leave the campground cleaner than you found it.
 
-## 1. Git
+## Git
 
 ### Use [`git up`](https://github.com/aanand/git-up) tool
 
@@ -23,16 +23,16 @@ If you're comfortable with Git commands, use [`git config --global branch.autose
 
 Follow the rules described in our [Git flow](GIT.md)
 
-## 2. JavaScript
+## JavaScript
 
 * "classes are for designers", so don't scope with `ids` and `classes` in js. JavaScript developers should use [data-* attributes](http://roytomeij.com/2012/dont-use-class-names-to-find-HTML-elements-with-JS.html), [js-* prefix for classes](http://coderwall.com/p/qktuzw) or [role attribute](https://github.com/kossnocorp/role) (go to [discussion](https://github.com/monterail/rules/pull/4))
 
-### 2.1. JS on Rails
+### JS on Rails
 
 * [use callbacks](https://gist.github.com/3019231) instead of low-level `$.ajax` when possible
 * [move javascript tags](https://github.com/rails/rails/pull/7888) from `HEAD` to the bottom (go to [discussion](https://github.com/monterail/rules/pull/2))
 
-## 3. Rails
+## Rails
 
 * add [miniprofiler](http://railscasts.com/episodes/368-miniprofiler) to the `Gemfile` when using `RDBMS` (go to [discussion](https://github.com/monterail/rules/pull/3))
 
@@ -93,13 +93,13 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 * [active_link_to](https://github.com/twg/active_link_to.git) - easy way to handle active links
 * [select2-rails](https://github.com/argerim/select2-rails.git) - fancy select and autocomplete
 
-## 4. Ruby
+## Ruby
 
-## 5. Projects in general
+## Projects in general
 
 * [prepare maintenance screens for server errors and configure http servers / proxies](http://codetunes.com/2012/11/21/custom-maintenance-page-for-nginx)
 
-## 6. Coding / development enrivonments
+## Coding / development enrivonments
 
 * use [livereload](https://gist.github.com/653bb4d039adcf7f35b3)
 
