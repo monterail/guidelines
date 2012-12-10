@@ -13,12 +13,16 @@ be treated as a "standard", please add it below.
 * [devise-async](https://github.com/mhfs/devise-async) - sending devise emails in background
 * [sidekiq](http://mperham.github.com/sidekiq/) - threaded background queue
 
+## Debug
+
+* [better_errors](https://github.com/charliesome/better_errors) - replace standard rails error page with more useful version
+* [miniprofiler](http://railscasts.com/episodes/368-miniprofiler) - profiler for database queries and time spent loading parts of page (go to [discussion](https://github.com/monterail/rules/pull/3))
+* [pry-rails](https://github.com/rweng/pry-rails) - `rails console` replacement
+
 ## Development
 
 * [guard-livereload](https://github.com/guard/guard-livereload)
 * [letter_opener](https://github.com/ryanb/letter_opener) - see sent emails in browser
-* [miniprofiler](http://railscasts.com/episodes/368-miniprofiler) - profiler for database queries and time spent loading parts of page (go to [discussion](https://github.com/monterail/rules/pull/3))
-* [pry-rails](https://github.com/rweng/pry-rails) - `rails console` replacement
 * [rack-livereload](https://github.com/johnbintz/rack-livereload) - autoreload assets & views
 
 ## Frontend
