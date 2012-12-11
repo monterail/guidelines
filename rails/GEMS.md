@@ -29,6 +29,7 @@ be treated as a "standard", please add it below.
 ## General
 
 * [activeadmin](http://activeadmin.io) - admin panel for free
+* [auto_strip_attributes](https://github.com/holli/auto_strip_attributes) - automatically strip whitespaces
 * [carrierwave](https://github.com/jnicklas/carrierwave) - file uploads
 * [friendly_id](https://github.com/norman/friendly_id) - slug generation
 * [rails_config](https://github.com/railsjedi/rails_config) - miscallanous settings for different stages
