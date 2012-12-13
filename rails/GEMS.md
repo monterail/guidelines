@@ -4,6 +4,11 @@ Useful gems
 This list contains suggested gems for specific problems. If you find any specific gem, which should
 be treated as a "standard", please add it below.
 
+## API
+
+* [roar](https://github.com/apotonick/roar) - very flexible way to create JSON representation of resources
+* [roar-rails](https://github.com/apotonick/roar-rails) - include roar into rails
+
 ## Authentication
 
 * [devise](https://github.com/plataformatec/devise) - auth & more
