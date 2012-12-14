@@ -32,3 +32,12 @@ be treated as a "standard", please add it below.
 * [carrierwave](https://github.com/jnicklas/carrierwave) - file uploads
 * [friendly_id](https://github.com/norman/friendly_id) - slug generation
 * [rails_config](https://github.com/railsjedi/rails_config) - miscallanous settings for different stages
+
+## Testing
+
+* [capybara](https://github.com/jnicklas/capybara) - webrat replacement
+* [database_cleaner](https://github.com/bmabey/database_cleaner) - ensure a clean state during tests
+* [factory_girl](https://github.com/thoughtbot/factory_girl) - fixtures replacement
+* [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails) - factory girl integration for rails
+* [rspec](https://github.com/rspec/rspec) - testing framework
+* [rspec-rails](https://github.com/rspec/rspec-rails) - rspec integration for rails
