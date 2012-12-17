@@ -23,7 +23,8 @@ On the other hand if you want to fetch others work from remote server use:
     $ git fetch origin
     $ git checkout -b feature/my-new-tiny-feature origin/feature/my-new-tiny-feature
 
-When the work is finished merge it into `dev` branch:
+
+When the work is finished [squash commits](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html) into single one and merge it into `dev` branch:
 
     in ~/workspace/project
     $ git checkout dev
