@@ -61,6 +61,31 @@ This style of importing implies, that extracted files should not be dependent on
 
 Put all code that is dependent at the top of `stylesheets.css.scss`.
 
+### Learn about CSS specifity and keep it as low as possible
+
+http://www.htmldog.com/guides/cssadvanced/specificity/
+
+For example following selectors should be avoided:
+
+```css
+div.klass { ... }
+ul li .klass { ... }
+section a.btn { ... }
+html a { ... }
+div p { ... }
+```
+
+Also remember:
+
+* Don't nest SCSS selectors more than 3 levels deep.
+* Don't use `!important` to solve high specificity problems.
+* IDs should never be used in CSS.
+
+If you're not sure about this:
+
+* read http://csswizardry.com/2012/11/code-smells-in-css/
+* watch http://youtu.be/hou2wJCh3XE?t=16m49s
+
 ## Coding / development enrivonments
 
 * use [livereload](https://gist.github.com/653bb4d039adcf7f35b3)
