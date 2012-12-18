@@ -28,3 +28,7 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 
 * Use some kind of process monitor (e.g. monit)
 * If using devise, set correct "from" email address
+
+## Required gems for new apps
+
+* [strong_parameters](https://github.com/rails/strong_parameters) (even for Rails 3.x)
