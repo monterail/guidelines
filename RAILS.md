@@ -33,3 +33,4 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 ## Required gems for new apps
 
 * [strong_parameters](https://github.com/rails/strong_parameters) (even for Rails 3.x)
+* [letter_opener](https://github.com/ryanb/letter_opener) (for development mode)
