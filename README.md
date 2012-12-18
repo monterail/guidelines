@@ -61,7 +61,7 @@ This style of importing implies, that extracted files should not be dependent on
 
 Put all code that is dependent at the top of `stylesheets.css.scss`.
 
-### Learn about CSS specifity and keep it as low as possible
+### Learn about CSS specificity and keep it as low as possible
 
 http://www.htmldog.com/guides/cssadvanced/specificity/
 
