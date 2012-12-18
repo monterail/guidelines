@@ -86,6 +86,47 @@ If you're not sure about this:
 * read http://csswizardry.com/2012/11/code-smells-in-css/
 * watch http://youtu.be/hou2wJCh3XE?t=16m49s
 
+### Use proper SCSS formatting
+
+* Use soft-tabs with a two space indent.
+* Put spaces after `:` in property declarations.
+* Put spaces before `{` in rule declarations.
+* Put spaces after `,` in attribute declarations;
+* Use hex color codes `#000` unless using rgba.
+* Use `//` for comment blocks (instead of `/* */`).
+* put nested components at the end of block
+* puts `@include` and `@extend` just before nested components
+* use extra blank line between top level selectors
+* use dashes for separating words in class names
+* use underscores for separating words in ID names
+* don't omit leading zeros in numeric values
+* don't use units in zero numeric values
+* use short hexadecimal notation if possible
+* never put many rule declarations in one line
+
+
+Example syntax:
+
+```scss
+// This is a good example!
+.styleguide-format {
+  border: 1px solid #0f0;
+  color: #000;
+  background: rgba(0, 0, 0, 0.5);
+  @include border-radius(5px);
+  .styleguide-nested {
+    color: #222;
+  }
+  .styleguide-another {
+    color: #333;
+  }
+}
+
+#some_element {
+  display: none;
+}
+```
+
 ## HTML
 
 ### Use consistent class names and markup for HTML components
