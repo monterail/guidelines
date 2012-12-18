@@ -47,3 +47,28 @@ Follow the rules described in our [Git flow](GIT.md)
 
 * use [livereload](https://gist.github.com/653bb4d039adcf7f35b3)
 
+## Contribution to this document
+
+According to [this issue](https://github.com/monterail/rules/issues/25) we agreed to:
+
+> * declare if he/she wants to participate in issues tagged with given word, for example #ruby or #css. Then all issues / pull-request would be tagged appropriately.
+> * if so, he/she would be obligated to comment on issue or at least give +1 or no opinion comment for example until week after issue has been created.
+> * the idea is subscribed persons would be obligated to comment. we will mention them in such cases.
+> * final decision for merging is for CTO
+> * it's of couse possible for non-declared person to participate. That list would help us determine if issue is ready to be accepted or it needs more discussion / time (for example if everyone would vote "no opinion").
+
+Available tags for now: #ruby, #js, #git, #css, #design, #unix, #html
+
+Here is current list of contributors along with tags they subscribe:
+
+* Jan Dudulski ([@jandudulski](https://github.com/jandudulski)) - all tags
+* Adam Stankiewicz ([@sheerun](https://github.com/sheerun)) - all tags
+* Dariusz Gertych ([@chytreg](https://github.com/chytreg)) - #ruby, #js, #design
+* Tymon Tobolski ([@teamon](https://github.com/teamon)) - #ruby, #git, #unix
+* Michał Szajbe ([@szajbus](https://github.com/szajbus) - #ruby, #js, #git, #unix
+* Dominik Porada ([@porada](https://github.com/porada)) - #design, #html, #css, #js
+* Krzysztof Jung ([@venticco](https://github.com/venticco)) - #design, #html, #css, #js
+* Michał Duda ([@Ostrzy](https://github.com/Ostrzy)) - #ruby, #js, #git, #html
+* Szymon Boniecki ([@szymo](https://github.com/szymo)) - #design
+
+Pull requests and issues from third party are of course welcome too!
