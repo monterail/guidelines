@@ -86,6 +86,17 @@ If you're not sure about this:
 * read http://csswizardry.com/2012/11/code-smells-in-css/
 * watch http://youtu.be/hou2wJCh3XE?t=16m49s
 
+## HTML
+
+### Use consistent class names and markup for HTML components
+
+For basic ones, use [twitter bootstrap 2](http://twitter.github.com/bootstrap/) conventions. 
+For example don't use `<div class="crumbs">` for breadcrumbs instead of `<ul class="breadcrumb"></ul>`. This also concerns layout, forms, buttons, flash messages, navigation and others.
+
+If possible, document new markup proposals in our [styleguide](https://github.com/monterail/boilerplate-rails).
+
+For proper forms markup, install the [formtastic-bootstrap](https://github.com/mjbellantoni/formtastic-bootstrap) gem.
+
 ## Coding / development enrivonments
 
 * use [livereload](https://gist.github.com/653bb4d039adcf7f35b3)
