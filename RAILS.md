@@ -29,7 +29,10 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 * Use some kind of process monitor (e.g. monit)
 * If using devise, set correct "from" email address
 * Set up [Vagrantfile](http://vagrantup.com/) for apps with most complicated start-ups
-
+* In non-SPA applications render URLs for JavaScript on server side. If you need to add them to custom JavaScript component, just print the links and iterate through them:
+  ```
+  $('a').each(function(index, el) { carousel.add(index, el); });
+  ```
 ## Required gems for new apps
 
 * [strong_parameters](https://github.com/rails/strong_parameters) (even for Rails 3.x)
