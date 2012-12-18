@@ -29,6 +29,40 @@ When the work is finished merge it into `dev` branch:
     $ git checkout dev
     $ git merge --no-ff feature/my-new-tiny-feature
 
+## Flow using [git up](https://github.com/aanand/git-up), [git-flow](https://github.com/nvie/gitflow) and [hub](https://github.com/defunkt/hub) tools
+
+Say, you want to contribute to the Docrails project
+
+First, install appropriate tools:
+
+    brew install git git-flow hub
+    gem install git-up
+    hub alias # do what it says
+
+Then clone repository you want and start new feature:
+
+    git clone lifo/docrails
+    git flow feature start my_feature
+
+Do your changes, and test them on updated repository:
+
+    git up # fetches and merges/rebases all remote changes
+    git flow feature rebase my_feature
+    
+Now, publish feature and open pull reqeust:
+
+    git flow feature publish my_feature
+    git pull-request
+
+If someone asks you in pull request to do some changes:
+
+    git commit -m "fixes"
+    git push
+
+Now you can close feature (but you don't have to):
+
+    git feature finish my_feature
+
 ## Ugly [bugs](http://vladstudio.deviantart.com/art/A-bug-142782682)
 
 Bugs found on `dev` branch should be fixed it in the proper feature branch which introduced the bug.
