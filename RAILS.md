@@ -28,6 +28,7 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 
 * Use some kind of process monitor (e.g. monit)
 * If using devise, set correct "from" email address
+* Set up [Vagrantfile](http://vagrantup.com/) for apps with most complicated start-ups
 
 ## Required gems for new apps
 
