@@ -43,6 +43,24 @@ Follow the rules described in our [Git flow](GIT.md)
 
 * [prepare maintenance screens for server errors and configure http servers / proxies](http://codetunes.com/2012/11/21/custom-maintenance-page-for-nginx)
 
+## CSS
+
+### When file is larger than few hundred lines, think about modularization
+
+If it does, create directory with the same name as SCSS file, and extract code to separate files.
+
+After that import these files using following sprockets template:
+
+```scss
+// stylesheets.css.scss
+
+@import "stylesheets/*"; 
+```
+
+This style of importing implies, that extracted files should not be dependent on each other. 
+
+Put all code that is dependent at the top of `stylesheets.css.scss`.
+
 ## Coding / development enrivonments
 
 * use [livereload](https://gist.github.com/653bb4d039adcf7f35b3)
