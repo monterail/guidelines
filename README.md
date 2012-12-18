@@ -1,6 +1,8 @@
 The Monterail's Rules
 =====
 
+Following document contains development guidelines for [Monterail.com, LLC](http://monterail.com).
+
 ## General
 
 1. Leave the campground cleaner than you found it.
