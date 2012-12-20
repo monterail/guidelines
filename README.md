@@ -96,7 +96,7 @@ If you're not sure about this:
 * Use `//` for comment blocks (instead of `/* */`).
 * put nested components at the end of block
 * puts `@include` and `@extend` just before nested components
-* use extra blank line between top level selectors
+* use extra blank line between selectors (both top level and nested ones)
 * use dashes for separating words in class names
 * use underscores for separating words in ID names
 * don't omit leading zeros in numeric values
@@ -114,9 +114,11 @@ Example syntax:
   color: #000;
   background: rgba(0, 0, 0, 0.5);
   @include border-radius(5px);
+  
   .styleguide-nested {
     color: #222;
   }
+  
   .styleguide-another {
     color: #333;
   }
