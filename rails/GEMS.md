@@ -6,6 +6,7 @@ be treated as a "standard", please add it below.
 
 ## API
 
+* [httparty](https://github.com/jnunemaker/httparty) - easy way to wrap http responses
 * [roar](https://github.com/apotonick/roar) - very flexible way to create JSON representation of resources
 * [roar-rails](https://github.com/apotonick/roar-rails) - include roar into rails
 
