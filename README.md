@@ -54,10 +54,10 @@ After that import these files using following sprockets template:
 ```scss
 // stylesheets.css.scss
 
-@import "stylesheets/*"; 
+@import "stylesheets/*";
 ```
 
-This style of importing implies, that extracted files should not be dependent on each other. 
+This style of importing implies, that extracted files should not be dependent on each other.
 
 Put all code that is dependent at the top of `stylesheets.css.scss`.
 
@@ -114,11 +114,11 @@ Example syntax:
   color: #000;
   background: rgba(0, 0, 0, 0.5);
   @include border-radius(5px);
-  
+
   .styleguide-nested {
     color: #222;
   }
-  
+
   .styleguide-another {
     color: #333;
   }
@@ -133,7 +133,7 @@ Example syntax:
 
 ### Use consistent class names and markup for HTML components
 
-For basic ones, use [twitter bootstrap 2](http://twitter.github.com/bootstrap/) conventions. 
+For basic ones, use [twitter bootstrap 2](http://twitter.github.com/bootstrap/) conventions.
 For example don't use `<div class="crumbs">` for breadcrumbs instead of `<ul class="breadcrumb"></ul>`. This also concerns layout, forms, buttons, flash messages, navigation and others.
 
 If possible, document new markup proposals in our [styleguide](https://github.com/monterail/boilerplate-rails).
