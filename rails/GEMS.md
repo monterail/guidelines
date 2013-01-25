@@ -35,6 +35,7 @@ be treated as a "standard", please add it below.
 
 * [active_link_to](https://github.com/twg/active_link_to.git) - easy way to handle active links
 * [select2-rails](https://github.com/argerim/select2-rails.git) - fancy select and autocomplete
+* [simple_form](https://github.com/plataformatec/simple_form) - DSL for generating forms
 
 ## General
 
