@@ -39,6 +39,7 @@ Follow the rules described in our [Git flow](GIT.md)
 ## [Rails](RAILS.md)
 
 ## Ruby
+* [avoid rescuing StandardError and Exception](http://stackoverflow.com/questions/10048173/why-is-it-bad-style-to-rescue-exception-e-in-ruby#answer-10048406)
 
 ## Projects in general
 
