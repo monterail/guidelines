@@ -18,6 +18,7 @@ be treated as a "standard", please add it below.
 
 * [devise-async](https://github.com/mhfs/devise-async) - sending devise emails in background
 * [sidekiq](http://mperham.github.com/sidekiq/) - threaded background queue
+* [whenever](https://github.com/javan/whenever) - scheduler
 
 ## Debug
 
