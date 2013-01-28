@@ -98,6 +98,22 @@ If you're not sure about this:
 * read http://csswizardry.com/2012/11/code-smells-in-css/
 * watch http://youtu.be/hou2wJCh3XE?t=16m49s
 
+### Try to add CSS properties instead of removing them
+
+Following styles should be avoided:
+
+```css
+margin: 0;
+padding: 0;
+border: none;
+float: left;
+background: none;
+```
+
+If you need to remove styles, you've applied them too early. 
+
+Consider different scoping, think if you can use mixins or refactor CSS to separate class.
+
 ### Use proper SCSS formatting
 
 * Use soft-tabs with a two space indent.
@@ -115,7 +131,6 @@ If you're not sure about this:
 * don't use units in zero numeric values
 * use short hexadecimal notation if possible
 * never put many rule declarations in one line
-
 
 Example syntax:
 
