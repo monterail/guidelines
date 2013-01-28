@@ -58,7 +58,7 @@ For proper forms markup, install the [formtastic-bootstrap](https://github.com/m
 
 ## [Coding / development enrivonments](TOOLBOX.md)
 
-## Contribution to this document
+## Contribution to this repository
 
 According to [this issue](https://github.com/monterail/rules/issues/25) we agreed to:
 
