@@ -33,6 +33,8 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
   ```
   $('a').each(function(index, el) { carousel.add(index, el); });
   ```
+* Use I18n keys instead of plain text in views
+
 ## Required gems for new apps
 
 * [strong_parameters](https://github.com/rails/strong_parameters) (even for Rails 3.x)
