@@ -47,6 +47,11 @@ Follow the rules described in our [Git flow](GIT.md)
 
 ## CSS
 
+### For each new project implement CSS style guide first
+
+Like [Github's one](https://github.com/styleguide/css). In our apps it is implemented as Rails engine available 
+under `/styles` URL in development mode. It consists of rendered components with ready-to-copy snippets of HAML and SCSS.
+
 ### Use [CSS normalize](http://necolas.github.com/normalize.css/) instead of CSS reset
 
 ### Use SCSS preprocessor for all stylesheets
