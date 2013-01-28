@@ -47,6 +47,9 @@ Follow the rules described in our [Git flow](GIT.md)
 
 ## CSS
 
+### Use [CSS normalize](http://necolas.github.com/normalize.css/) instead of CSS reset
+
+
 ### When file is larger than few hundred lines, think about modularization
 
 If it does, create directory with the same name as SCSS file, and extract code to separate files.
