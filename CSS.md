@@ -7,6 +7,8 @@ under `/styles` URL in development mode. It consists of rendered components with
 
 ### Use [CSS normalize](http://necolas.github.com/normalize.css/) instead of CSS reset
 
+### Use [Bourbon](http://bourbon.io/) for CSS3 properties
+
 ### Use SCSS preprocessor for all stylesheets
 
 ### Don't use sprocket's commands in SCSS files
