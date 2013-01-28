@@ -113,6 +113,10 @@ Never ever commit directly in `dev` or `master` branches!
 * Hotfix branch: `hotfix/name` or `hotfix/bugid` (from ticket system like redmine)
 * Realease branch: `release/version`
 * Multi word branch name: `really-long-branch-name`
+* Use `fix: ` prefix for fix commits. Don't use any other form of the "fix" word.
+
+  (it's the only form that can be used for commit messages like "fix: statistic on home page polluted by google bot")
+
 
 ## Todo
 
