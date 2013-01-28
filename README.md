@@ -120,6 +120,15 @@ If you need to remove styles, you've applied them too early.
 
 Consider different scoping, think if you can use mixins or refactor CSS to separate class.
 
+### Don't use "is" as prefix for state rules. Use verbs.
+
+[SMACSS](http://smacss.com/) says state rules should be prefixed with "is-", for example "is-active". 
+
+**But** we think it is superfluous, as state classes are verbs, 
+what cleanly distinguish them from submodule classes like alert-error. 
+
+Moreover Bootstrap v2 simple verbs too, so we're consisten with other guidelines.
+
 ### Use proper SCSS formatting
 
 * Use soft-tabs with a two space indent.
