@@ -98,6 +98,12 @@ If you're not sure about this:
 * read http://csswizardry.com/2012/11/code-smells-in-css/
 * watch http://youtu.be/hou2wJCh3XE?t=16m49s
 
+### Test CSS design using different content for HTML elements
+
+This especially concerns testing different text lengths of paragraphs, button labels, form labels. 
+
+It also means you should test very long words like supercalifragilisticexpialidocious.
+
 ### Try to add CSS properties instead of removing them
 
 Following styles should be avoided:
