@@ -124,7 +124,7 @@ Consider different scoping, think if you can use mixins or refactor CSS to separ
 
 [SMACSS](http://smacss.com/) says state rules should be prefixed with "is-", for example "is-active". 
 
-**But** we think it is superfluous, as state classes are verbs, 
+**But** we think it is superfluous, as state classes are adjectives, 
 what cleanly distinguish them from submodule classes like alert-error. 
 
 Moreover Bootstrap v2 simple verbs too, so we're consisten with other guidelines.
