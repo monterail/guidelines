@@ -49,6 +49,8 @@ Follow the rules described in our [Git flow](GIT.md)
 
 ### Use [CSS normalize](http://necolas.github.com/normalize.css/) instead of CSS reset
 
+### Use SCSS preprocessor for all stylesheets
+
 ### Don't use sprocket's commands in SCSS files
 
 Sprocket's `require` commands are primitive and do not work well with SCSS files. 
