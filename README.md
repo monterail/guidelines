@@ -72,9 +72,9 @@ Here is current list of tags along their participants:
 
 * #ruby - @jandudulski, @sheerun, @chytreg, @teamon, @szajbus, @Ostrzy
 * #js - @jandudulski, @sheerun, @chytreg, @szajbus, @porada, @Ostrzy
-* #git - @jandudulski, @sheerun, @teamon, @szajbus, @Ostrzy
+* #git - @jandudulski, @sheerun, @teamon, @szajbus, @Ostrzy, @porada
 * #html - @jandudulski, @sheerun, @porada, @venticco, @Ostrzy
-* #unix - @jandudulski, @sheerun, @teamon, @szajbus
+* #unix - @jandudulski, @sheerun, @teamon, @szajbus, @porada
 * #css - @jandudulski, @sheerun, @porada, @venticco
 * #design -  @jandudulski, @sheerun, @design, @venticco, @szymo, @porada
 
