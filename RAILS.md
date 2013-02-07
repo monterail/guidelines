@@ -5,9 +5,6 @@ This page contains Rails specific tips and recommendations. See also [useful gem
 
 ## Every app should
 
-* [rotate logs in produciton](http://www.stackednotion.com/blog/2011/09/12/how-to-setup-log-rotation-for-rails-apps/)
-* Make redirect to one domain (on nginx level).
-  Example: http://www.monterail.com => http://monterail.com
 * When making time-based statistic use the midnight of next day as upper limit
 * Split upload path into subdirectories
 ```ruby
@@ -19,16 +16,12 @@ end
 ```
 
 * If converting images, optimize them for web. imagemagick options: `-strip +profile "exif" -quality 80`
-* Use honeybadger or airbrake
 * If using whenever, set absolute paths
 ```ruby
 set :output, File.join("log", "cron.log")
 job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec rake :task :output"
 ```
 
-* Use some kind of process monitor (e.g. monit)
-* If using devise, set correct "from" email address
-* Set up [Vagrantfile](http://vagrantup.com/) for apps with most complicated start-ups
 * In non-SPA applications render URLs for JavaScript on server side. If you need to add them to custom JavaScript component, just print the links and iterate through them:
   ```
   $('a').each(function(index, el) { carousel.add(index, el); });
