@@ -117,6 +117,9 @@ Never ever commit directly in `dev` or `master` branches!
 
   (it's the only form that can be used for commit messages like "fix: statistic on home page polluted by google bot")
 
+* Begin git messages from big letter. Don't use dot at the end.
+
+  Sample: `fix: Very important thing, closes #42`
 
 ## Todo
 
