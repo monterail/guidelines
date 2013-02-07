@@ -40,3 +40,5 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 * [strong_parameters](https://github.com/rails/strong_parameters) (even for Rails 3.x)
 * [letter_opener](https://github.com/ryanb/letter_opener) (for development mode)
 * [slim](https://github.com/stonean/slim) and [slim-rails](https://github.com/leogalmeida/slim-rails) (only for new projects)
+* [sidekiq](http://mperham.github.com/sidekiq/)
+* [devise-async](https://github.com/mhfs/devise-async)
