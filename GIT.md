@@ -106,6 +106,15 @@ When your work is production ready merge it to the `master` branch:
 ## Rules
 
 * Never ever commit directly in `dev` or `master` branches!
+
+* Always commit your fixes to the oldest supported branch that require them. 
+  Then (periodically) merge the integration branches upwards into each other.
+
+  This gives a very controlled flow of fixes. If you notice that you have 
+  applied a fix to e.g. master that is also required in maint, you will need 
+  to cherry-pick it (using git-cherry-pick(1)) downwards. This will happen a 
+  few times and is nothing to worry about unless you do it very frequently.
+
 * Merge to downstream only at well-defined points.
 
   Otherwise, the feature that was merged to suddenly contains more than a single (well-separated) change. 
