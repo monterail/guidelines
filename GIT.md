@@ -103,9 +103,15 @@ When your work is production ready merge it to the `master` branch:
     git checkout master
     git merge --no-ff dev # or release branch if used
 
-## Caution
+## Rules
 
-Never ever commit directly in `dev` or `master` branches!
+* Never ever commit directly in `dev` or `master` branches!
+* Merge to downstream only at well-defined points.
+
+  Otherwise, the feature that was merged to suddenly contains more than a single (well-separated) change. 
+  The many resulting small merges will greatly clutter up history. Merge if you need stuff commited to 
+  develop or master to make feature work or test. For example critical fixes.
+  
 
 ## Conventions
 
