@@ -3,7 +3,7 @@ Git flow by Monterail
 
 ## Successfull branching model
 
-Basically we inherent from [successful git branch model](http://nvie.com/posts/a-successful-git-branching-model/) AKA *git flow* so we strongly recommend to read it first if you have not already.
+Basically we inherit from [successful git branch model](http://nvie.com/posts/a-successful-git-branching-model/) AKA *git flow* so we strongly recommend reading it first if you have not already.
 
 ## Basic flow
 
@@ -27,7 +27,7 @@ When the work is finished merge it into `dev` branch:
 
 ## Flow using [git up](https://github.com/aanand/git-up), [git-flow](https://github.com/nvie/gitflow) and [hub](https://github.com/defunkt/hub) tools
 
-Say, you want to contribute to the Docrails project
+Say you want to contribute to the Docrails project
 
 First, install appropriate tools:
 
@@ -61,7 +61,7 @@ Now you can close feature (but you don't have to):
 
 ## Ugly [bugs](http://vladstudio.deviantart.com/art/A-bug-142782682)
 
-Bugs found on `dev` branch should be fixed it in the proper feature branch which introduced the bug.
+Bugs found on `dev` branch should be fixed in the proper feature branch which introduced the bug.
 
 Bugs found on `master` branch should be fixed in the `hotfix/bugid` branch:
 
@@ -85,7 +85,7 @@ You can read more about reverting at [gitready](http://gitready.com/intermediate
 
 ## [Freeze](http://www.youtube.com/watch?v=qSqnO8iGz9o)
 
-If your development process needs code freezing create a separate branches named `release/version` from the `dev` branch when needed.
+If your development process needs code freezing create a separate branch named `release/version` from the `dev` branch when needed.
 
     git checkout -b release/version dev # or hash if you want to freeze from specific point
 
@@ -98,19 +98,19 @@ Any bugs found in a release branch should be fixed directly in release branch. W
 
 ## Going live
 
-When your work is production ready merge it to the `master` branch:
+When your work is production-ready merge it to the `master` branch:
 
     git checkout master
     git merge --no-ff dev # or release branch if used
 
 ## Rules
 
-* Never ever commit directly in `dev` or `master` branches!
+* Never ever commit directly to `dev` or `master` branches!
 
-* Always commit your fixes to the oldest supported branch that require them. 
+* Always commit your fixes to the oldest supported branch that requires them.
   Then (periodically) merge the integration branches upwards into each other.
 
-  This gives a very controlled flow of fixes. If you notice that you have 
+  This results is a very controlled flow of fixes. If you notice that you have
   applied a fix to e.g. master that is also required in maint, you will need 
   to cherry-pick it (using git-cherry-pick(1)) downwards. This will happen a 
   few times and is nothing to worry about unless you do it very frequently.
