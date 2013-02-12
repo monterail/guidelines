@@ -3,7 +3,7 @@ Git flow by Monterail
 
 ## Successfull branching model
 
-Basically we inherent from [successful git branch model](http://nvie.com/posts/a-successful-git-branching-model/) AKA *git flow* so we strongly recommend to read it first if you have not already.
+Basically we inherit from [successful git branch model](http://nvie.com/posts/a-successful-git-branching-model/) AKA *git flow* so we strongly recommend reading it first if you have not already.
 
 ## Basic flow
 
@@ -13,7 +13,7 @@ When you are working on a new feature create a new branch named `feature/name` f
 
 If you want to share your work with others push your topic branch to the remote server:
 
-    git push origin feature/my-new-tiny-feature
+    git push -u origin feature/my-new-tiny-feature
 
 On the other hand if you want to fetch others work from remote server use:
 
@@ -27,7 +27,7 @@ When the work is finished merge it into `dev` branch:
 
 ## Flow using [git up](https://github.com/aanand/git-up), [git-flow](https://github.com/nvie/gitflow) and [hub](https://github.com/defunkt/hub) tools
 
-Say, you want to contribute to the Docrails project
+Say you want to contribute to the Docrails project
 
 First, install appropriate tools:
 
@@ -61,7 +61,7 @@ Now you can close feature (but you don't have to):
 
 ## Ugly [bugs](http://vladstudio.deviantart.com/art/A-bug-142782682)
 
-Bugs found on `dev` branch should be fixed it in the proper feature branch which introduced the bug.
+Bugs found on `dev` branch should be fixed in the proper feature branch which introduced the bug.
 
 Bugs found on `master` branch should be fixed in the `hotfix/bugid` branch:
 
@@ -79,15 +79,15 @@ When finished, merge it to the `master` and `dev` branches:
 
 From time to time you might need to revert a feature work which were added to the `dev` or `master` but should not. In such a cases find a merge commit and revert it:
 
-    git revert hash
+    git revert sha1
 
 You can read more about reverting at [gitready](http://gitready.com/intermediate/2009/03/16/rolling-back-changes-with-revert.html) and [git-scm article](http://git-scm.com/2010/03/02/undoing-merges.html).
 
 ## [Freeze](http://www.youtube.com/watch?v=qSqnO8iGz9o)
 
-If your development process needs code freezing create a separate branches named `release/version` from the `dev` branch when needed.
+If your development process needs code freezing create a separate branch named `release/version` from the `dev` branch when needed.
 
-    git checkout -b release/version dev # or hash if you want to freeze from specific point
+    git checkout -b release/version dev # or sha1 if you want to freeze from specific point
 
 Any bugs found in a release branch should be fixed directly in release branch. When the freeze is accepted merge it into master and dev.
 
@@ -98,19 +98,19 @@ Any bugs found in a release branch should be fixed directly in release branch. W
 
 ## Going live
 
-When your work is production ready merge it to the `master` branch:
+When your work is production-ready merge it to the `master` branch:
 
     git checkout master
     git merge --no-ff dev # or release branch if used
 
 ## Rules
 
-* Never ever commit directly in `dev` or `master` branches!
+* Never ever commit directly to `dev` or `master` branches!
 
-* Always commit your fixes to the oldest supported branch that require them. 
+* Always commit your fixes to the oldest supported branch that requires them.
   Then (periodically) merge the integration branches upwards into each other.
 
-  This gives a very controlled flow of fixes. If you notice that you have 
+  This results is a very controlled flow of fixes. If you notice that you have
   applied a fix to e.g. master that is also required in maint, you will need 
   to cherry-pick it (using git-cherry-pick(1)) downwards. This will happen a 
   few times and is nothing to worry about unless you do it very frequently.
