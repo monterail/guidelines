@@ -27,6 +27,7 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
   $('a').each(function(index, el) { carousel.add(index, el); });
   ```
 * Use I18n keys instead of plain text in views
+* Use attr_accessible instead of attr_protected
 
 ## Required gems for new apps
 
