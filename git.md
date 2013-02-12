@@ -13,7 +13,7 @@ When you are working on a new feature create a new branch named `feature/name` f
 
 If you want to share your work with others push your topic branch to the remote server:
 
-    git push origin feature/my-new-tiny-feature
+    git push -u origin feature/my-new-tiny-feature
 
 On the other hand if you want to fetch others work from remote server use:
 
@@ -79,7 +79,7 @@ When finished, merge it to the `master` and `dev` branches:
 
 From time to time you might need to revert a feature work which were added to the `dev` or `master` but should not. In such a cases find a merge commit and revert it:
 
-    git revert hash
+    git revert sha1
 
 You can read more about reverting at [gitready](http://gitready.com/intermediate/2009/03/16/rolling-back-changes-with-revert.html) and [git-scm article](http://git-scm.com/2010/03/02/undoing-merges.html).
 
@@ -87,7 +87,7 @@ You can read more about reverting at [gitready](http://gitready.com/intermediate
 
 If your development process needs code freezing create a separate branch named `release/version` from the `dev` branch when needed.
 
-    git checkout -b release/version dev # or hash if you want to freeze from specific point
+    git checkout -b release/version dev # or sha1 if you want to freeze from specific point
 
 Any bugs found in a release branch should be fixed directly in release branch. When the freeze is accepted merge it into master and dev.
 
