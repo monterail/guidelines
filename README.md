@@ -24,9 +24,9 @@ git config --global git-up.rebase.arguments --preserve-merges
 
 If you're comfortable with Git commands, use [`git config --global branch.autosetuprebase always`](http://blog.aplikacja.info/2010/11/git-pull-rebase-by-default/)
 
-Follow the rules described in our [Git flow](GIT.md)
+Follow the rules described in our [Git flow](git.md)
 
-## [Rails](RAILS.md)
+## [Rails](rails.md)
 
 ## Ruby
 * [avoid rescuing StandardError and Exception](http://stackoverflow.com/questions/10048173/why-is-it-bad-style-to-rescue-exception-e-in-ruby#answer-10048406)
@@ -42,7 +42,7 @@ If possible, document new markup proposals in our [styleguide](https://github.co
 
 For proper forms markup, install the [formtastic-bootstrap](https://github.com/mjbellantoni/formtastic-bootstrap) gem.
 
-## [Coding / development enrivonments](TOOLBOX.md)
+## [Coding / development enrivonments](toolbox.md)
 
 ## Contribution to this repository
 
