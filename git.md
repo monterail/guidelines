@@ -35,6 +35,15 @@ First, install appropriate tools:
     gem install git-up
     hub alias # do what it says
 
+Configure them:
+
+```bash
+git config --global git-up.bundler.check true
+git config --global git-up.bundler.autoinstall true
+git config --global git-up.fetch.all true
+git config --global git-up.rebase.arguments --preserve-merges
+```
+
 Then clone repository you want and start new feature:
 
     git clone lifo/docrails
@@ -44,7 +53,7 @@ Do your changes, and test them on updated repository:
 
     git up # fetches and merges/rebases all remote changes
     git flow feature rebase my_feature
-    
+
 Now, publish feature and open pull reqeust:
 
     git flow feature publish my_feature
