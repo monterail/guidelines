@@ -13,17 +13,6 @@ Following document contains development guidelines for [Monterail.com, LLC](http
 ## Ruby
 * [avoid rescuing StandardError and Exception](http://stackoverflow.com/questions/10048173/why-is-it-bad-style-to-rescue-exception-e-in-ruby#answer-10048406)
 
-## HTML
-
-### Use consistent class names and markup for HTML components
-
-For basic ones, use [twitter bootstrap 2](http://twitter.github.com/bootstrap/) conventions.
-For example don't use `<div class="crumbs">` for breadcrumbs instead of `<ul class="breadcrumb"></ul>`. This also concerns layout, forms, buttons, flash messages, navigation and others.
-
-If possible, document new markup proposals in our [styleguide](https://github.com/monterail/boilerplate-rails).
-
-For proper forms markup, install the [formtastic-bootstrap](https://github.com/mjbellantoni/formtastic-bootstrap) gem.
-
 ## [Coding / development enrivonments](toolbox.md)
 
 ## Contribution to this repository
