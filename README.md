@@ -8,24 +8,6 @@ Following document contains development guidelines for [Monterail.com, LLC](http
 1. Leave the campground cleaner than you found it.
 2. [Configure your editor](https://gist.github.com/4451806) to automatically strip trailing whitespaces.
 
-## Git
-
-### Use [`git up`](https://github.com/aanand/git-up) tool
-
-especially if you're not experienced with git. It keeps the commit history clean.
-
-```bash
-gem install git-up
-git config --global git-up.bundler.check true
-git config --global git-up.bundler.autoinstall true
-git config --global git-up.fetch.all true
-git config --global git-up.rebase.arguments --preserve-merges
-```
-
-If you're comfortable with Git commands, use [`git config --global branch.autosetuprebase always`](http://blog.aplikacja.info/2010/11/git-pull-rebase-by-default/)
-
-Follow the rules described in our [Git flow](git.md)
-
 ## [Rails](rails.md)
 
 ## Ruby
