@@ -1,7 +1,7 @@
 Rails
 =====
 
-This page contains Rails specific tips and recommendations. See also [useful gems](rails/GEMS.md)
+This page contains Rails specific tips and recommendations. See also [useful gems](rails-gems.md)
 
 ## Every app should
 
