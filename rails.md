@@ -36,3 +36,62 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 * [slim](https://github.com/stonean/slim) and [slim-rails](https://github.com/leogalmeida/slim-rails)
 * [sidekiq](http://mperham.github.com/sidekiq/)
 * [devise-async](https://github.com/mhfs/devise-async)
+
+
+## Setup proper redis namespaces
+
+![redis namespaces](redis-namespace.png)
+
+### Rails cache store
+
+```ruby
+# config/application.rb
+config.cache_store = :redis_store, "redis://localhost:6379/0/app_name:#{Rails.env}:cache"
+```
+
+
+### Rails session store
+
+```ruby
+# config/initializers/session_store.rb
+Rails.application.config.session_store :redis_store, :redis_server => { :namespace => "app_name:#{Rails.env}:session" }
+```
+
+
+### Rack cache
+
+```ruby
+# config/environments/production.rb
+config.action_dispatch.rack_cache = {
+  :metastore    => "redis://localhost:6379/0/app_name:#{Rails.env}:rack-cache:metastore",
+  :entitystore  => "redis://localhost:6379/0/app_name:#{Rails.env}:rack-cache:entitystore"
+}
+```
+
+### Sidekiq
+
+```ruby
+# config/initializers/sidekiq.rb
+Sidekiq.configure_server do |config|
+  config.redis = { :namespace => "app_name:#{Rails.env}:sidekiq" }
+end
+
+Sidekiq.configure_client do |config|
+  config.redis = { :namespace => "app_name:#{Rails.env}:sidekiq" }
+end
+```
+
+### Faye server
+
+```ruby
+# faye.ru
+faye_server = Faye::RackAdapter.new(
+  :mount => '/faye',
+  :timeout => 30,
+  :engine => {
+    :type  => Faye::Redis, # or Faye::PersistentRedis
+    :namespace => "app_name:#{ENV["RACK_ENV"]}:faye:"
+  }
+)
+```
+
