@@ -29,6 +29,24 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 * Use I18n keys instead of plain text in views
 * Use attr_accessible instead of attr_protected
 
+## Remember to add indexes for foreign keys
+
+```ruby
+class CreateComments < ActiveRecord::Migration
+  def change
+    create_table :comments do |t|
+      t.integer :post_id
+      t.integer :user_id
+
+      # ...
+    end
+
+    add_index :comments, :post_id # <= this
+    add_index :comments, :user_id # <= and this
+  end
+end
+```
+
 ## Required gems for new apps
 
 * [strong_parameters](https://github.com/rails/strong_parameters) (even for Rails 3.x)
