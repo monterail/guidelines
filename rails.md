@@ -29,6 +29,15 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 * Use I18n keys instead of plain text in views
 * Use attr_accessible instead of attr_protected
 
+## Turn off assets generation
+```ruby
+# config/application.rb
+config.generators do |g|
+  g.stylesheets = false
+  g.javascripts = false
+end
+```
+
 ## Remember to add indexes for foreign keys
 
 ```ruby
