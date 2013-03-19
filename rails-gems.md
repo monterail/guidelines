@@ -20,6 +20,10 @@ be treated as a "standard", please add it below.
 * [sidekiq](http://mperham.github.com/sidekiq/) - threaded background queue
 * [whenever](https://github.com/javan/whenever) - scheduler
 
+## DB
+
+* [schema_plus](https://github.com/lomba/schema_plus) - support for foreign keys, database defined validations and associations for postgresql
+
 ## Debug
 
 * [better_errors](https://github.com/charliesome/better_errors) - replace standard rails error page with more useful version
