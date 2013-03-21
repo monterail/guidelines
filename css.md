@@ -2,7 +2,7 @@
 
 ### For each new project implement CSS style guide first
 
-Like [Github's one](https://github.com/styleguide/css). In our apps it is implemented as Rails engine available 
+Like [Github's one](https://github.com/styleguide/css). In our apps it is implemented as Rails engine available
 under `/styles` URL in development mode. It consists of rendered components with ready-to-copy snippets of HAML and SCSS.
 
 ### Use [CSS normalize](http://necolas.github.com/normalize.css/) instead of CSS reset
@@ -13,7 +13,7 @@ under `/styles` URL in development mode. It consists of rendered components with
 
 ### Don't use sprocket's commands in SCSS files
 
-Sprocket's `require` commands are primitive and do not work well with SCSS files. 
+Sprocket's `require` commands are primitive and do not work well with SCSS files.
 
 Instead, use SCSS's `@import` command. It supports globbing and development mode too.
 
@@ -60,7 +60,7 @@ If you're not sure about this:
 
 ### Test CSS design using different content for HTML elements
 
-This especially concerns testing different text lengths of paragraphs, button labels, form labels. 
+This especially concerns testing different text lengths of paragraphs, button labels, form labels.
 
 It also means you should test very long words like supercalifragilisticexpialidocious.
 
@@ -76,16 +76,16 @@ float: left;
 background: none;
 ```
 
-If you need to remove styles, you've applied them too early. 
+If you need to remove styles, you've applied them too early.
 
 Consider different scoping, think if you can use mixins or refactor CSS to separate class.
 
 ### Don't use "is" as prefix for state rules. Use verbs.
 
-[SMACSS](http://smacss.com/) says state rules should be prefixed with "is-", for example "is-active". 
+[SMACSS](http://smacss.com/) says state rules should be prefixed with "is-", for example "is-active".
 
-**But** we think it is superfluous, as state classes are adjectives, 
-what cleanly distinguish them from submodule classes like alert-error. 
+**But** we think it is superfluous, as state classes are adjectives,
+what cleanly distinguish them from submodule classes like alert-error.
 
 Moreover Bootstrap v2 simple verbs too, so we're consisten with other guidelines.
 
@@ -101,11 +101,11 @@ Moreover Bootstrap v2 simple verbs too, so we're consisten with other guidelines
 * puts `@include` and `@extend` just before nested components
 * use extra blank line between selectors (both top level and nested ones)
 * use dashes for separating words in class names
-* use underscores for separating words in ID names
 * don't omit leading zeros in numeric values
 * don't use units in zero numeric values
 * use short hexadecimal notation if possible
 * never put many rule declarations in one line
+* Don’t use underscores in class names.
 
 Example syntax:
 
