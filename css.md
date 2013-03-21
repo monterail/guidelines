@@ -1,116 +1,80 @@
-## CSS guidelines
+# CSS
 
-### For each new project implement CSS style guide first
+* **For each new project create a CSS style guide first.**
 
-Like [Github's one](https://github.com/styleguide/css). In our apps it is implemented as Rails engine available
+    Like [Github’s one](https://github.com/styleguide/css). It’s implemented in our apps as a Rails engine available
 under `/styles` URL in development mode. It consists of rendered components with ready-to-copy snippets of HAML and SCSS.
 
-### Use [CSS normalize](http://necolas.github.com/normalize.css/) instead of CSS reset
+* **Use [CSS normalize](http://necolas.github.com/normalize.css/) as the foundation.**
 
-### Use [Bourbon](http://bourbon.io/) for CSS3 properties
+    Don’t use CSS reset.
 
-### Use SCSS preprocessor for all stylesheets
+* **Use [Bourbon](http://bourbon.io/) for CSS3 properties.**
 
-### Don't use sprocket's commands in SCSS files
+* **Use SCSS preprocessor for all stylesheets.**
 
-Sprocket's `require` commands are primitive and do not work well with SCSS files.
+* **Don’t use Sprocket commands in Sass files.**
 
-Instead, use SCSS's `@import` command. It supports globbing and development mode too.
+    Sprocket’s `require` commands are primitive and do not work well with SCSS files.
 
-### When file is larger than few hundred lines, think about modularization
+    Use `@import` command instead. It supports globbing and development mode too.
 
-If it does, create directory with the same name as SCSS file, and extract code to separate files.
+* **When file is larger than few hundred lines, modularize.**
 
-After that import these files using following sprockets template:
+    Create directory with the same name as SCSS file, and extract code to separate files. After that, `@import` these files using following sprockets template.
 
-```scss
-// stylesheets.css.scss
+    It’s recommended that the extracted files should not be dependent on each other.
 
-@import "stylesheets/*";
-```
+* **Keep [selector specificity](http://www.htmldog.com/guides/cssadvanced/specificity/) as low as possible.**
 
-This style of importing implies, that extracted files should not be dependent on each other.
+    IDs should never be used in CSS.
 
-Put all code that is dependent at the top of `stylesheets.css.scss`.
+    Don’t use `!important` to solve high specificity problems either.
 
-### Learn about CSS specificity and keep it as low as possible
+* **Test CSS design using different content for HTML elements.**
 
-http://www.htmldog.com/guides/cssadvanced/specificity/
+    This especially concerns testing different lengths of text for paragraphs, button labels, form labels, etc. Make sure they don’t break with very long words like `supercalifragilisticexpialidocious`.
 
-For example following selectors should be avoided:
+* **Try to add CSS properties instead of removing them.**
 
-```css
-div.klass { ... }
-ul li .klass { ... }
-section a.btn { ... }
-html a { ... }
-div p { ... }
-```
+    Following styles should be avoided:
 
-Also remember:
+        margin: 0;
+        padding: 0;
+        border: none;
+        float: left;
+        background: none;
 
-* Don't nest SCSS selectors more than 3 levels deep.
-* Don't use `!important` to solve high specificity problems.
-* IDs should never be used in CSS.
+    If you need to remove styles that were applied too early, consider different scoping, usage of mixins or refactoring.
 
-If you're not sure about this:
+* **Don’t use `is-` as prefix for rules describing state rules.**
 
-* read http://csswizardry.com/2012/11/code-smells-in-css/
-* watch http://youtu.be/hou2wJCh3XE?t=16m49s
+If you’re not sure about those, read or watch:
 
-### Test CSS design using different content for HTML elements
+* [Code smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css/)
+* [Writing tactical HTML & CSSS](http://youtu.be/hou2wJCh3XE?t=16m49s)
 
-This especially concerns testing different text lengths of paragraphs, button labels, form labels.
-
-It also means you should test very long words like supercalifragilisticexpialidocious.
-
-### Try to add CSS properties instead of removing them
-
-Following styles should be avoided:
-
-```css
-margin: 0;
-padding: 0;
-border: none;
-float: left;
-background: none;
-```
-
-If you need to remove styles, you've applied them too early.
-
-Consider different scoping, think if you can use mixins or refactor CSS to separate class.
-
-### Don't use "is" as prefix for state rules. Use verbs.
-
-[SMACSS](http://smacss.com/) says state rules should be prefixed with "is-", for example "is-active".
-
-**But** we think it is superfluous, as state classes are adjectives,
-what cleanly distinguish them from submodule classes like alert-error.
-
-Moreover Bootstrap v2 simple verbs too, so we're consisten with other guidelines.
-
-### Use proper SCSS formatting
+## Proper SCSS formatting
 
 * Use soft-tabs with a two space indent.
 * Put spaces after `:` in property declarations.
 * Put spaces before `{` in rule declarations.
-* Put spaces after `,` in attribute declarations;
-* Use hex color codes `#000` unless using rgba.
-* Use `//` for comment blocks (instead of `/* */`).
-* put nested components at the end of block
-* puts `@include` and `@extend` just before nested components
-* use extra blank line between selectors (both top level and nested ones)
-* use dashes for separating words in class names
-* don't omit leading zeros in numeric values
-* don't use units in zero numeric values
-* use short hexadecimal notation if possible
-* never put many rule declarations in one line
-* Don’t use underscores in class names.
+* Put spaces after `,` in attribute declarations.
+* Use hex color codes (even in `rgba` — Sass understands `rgba(#000, 0.5)`).
+* Use `//` for comment blocks instead of `/* */`.
+* Don’t nest selectors more than 3 levels deep.
+* Put nested components at the end of block.
+* Put `@include` and `@extend` before nested components.
+* Use a blank line between selectors (both top level and nested ones).
+* Use dashes for separating words in class names, don’t use underscores.
+* Don’t omit leading zeros in numeric values.
+* Don’t use units in zero numeric values.
+* Use short hexadecimal notation where applicable.
+* Never put multiple property declarations in one line.
 
-Example syntax:
+### Example syntax
 
 ```scss
-// This is a good example!
 .styleguide-format {
   border: 1px solid #0f0;
   color: #000;
@@ -121,13 +85,8 @@ Example syntax:
     color: #222;
   }
 
-  .styleguide-another {
+  .styleguide-another-nested {
     color: #333;
   }
 }
-
-#some_element {
-  display: none;
-}
 ```
-
