@@ -37,14 +37,6 @@ under `/styles` URL in development mode. It consists of rendered components with
 
 * **Try to add CSS properties instead of removing them.**
 
-    Following styles should be avoided:
-
-        margin: 0;
-        padding: 0;
-        border: none;
-        float: left;
-        background: none;
-
     If you need to remove styles that were applied too early, consider different scoping, usage of mixins or refactoring.
 
 * **Don’t use `is-` as prefix for rules describing state rules.**
