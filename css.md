@@ -49,6 +49,8 @@ under `/styles` URL in development mode. It consists of rendered components with
 
 * **Don’t use `is-` as prefix for rules describing state rules.**
 
+* **Embrace relative units.**
+
 If you’re not sure about those, read or watch:
 
 * [Code smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css/)
