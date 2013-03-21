@@ -26,7 +26,7 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
   ```
   $('a').each(function(index, el) { carousel.add(index, el); });
   ```
-* Use I18n keys instead of plain text in views
+* Use I18n keys instead of plain text in views. In order to keep the reusability, the translation strings shouldn’t contain punctuation at their end, because those belong to the very UI.
 * Use attr_accessible instead of attr_protected
 
 ## Setup generators
