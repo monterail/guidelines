@@ -46,7 +46,7 @@ under `/styles` URL in development mode. It consists of rendered components with
 If you’re not sure about those, read or watch:
 
 * [Code smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css/)
-* [Writing tactical HTML & CSSS](http://youtu.be/hou2wJCh3XE?t=16m49s)
+* [Writing tactical HTML & CSS](http://youtu.be/hou2wJCh3XE?t=16m49s)
 
 ## Proper SCSS formatting
 
