@@ -120,16 +120,16 @@ When your work is production-ready merge it to the `master` branch:
   Then (periodically) merge the integration branches upwards into each other.
 
   This results is a very controlled flow of fixes. If you notice that you have
-  applied a fix to e.g. master that is also required in maint, you will need 
-  to cherry-pick it (using git-cherry-pick(1)) downwards. This will happen a 
+  applied a fix to e.g. master that is also required in maint, you will need
+  to cherry-pick it (using git-cherry-pick(1)) downwards. This will happen a
   few times and is nothing to worry about unless you do it very frequently.
 
 * Merge to downstream only at well-defined points.
 
-  Otherwise, the feature that was merged to suddenly contains more than a single (well-separated) change. 
-  The many resulting small merges will greatly clutter up history. Merge if you need stuff commited to 
+  Otherwise, the feature that was merged to suddenly contains more than a single (well-separated) change.
+  The many resulting small merges will greatly clutter up history. Merge if you need stuff commited to
   develop or master to make feature work or test. For example critical fixes.
-  
+
 
 ## Conventions
 
