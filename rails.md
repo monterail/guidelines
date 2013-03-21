@@ -68,7 +68,7 @@ end
 
 ## Setup proper redis namespaces
 
-![redis namespaces](redis-namespace.png)
+![redis namespaces](images/redis-namespace.png)
 
 ### Rails cache store
 
