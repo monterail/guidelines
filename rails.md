@@ -59,12 +59,12 @@ end
 
 ## Required gems for new apps
 
-* [strong_parameters](https://github.com/rails/strong_parameters) (even for Rails 3.x)
-* [letter_opener](https://github.com/ryanb/letter_opener) (for development mode)
-* [slim](https://github.com/stonean/slim) and [slim-rails](https://github.com/leogalmeida/slim-rails)
-* [sidekiq](http://mperham.github.com/sidekiq/)
 * [devise-async](https://github.com/mhfs/devise-async)
-
+* [letter_opener](https://github.com/ryanb/letter_opener) (for development mode)
+* [schema_plus](https://github.com/lomba/schema_plus) - support for foreign keys, database defined validations and associations for postgresql
+* [sidekiq](http://mperham.github.com/sidekiq/)
+* [slim](https://github.com/stonean/slim) and [slim-rails](https://github.com/leogalmeida/slim-rails)
+* [strong_parameters](https://github.com/rails/strong_parameters) (even for Rails 3.x)
 
 ## Setup proper redis namespaces
 
