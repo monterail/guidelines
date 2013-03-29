@@ -59,6 +59,7 @@ end
 
 ## Required gems for new apps
 
+* [decent_exposure](https://github.com/voxdolo/decent_exposure)
 * [devise-async](https://github.com/mhfs/devise-async)
 * [letter_opener](https://github.com/ryanb/letter_opener) (for development mode)
 * [schema_plus](https://github.com/lomba/schema_plus) - support for foreign keys, database defined validations and associations for postgresql
