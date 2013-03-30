@@ -7,7 +7,7 @@ We write down here the guidelines we follow when developing our applications.
 * [Git](https://github.com/monterail/guidelines/blob/master/git.md)
 * [Ruby](https://github.com/monterail/guidelines/blob/master/ruby.md)
 * [Ruby on Rails](https://github.com/monterail/guidelines/blob/master/rails.md)
-* [Style sheets](https://github.com/monterail/guidelines/blob/master/css.md)
+* [Style sheets](https://github.com/monterail/guidelines/blob/master/stylesheets.md)
 * [JavaScript](https://github.com/monterail/guidelines/blob/master/javascript.md)
 * [HTML](https://github.com/monterail/guidelines/blob/master/html.md)
 
