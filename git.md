@@ -1,5 +1,16 @@
 # Git guidelines
 
+* Leave the campground cleaner than you found it.
+* [Configure your editor](https://gist.github.com/4451806) to automatically strip trailing whitespaces.
+* Feature branch: `feature/name`
+* Hotfix branch: `hotfix/name` or `hotfix/bugid` (from ticket system like redmine)
+* Realease branch: `release/version`
+* Multi word branch name: `really-long-branch-name`
+* Use `fix: ` prefix for fix commits. Don't use any other form of the "fix" word.
+  (it's the only form that can be used for commit messages like "fix: statistic on home page polluted by google bot")
+* Begin git messages from big letter. Don't use dot at the end.
+  Sample: `fix: Very important thing, closes #42`
+
 ## Successfull branching model
 
 Basically we inherit from [successful git branch model](http://nvie.com/posts/a-successful-git-branching-model/) AKA *git flow* so we strongly recommend reading it first if you have not already.
@@ -142,25 +153,3 @@ When your work is production-ready merge it to the `master` branch:
 * When deploying on staging multiple features, use throw-away `staging` branch.
 
   Also, enable the [`rerere` git feature](http://git-scm.com/2010/03/08/rerere.html), to remember and replay resolved merge conflicts.
-
-
-## Conventions
-
-* Feature branch: `feature/name`
-* Hotfix branch: `hotfix/name` or `hotfix/bugid` (from ticket system like redmine)
-* Realease branch: `release/version`
-* Multi word branch name: `really-long-branch-name`
-* Use `fix: ` prefix for fix commits. Don't use any other form of the "fix" word.
-
-  (it's the only form that can be used for commit messages like "fix: statistic on home page polluted by google bot")
-
-* Begin git messages from big letter. Don't use dot at the end.
-
-  Sample: `fix: Very important thing, closes #42`
-
-## Todo
-
-* describe squashing
-* introduce versioning convention
-* anything more?
-
