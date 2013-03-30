@@ -10,9 +10,6 @@ Following document contains development guidelines for [Monterail.com, LLC](http
 
 ## [Rails](rails.md)
 
-## Ruby
-* [avoid rescuing StandardError and Exception](http://stackoverflow.com/questions/10048173/why-is-it-bad-style-to-rescue-exception-e-in-ruby#answer-10048406)
-
 ## [Coding / development enrivonments](toolbox.md)
 
 ## Contribution to this repository
