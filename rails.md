@@ -6,6 +6,8 @@ This page contains Rails specific tips and recommendations. See also [useful gem
 ## Every app should
 
 * Put the ruby version it uses in the README.md file
+* [Use service objects for decomposing application](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)
+  Try not to use for example observers or filters.
 * When making time-based statistic use the midnight of next day as upper limit
 * Split upload path into subdirectories
 ```ruby
