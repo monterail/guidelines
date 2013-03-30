@@ -94,6 +94,7 @@ end
 group :development do
   gem 'letter_opener'
   gem 'rails_best_practices'
+  gem 'commands'
 end
 ```
 
