@@ -2,7 +2,7 @@
 
 We write down here the guidelines we follow when developing our applications.
 
-## Categories
+## Guidelines
 
 * [Git](https://github.com/monterail/guidelines/blob/master/git.md)
 * [Ruby](https://github.com/monterail/guidelines/blob/master/ruby.md)
