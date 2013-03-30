@@ -77,6 +77,7 @@ end
 ## Required gems for new apps
 
 ```ruby
+gem 'yajl-ruby'
 gem 'strong_parameters'
 gem 'slim-rails'
 gem 'sidekiq'
