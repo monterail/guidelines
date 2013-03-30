@@ -36,6 +36,11 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 * Occasionally run `rails_best_practices` command, and follow the hints.
 * If using `strong_parameters` gem, turn `whitelist_attributes` off, otherwise leave it enabled.
 * Use unicorn server in production
+
+* Secure secure token in public projects
+
+    Put it in settings.yml on production and generate once during initial setup, change when needed.
+
 * Use `rails-timeago` gem by default. Don't render "ago" dates on server-side.
 
     The reason is they need to be often updated in real-time on browser side.
