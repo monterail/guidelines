@@ -67,6 +67,7 @@ gem 'devise-async'
 gem 'decent_exposure'
 gem 'letter_opener'
 gem 'schema_plus'
+gem 'coffee-rails-source-maps'
 
 group :development do
   gem 'letter_opener'
@@ -128,4 +129,18 @@ faye_server = Faye::RackAdapter.new(
     :namespace => "app_name:#{ENV["RACK_ENV"]}:faye:"
   }
 )
+```
+
+### Source maps
+
+```ruby
+# Do not compress assets
+config.assets.compress = false
+
+# Expands the lines which load the assets
+config.assets.debug = true
+
+# Enable sources maps
+config.sass.debug_info = true
+config.sass.line_comments = false
 ```
