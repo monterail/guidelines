@@ -1,11 +1,11 @@
 Rails
 =====
 
-This page contains Rails specific tips and recommendations. See also [useful gems](rails-gems.md)
+This page contains Rails specific tips and recommendations. See also [useful gems](rails-gems.md).
 
 ## Every app should
 
-* Put the ruby version it uses in the README.md file
+* Put the ruby version it uses in the README.md file.
 
 * [Use service objects for decomposing application](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)
   Try not to use for example observers or filters.
@@ -14,9 +14,9 @@ This page contains Rails specific tips and recommendations. See also [useful gem
 
 * Use CoffeeScript instead of plain JavaScript.
 
-* When making time-based statistic use the midnight of next day as upper limit
+* When making time-based statistic use the midnight of next day as upper limit.
 
-* Split upload path into subdirectories
+* Split upload path into subdirectories.
 
   ```ruby
   # partition_uid("1234567890")
@@ -26,9 +26,9 @@ This page contains Rails specific tips and recommendations. See also [useful gem
   end
   ```
 
-* If converting images, optimize them for web. imagemagick options: `-strip +profile "exif" -quality 80`
+* If converting images, optimize them for web. imagemagick options: `-strip +profile "exif" -quality 80`.
 
-* If using whenever, set absolute paths
+* If using whenever, set absolute paths.
 
   ```ruby
   set :output, File.join("log", "cron.log")
@@ -40,17 +40,18 @@ This page contains Rails specific tips and recommendations. See also [useful gem
   ```coffee
   $('a').each (index, el) -> carousel.add(index, el)
   ```
+
 * Use I18n kes instead of plain text in views. In order to keep the reusability, the translation strings shouldn’t contain punctuation at their end, because those belong to the very UI.
 
-* Use attr_accessible instead of attr_protected
+* Use attr_accessible instead of attr_protected.
 
 * Occasionally run `rails_best_practices` command, and follow the hints.
 
 * If using `strong_parameters` gem, turn `whitelist_attributes` off, otherwise leave it enabled.
 
-* Use unicorn server in production
+* Use unicorn server in production.
 
-* Secure secure token in public projects
+* Secure secure token in public projects.
 
     Put it in settings.yml on production and generate once during initial setup, change when needed.
 
