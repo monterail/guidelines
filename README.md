@@ -1,16 +1,9 @@
-The Monterail's Rules
-=====
-
-Following document contains development guidelines for [Monterail.com, LLC](http://monterail.com).
+# [Monterail.com](http://monterail.com) development guidelines
 
 ## General
 
 1. Leave the campground cleaner than you found it.
 2. [Configure your editor](https://gist.github.com/4451806) to automatically strip trailing whitespaces.
-
-## [Rails](rails.md)
-
-## [Coding / development enrivonments](toolbox.md)
 
 ## Contribution to this repository
 
@@ -33,4 +26,3 @@ Here is current list of tags along their participants:
 * #design -  @jandudulski, @sheerun, @design, @venticco, @szymo, @porada
 
 Pull requests, issues, and comments from third party are welcome too!
-
