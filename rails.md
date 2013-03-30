@@ -31,6 +31,7 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
   ```
 * Use I18n keys instead of plain text in views. In order to keep the reusability, the translation strings shouldn’t contain punctuation at their end, because those belong to the very UI.
 * Use attr_accessible instead of attr_protected
+* Occasionally run `rails_best_practices` command, and follow the hints.
 
 ## Setup generators
 ```ruby
@@ -74,6 +75,7 @@ gem 'coffee-rails-source-maps'
 
 group :development do
   gem 'letter_opener'
+  gem 'rails_best_practices'
 end
 ```
 
