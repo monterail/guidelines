@@ -36,6 +36,10 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 * Occasionally run `rails_best_practices` command, and follow the hints.
 * If using `strong_parameters` gem, turn `whitelist_attributes` off, otherwise leave it enabled.
 * Use unicorn server in production
+* Use `rails-timeago` gem by default. Don't render "ago" dates on server-side.
+
+    The reason is they need to be often updated in real-time on browser side.
+    For example 3 minutes after staying on page "1 minute ago" should say "4 minutes ago".
 
 ## Setup generators
 ```ruby
@@ -76,6 +80,10 @@ gem 'decent_exposure'
 gem 'letter_opener'
 gem 'schema_plus'
 gem 'coffee-rails-source-maps'
+
+group :assets do
+  gem 'rails-timeago', '~> 2.0'
+end
 
 group :development do
   gem 'letter_opener'
