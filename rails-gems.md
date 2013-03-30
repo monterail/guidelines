@@ -1,5 +1,4 @@
-Useful gems
-===========
+# Useful gems
 
 This list contains suggested gems for specific problems. If you find any specific gem, which should
 be treated as a "standard", please add it below.

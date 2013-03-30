@@ -1,5 +1,4 @@
-Coding / development enrivonments
-=================================
+# Coding and development tools
 
 * [httpie](https://github.com/jkbr/httpie) - CLI for HTTP with nice usage and output
 * [livereload](https://gist.github.com/653bb4d039adcf7f35b3) - reloads a browser after change in project

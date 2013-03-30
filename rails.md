@@ -1,9 +1,4 @@
-Rails
-=====
-
-This page contains Rails specific tips and recommendations. See also [useful gems](rails-gems.md).
-
-## Every app should
+# Rails guidelines
 
 * Put the ruby version it uses in the README.md file.
 
@@ -118,6 +113,8 @@ group :development do
   gem 'commands'
 end
 ```
+
+See also [useful gems](rails-gems.md).
 
 ### Rails cache store
 

@@ -1,11 +1,10 @@
-Git flow by Monterail
-=====================
+# Git guidelines
 
 ## Successfull branching model
 
 Basically we inherit from [successful git branch model](http://nvie.com/posts/a-successful-git-branching-model/) AKA *git flow* so we strongly recommend reading it first if you have not already.
 
-## Basic flow
+### Basic flow
 
 When you are working on a new feature create a new branch named `feature/name` from `dev` branch. Separate words with dashes:
 
@@ -68,7 +67,7 @@ Now you can close feature (but you don't have to):
 
     git feature finish my_feature
 
-## Ugly [bugs](http://vladstudio.deviantart.com/art/A-bug-142782682)
+### Ugly [bugs](http://vladstudio.deviantart.com/art/A-bug-142782682)
 
 Bugs found on `dev` branch should be fixed in the proper feature branch which introduced the bug.
 
@@ -83,7 +82,7 @@ When finished, merge it to the `master` and `dev` branches:
     git checkout dev
     git merge --no-ff hotfix/bugid
 
-## Revert changes
+### Revert changes
 *... AKA "I don't wanna this any more!"*
 
 From time to time you might need to revert a feature work which were added to the `dev` or `master` but should not. In such a cases find a merge commit and revert it:
@@ -92,7 +91,7 @@ From time to time you might need to revert a feature work which were added to th
 
 You can read more about reverting at [gitready](http://gitready.com/intermediate/2009/03/16/rolling-back-changes-with-revert.html) and [git-scm article](http://git-scm.com/2010/03/02/undoing-merges.html).
 
-## [Freeze](http://www.youtube.com/watch?v=qSqnO8iGz9o)
+### [Freeze](http://www.youtube.com/watch?v=qSqnO8iGz9o)
 
 If your development process needs code freezing create a separate branch named `release/version` from the `dev` branch when needed.
 
@@ -105,7 +104,7 @@ Any bugs found in a release branch should be fixed directly in release branch. W
     git checkout dev
     git merge --no-ff release/version
 
-## Going live
+### Going live
 
 When your work is production-ready merge it to the `master` branch:
 

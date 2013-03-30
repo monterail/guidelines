@@ -1,4 +1,4 @@
-# CSS
+# CSS guidelines
 
 * **For each new project create a CSS style guide first.**
 
