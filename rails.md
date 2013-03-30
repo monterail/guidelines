@@ -59,13 +59,19 @@ end
 
 ## Required gems for new apps
 
-* [decent_exposure](https://github.com/voxdolo/decent_exposure)
-* [devise-async](https://github.com/mhfs/devise-async)
-* [letter_opener](https://github.com/ryanb/letter_opener) (for development mode)
-* [schema_plus](https://github.com/lomba/schema_plus) - support for foreign keys, database defined validations and associations for postgresql
-* [sidekiq](http://mperham.github.com/sidekiq/)
-* [slim](https://github.com/stonean/slim) and [slim-rails](https://github.com/leogalmeida/slim-rails)
-* [strong_parameters](https://github.com/rails/strong_parameters) (even for Rails 3.x)
+```ruby
+gem 'strong_parameters'
+gem 'slim-rails'
+gem 'sidekiq'
+gem 'devise-async'
+gem 'decent_exposure'
+gem 'letter_opener'
+gem 'schema_plus'
+
+group :development do
+  gem 'letter_opener'
+end
+```
 
 ## Setup proper redis namespaces
 
@@ -123,4 +129,3 @@ faye_server = Faye::RackAdapter.new(
   }
 )
 ```
-
