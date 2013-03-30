@@ -14,7 +14,7 @@ We write down here the guidelines we follow when developing our applications.
 ## Extras
 
 * [Checklists](https://github.com/monterail/guidelines/blob/master/checklist.md)
-* [Tools](https://github.com/monterail/guidelines/blob/master/toolbox.md)
+* [Tools](https://github.com/monterail/guidelines/blob/master/tools.md)
 * [Gems](https://github.com/monterail/guidelines/blob/master/gems.md)
 
 ## License
