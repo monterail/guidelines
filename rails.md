@@ -35,6 +35,7 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
 * Use attr_accessible instead of attr_protected
 * Occasionally run `rails_best_practices` command, and follow the hints.
 * If using `strong_parameters` gem, turn `whitelist_attributes` off, otherwise leave it enabled.
+* Use unicorn server in production
 
 ## Setup generators
 ```ruby
