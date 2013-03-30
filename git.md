@@ -130,6 +130,11 @@ When your work is production-ready merge it to the `master` branch:
   The many resulting small merges will greatly clutter up history. Merge if you need stuff commited to
   develop or master to make feature work or test. For example critical fixes.
 
+* Fast-forward, rebase or run git-up before any commit or merge.
+
+  That is, you should avoid creating avoid merge hell looking like this:
+
+  ![Screen Shot 2013-02-06 at 11 54 24 PM](https://f.cloud.github.com/assets/31995/133685/34e4a9a6-70b0-11e2-8cce-6134cfb4d386.png)
 
 ## Conventions
 
