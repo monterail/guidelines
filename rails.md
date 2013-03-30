@@ -46,6 +46,8 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
     The reason is they need to be often updated in real-time on browser side.
     For example 3 minutes after staying on page "1 minute ago" should say "4 minutes ago".
 
+* Use `bin/setup` file as [thoughtbot desctibes](http://robots.thoughtbot.com/post/41439635905/bin-setup) (for example for git hooks).
+
 ## Setup generators
 ```ruby
 # config/application.rb
