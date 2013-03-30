@@ -136,6 +136,15 @@ When your work is production-ready merge it to the `master` branch:
 
   ![Screen Shot 2013-02-06 at 11 54 24 PM](https://f.cloud.github.com/assets/31995/133685/34e4a9a6-70b0-11e2-8cce-6134cfb4d386.png)
 
+* Once feature is merged to develop, all fixes should go to develop.
+
+  The same way, if feature is released, all fixes shold go to master, and merge downstream.
+
+* When deploying on staging multiple features, use throw-away `staging` branch.
+
+  Also, enable the [`rerere` git feature](http://git-scm.com/2010/03/08/rerere.html), to remember and replay resolved merge conflicts.
+
+
 ## Conventions
 
 * Feature branch: `feature/name`
