@@ -1,4 +1,4 @@
-# [Monterail.com](http://monterail.com) development guidelines
+# [![Monterail.com](http://monterail.com/images/logo.png)](http://monterail.com) development guidelines
 
 ## General
 
