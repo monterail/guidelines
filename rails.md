@@ -5,6 +5,7 @@ This page contains Rails specific tips and recommendations. See also [useful gem
 
 ## Every app should
 
+* Put the ruby version it uses in the README.md file
 * When making time-based statistic use the midnight of next day as upper limit
 * Split upload path into subdirectories
 ```ruby
