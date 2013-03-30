@@ -4,12 +4,7 @@ We write down here the guidelines we follow when developing our applications.
 
 ## Guidelines
 
-* [Git](https://github.com/monterail/guidelines/blob/master/git.md)
-* [Ruby](https://github.com/monterail/guidelines/blob/master/ruby.md)
-* [Ruby on Rails](https://github.com/monterail/guidelines/blob/master/rails.md)
-* [Style sheets](https://github.com/monterail/guidelines/blob/master/stylesheets.md)
-* [JavaScript](https://github.com/monterail/guidelines/blob/master/javascript.md)
-* [HTML](https://github.com/monterail/guidelines/blob/master/html.md)
+[![Ruby](http://monterail.com/images/logos/ruby.png)](http://monterail.com/images/logos/git.png) [![Ruby on Rails](http://monterail.com/images/logos/rails.png)](https://github.com/monterail/guidelines/blob/master/rails.md) [![JavaScript](http://monterail.com/images/logos/javascript.png)](https://github.com/monterail/guidelines/blob/master/javascript.md) [![CSS](http://monterail.com/images/logos/css.png)](https://github.com/monterail/guidelines/blob/master/stylesheets.md) [![HTML](http://monterail.com/images/logos/html.png)](https://github.com/monterail/guidelines/blob/master/html.md) [![Git](http://monterail.com/images/logos/git.png)](https://github.com/monterail/guidelines/blob/master/git.md)
 
 ## Extras
 
