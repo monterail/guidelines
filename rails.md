@@ -6,35 +6,48 @@ This page contains Rails specific tips and recommendations. See also [useful gem
 ## Every app should
 
 * Put the ruby version it uses in the README.md file
+
 * [Use service objects for decomposing application](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)
   Try not to use for example observers or filters.
+
 * Group gems in [meaningful groups](https://gist.github.com/teamon/69a31a132ce18825f003) (not alphabetically).
-* Use Coffeescript instead of plain JavaScript.
+
+* Use CoffeeScript instead of plain JavaScript.
+
 * When making time-based statistic use the midnight of next day as upper limit
+
 * Split upload path into subdirectories
-```ruby
-# partition_uid("1234567890")
-# => "123/456/789/0"
-def partition_uid(uid, size)
-    uid.gsub(/(.{#{size}})/, "\\1/")
-end
-```
+
+  ```ruby
+  # partition_uid("1234567890")
+  # => "123/456/789/0"
+  def partition_uid(uid, size)
+      uid.gsub(/(.{#{size}})/, "\\1/")
+  end
+  ```
 
 * If converting images, optimize them for web. imagemagick options: `-strip +profile "exif" -quality 80`
+
 * If using whenever, set absolute paths
-```ruby
-set :output, File.join("log", "cron.log")
-job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec rake :task :output"
-```
+
+  ```ruby
+  set :output, File.join("log", "cron.log")
+  job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec rake :task :output"
+  ```
 
 * In non-SPA applications render URLs for JavaScript on server side. If you need to add them to custom JavaScript component, just print the links and iterate through them:
+
+  ```coffee
+  $('a').each (index, el) -> carousel.add(index, el)
   ```
-  $('a').each(function(index, el) { carousel.add(index, el); });
-  ```
-* Use I18n keys instead of plain text in views. In order to keep the reusability, the translation strings shouldn’t contain punctuation at their end, because those belong to the very UI.
+* Use I18n kes instead of plain text in views. In order to keep the reusability, the translation strings shouldn’t contain punctuation at their end, because those belong to the very UI.
+
 * Use attr_accessible instead of attr_protected
+
 * Occasionally run `rails_best_practices` command, and follow the hints.
+
 * If using `strong_parameters` gem, turn `whitelist_attributes` off, otherwise leave it enabled.
+
 * Use unicorn server in production
 
 * Secure secure token in public projects
@@ -46,9 +59,10 @@ job_type :rake, "cd :path && RAILS_ENV=:environment /usr/local/bin/bundle exec r
     The reason is they need to be often updated in real-time on browser side.
     For example 3 minutes after staying on page "1 minute ago" should say "4 minutes ago".
 
-* Use `bin/setup` file as [thoughtbot desctibes](http://robots.thoughtbot.com/post/41439635905/bin-setup) (for example for git hooks).
+* Use `bin/setup` file as [thoughtbot describes](http://robots.thoughtbot.com/post/41439635905/bin-setup) (for example for git hooks).
 
 ## Setup generators
+
 ```ruby
 # config/application.rb
 config.generators do |g|
@@ -76,7 +90,11 @@ class CreateComments < ActiveRecord::Migration
 end
 ```
 
-## Required gems for new apps
+### Setup proper redis namespaces
+
+![redis namespaces](images/redis-namespace.png)
+
+## Required gems and configurations for new Rails applications
 
 ```ruby
 gem 'yajl-ruby'
@@ -99,10 +117,6 @@ group :development do
   gem 'commands'
 end
 ```
-
-## Setup proper redis namespaces
-
-![redis namespaces](images/redis-namespace.png)
 
 ### Rails cache store
 

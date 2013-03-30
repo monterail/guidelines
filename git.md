@@ -120,7 +120,7 @@ When your work is production-ready merge it to the `master` branch:
   Then (periodically) merge the integration branches upwards into each other.
 
   This results is a very controlled flow of fixes. If you notice that you have
-  applied a fix to e.g. master that is also required in maint, you will need
+  applied a fix to e.g. master that is also required in develop, you will need
   to cherry-pick it (using git-cherry-pick(1)) downwards. This will happen a
   few times and is nothing to worry about unless you do it very frequently.
 
@@ -138,7 +138,7 @@ When your work is production-ready merge it to the `master` branch:
 
 * Once feature is merged to develop, all fixes should go to develop.
 
-  The same way, if feature is released, all fixes shold go to master, and merge downstream.
+  The same way, if feature is released, all fixes should go to master, and merge downstream.
 
 * When deploying on staging multiple features, use throw-away `staging` branch.
 

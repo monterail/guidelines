@@ -19,11 +19,11 @@ Following document contains development guidelines for [Monterail.com, LLC](http
 
 According to [this issue](https://github.com/monterail/rules/issues/25) we agreed to:
 
-> * declare if he/she wants to participate in issues tagged with given word, for example #ruby or #css. Then all issues / pull-request would be tagged appropriately.
-> * if so, he/she would be obligated to comment on issue or at least give +1 or no opinion comment for example until week after issue has been created.
-> * the idea is subscribed persons would be obligated to comment. we will mention them in such cases.
-> * final decision for merging is for CTO
-> * it's of couse possible for non-declared person to participate. That list would help us determine if issue is ready to be accepted or it needs more discussion / time (for example if everyone would vote "no opinion").
+* Declare if he/she wants to participate in issues tagged with given word, for example #ruby or #css. Then all issues / pull-request would be tagged appropriately.
+* If so, he/she would be obligated to comment on issue or at least give +1 or no opinion comment for example until week after issue has been created.
+* The idea is subscribed persons would be obligated to comment. We will mention them in such cases.
+* Final decision for merging is for CTO.
+* It's of course possible for non-declared person to participate. That list would help us determine if issue is ready to be accepted or it needs more discussion / time (for example if everyone would vote "no opinion").
 
 Here is current list of tags along their participants:
 
