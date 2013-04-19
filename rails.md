@@ -41,6 +41,7 @@
 * Use attr_accessible instead of attr_protected.
 
 * Occasionally run `rails_best_practices` command, and follow the hints.
+* For more advanced apps, setup [vagrant](http://www.vagrantup.com/) along with [puppet provisioner](http://docs-v1.vagrantup.com/v1/docs/provisioners/puppet.html). The puppet file shoud be kept in `manifests/site.pp`.
 
 * If using `strong_parameters` gem, turn `whitelist_attributes` off, otherwise leave it enabled.
 
