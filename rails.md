@@ -58,6 +58,8 @@
 
 * Use `bin/setup` file as [thoughtbot describes](http://robots.thoughtbot.com/post/41439635905/bin-setup) (for example for git hooks).
 
+* Never ever ever use natural keys in your database.
+
 ## Setup generators
 
 ```ruby
