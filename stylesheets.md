@@ -43,6 +43,16 @@ under `/styles` URL in development mode. It consists of rendered components with
 
 * **Embrace relative units.**
 
+* **Put temporary styles in `application.css` with proper comment**
+
+    ```css
+    /* TODO - Tymon */
+    .some .temp .css #foo { width: 100px; }
+    .some .other .crap { color: red }
+    #pretty #awesome #border { border: 1px dashed purple; }
+    ```
+
+
 If you’re not sure about those, read or watch:
 
 * [Code smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css/)
