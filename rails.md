@@ -87,10 +87,6 @@ class CreateComments < ActiveRecord::Migration
 end
 ```
 
-### Setup proper redis namespaces
-
-![redis namespaces](images/redis-namespace.png)
-
 ## Required gems and configurations for new Rails applications
 
 ```ruby
@@ -116,6 +112,10 @@ end
 ```
 
 See also [useful gems](rails-gems.md).
+
+## Setup proper redis namespaces
+
+![redis namespaces](images/redis-namespace.png)
 
 ### Rails cache store
 
@@ -170,7 +170,7 @@ faye_server = Faye::RackAdapter.new(
 )
 ```
 
-### Source maps
+## Source maps
 
 ```ruby
 # Do not compress assets
