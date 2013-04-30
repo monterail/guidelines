@@ -1,6 +1,6 @@
 # [Monterail.com](http://monterail.com) development guidelines
 
-We write down here the guidelines we follow when developing our applications.
+Hi there. This is a place on the Internet where we write down guidelines thta we follow in our daily work. Feel free to fork, comment and add your own.
 
 ## Guidelines
 
