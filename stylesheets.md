@@ -43,7 +43,7 @@ under `/styles` URL in development mode. It consists of rendered components with
 
 * **Embrace relative units.**
 
-* **Put temporary styles in `application.css` with proper comment**
+* **Put temporary styles in `temporary.css` with proper comment**
 
     ```css
     /* TODO - Tymon */
@@ -51,7 +51,6 @@ under `/styles` URL in development mode. It consists of rendered components with
     .some .other .crap { color: red }
     #pretty #awesome #border { border: 1px dashed purple; }
     ```
-
 
 If you’re not sure about those, read or watch:
 
