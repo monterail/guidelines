@@ -60,6 +60,8 @@
 
 * Never ever ever use natural keys in your database.
 
+* Do not add files to `vendor/assets`. Find proper gem or create a new one in [rails-assets](https://github.com/rails-assets).
+
 ## Setup generators
 
 ```ruby
