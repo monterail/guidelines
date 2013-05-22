@@ -13,7 +13,7 @@ under `/styles` URL in development mode. It consists of rendered components with
 
 * **Use SCSS preprocessor for all stylesheets.**
 
-* **Don’t use Sprocket commands in Sass files.**
+* **Don’t use Sprockets’ commands in Sass files.**
 
     Sprocket’s `require` commands are primitive and do not work well with SCSS files.
 
