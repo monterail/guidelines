@@ -9,8 +9,6 @@ under `/styles` URL in development mode. It consists of rendered components with
 
     Don’t use CSS reset.
 
-* **Use [Bourbon](http://bourbon.io/) for CSS3 properties.**
-
 * **Use SCSS preprocessor for all stylesheets.**
 
 * **Don’t use Sprockets’ commands in Sass files.**
