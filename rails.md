@@ -115,7 +115,7 @@ group :development do
 end
 ```
 
-See also [useful gems](rails-gems.md).
+See also [useful gems](gems.md).
 
 ## Setup proper redis namespaces
 
