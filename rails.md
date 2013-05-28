@@ -103,6 +103,7 @@ gem 'decent_exposure'
 gem 'letter_opener'
 gem 'schema_plus'
 gem 'coffee-rails-source-maps'
+gem 'bcrypt-ruby'
 
 group :assets do
   gem 'rails-timeago', '~> 2.0'
