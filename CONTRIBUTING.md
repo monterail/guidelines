@@ -10,12 +10,12 @@ According to [this issue](https://github.com/monterail/rules/issues/25) we agree
 
 Here is current list of tags along their participants:
 
-* #ruby - @jandudulski, @sheerun, @chytreg, @teamon, @szajbus, @Ostrzy
-* #js - @jandudulski, @sheerun, @chytreg, @szajbus, @porada, @Ostrzy
-* #git - @jandudulski, @sheerun, @teamon, @szajbus, @Ostrzy, @porada
-* #html - @jandudulski, @sheerun, @porada, @venticco, @Ostrzy
-* #unix - @jandudulski, @sheerun, @teamon, @szajbus, @porada
-* #css - @jandudulski, @sheerun, @porada, @venticco
-* #design -  @jandudulski, @sheerun, @design, @venticco, @szymo, @porada
+* #ruby - @jandudulski, @sheerun, @chytreg, @teamon, @szajbus, @Ostrzy, @jcieslar, @tallica
+* #js - @jandudulski, @sheerun, @chytreg, @szajbus, @porada, @Ostrzy, @tallica
+* #git - @jandudulski, @sheerun, @teamon, @szajbus, @Ostrzy, @porada, @jcieslar
+* #html - @jandudulski, @sheerun, @porada, @venticco, @Ostrzy, @michlask, @tallica
+* #unix - @jandudulski, @sheerun, @teamon, @szajbus, @porada, @jcieslar, @dmilith, @tallica
+* #css - @jandudulski, @sheerun, @porada, @venticco, @michlask, @tallica
+* #design -  @jandudulski, @sheerun,@venticco, @szymo, @porada
 
 Pull requests, issues, and comments from third party are welcome too!
