@@ -44,20 +44,15 @@ under `/styles` URL in development mode. It consists of rendered components with
 * **Put temporary styles in `temporary.css` with proper comment**
 
     ```css
-    /* TODO - Tymon */
+    /* TODO */
     .some .temp .css #foo { width: 100px; }
     .some .other .crap { color: red }
     #pretty #awesome #border { border: 1px dashed purple; }
     ```
 
-If you’re not sure about those, read or watch:
+* **Use `create`, `delete` and `update` for naming classes in CSS**
 
-* [Code smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css/)
-* [Writing tactical HTML & CSS](http://youtu.be/hou2wJCh3XE?t=16m49s)
-
-* *Use create, delete and update words in CSS*
-
-    Instead of modified, removed, added etc. It makes backend guys life easier.
+    Instead of `modified`, `removed`, `added` etc. It makes back-end guys’ life easier.
 
 ## Proper SCSS formatting
 
