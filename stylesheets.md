@@ -36,6 +36,10 @@ under `/styles` URL in development mode. It consists of rendered components with
 * **Try to add CSS properties instead of removing them.**
 
     If you need to remove styles that were applied too early, consider different scoping, usage of mixins or refactoring.
+    
+* **Never use data URI with properties that might be vendor-prefixed.**
+
+    [The explanation](https://github.com/monterail/guidelines/issues/146).
 
 * **Don’t use `is-` as prefix for rules describing state rules.**
 
