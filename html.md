@@ -10,4 +10,8 @@
 
     Use dashes instead.
 
+* **Always use double quotes for attributes.**
+
+    Especially in Slim templates.
+
 If possible, document new markup proposals in our [styleguide](https://github.com/monterail/boilerplate-rails).
