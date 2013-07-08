@@ -187,3 +187,33 @@ config.assets.debug = true
 config.sass.debug_info = true
 config.sass.line_comments = false
 ```
+
+
+### Redis
+
+Use `raw: true` option when using redis as a cache store.
+
+Example:
+
+```ruby
+class MyController
+  def index
+    render_cached_json("api:foos", expires_in: 1.hour) do
+      Foo.all
+    end
+  end
+
+  def render_cached_json(cache_key, opts = {}, &block)
+    opts[:expires_in] ||= 1.day
+
+    expires_in opts[:expires_in], :public => true
+    data = Rails.cache.fetch(cache_key, {raw: true}.merge(opts)) do
+      block.call.to_json
+    end
+
+    render :json => data
+  end
+end
+```
+
+This will store rendered json in redis, plain json, as string, as you should it should always do. Notice where is to_json and raw: true option. And you get HTTP cache headers for free.
