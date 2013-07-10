@@ -52,7 +52,6 @@ be treated as a "standard", please add it below.
 * [decent_exposure](https://github.com/voxdolo/decent_exposure) - helper for creating declarative interfaces in controllers
 * [figaro](https://github.com/laserlemon/figaro) - storing sensible settings in ENV
 * [friendly_id](https://github.com/norman/friendly_id) - slug generation
-* [rails_config](https://github.com/railsjedi/rails_config) - miscallanous settings for different stages
 
 ## Testing
 
