@@ -8,7 +8,12 @@ Feel free to fork, comment and add your own.
 
 ## Guidelines
 
-[![Ruby](https://raw.github.com/monterail/guidelines/master/images/ruby.png)](https://github.com/monterail/guidelines/blob/master/ruby.md) [![Ruby on Rails](https://raw.github.com/monterail/guidelines/master/images/rails.png)](https://github.com/monterail/guidelines/blob/master/rails.md) [![JavaScript](https://raw.github.com/monterail/guidelines/master/images/javascript.png)](https://github.com/monterail/guidelines/blob/master/javascript.md) [![CSS](https://raw.github.com/monterail/guidelines/master/images/css.png)](https://github.com/monterail/guidelines/blob/master/stylesheets.md) [![HTML](https://raw.github.com/monterail/guidelines/master/images/html.png)](https://github.com/monterail/guidelines/blob/master/html.md) [![Git](https://raw.github.com/monterail/guidelines/master/images/git.png)](https://github.com/monterail/guidelines/blob/master/git.md)
+* [Ruby](https://github.com/monterail/guidelines/blob/master/ruby.md)
+* [Ruby on Rails](https://github.com/monterail/guidelines/blob/master/rails.md)
+* [JavaScript](https://github.com/monterail/guidelines/blob/master/javascript.md) 
+* [CSS](https://github.com/monterail/guidelines/blob/master/stylesheets.md)
+* [HTML](https://github.com/monterail/guidelines/blob/master/html.md)
+* [Git](https://github.com/monterail/guidelines/blob/master/git.md)
 
 ## Extras
 
