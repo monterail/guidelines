@@ -100,7 +100,6 @@ gem 'slim-rails'
 gem 'sidekiq'
 gem 'devise-async'
 gem 'decent_exposure'
-gem 'letter_opener'
 gem 'schema_plus'
 gem 'coffee-rails-source-maps'
 
