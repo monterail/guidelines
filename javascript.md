@@ -8,3 +8,37 @@
 
 * [use callbacks](https://gist.github.com/3019231) instead of low-level `$.ajax` when possible
 * [move javascript tags](https://github.com/rails/rails/pull/7888) from `HEAD` to the bottom (go to [discussion](https://github.com/monterail/rules/pull/2))
+
+
+## Angular.js
+
+#### Use array notation instead of $inject
+
+Instead of:
+
+```coffee
+@MyCtrl = ($scope, $http) ->
+  $scope.foo = 1
+
+@MyCtrl.$inject = ["$scope", "$http"]
+```
+
+use:
+
+```coffee
+@app.controller "MyCtrl", ["$scope", "$http", ($scope, $http) ->
+  $scope.foo = 1
+]
+```
+
+and for long list of dependencies use
+
+```coffee
+@app.controller "MyCtrl", [
+  "$scope", "$http", "$timeout", "$q", "$location",
+  ($scope, $http, $timeout, $q, $location) ->
+    $scope.foo = 1
+]
+```
+
+Note that the body is indented more than with single line syntax (due to coffee rules)
