@@ -61,3 +61,4 @@ be treated as a "standard", please add it below.
 * [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails) - factory girl integration for rails
 * [rspec](https://github.com/rspec/rspec) - testing framework
 * [rspec-rails](https://github.com/rspec/rspec-rails) - rspec integration for rails
+* [site_prism](https://github.com/natritmeyer/site_prism) - DSL for [Page Object pattern](http://blog.josephwilk.net/cucumber/page-object-pattern.html)
