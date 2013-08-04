@@ -94,7 +94,7 @@ end
 ## Required gems and configurations for new Rails applications
 
 ```ruby
-gem 'yajl-ruby'
+gem 'yajl-ruby', require: 'yajl'
 gem 'strong_parameters'
 gem 'slim-rails'
 gem 'sidekiq'
