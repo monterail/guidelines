@@ -74,6 +74,7 @@ config.generators do |g|
   g.helper      false
   g.stylesheets false
   g.javascripts false
+  g.view_specs  false
 end
 ```
 
