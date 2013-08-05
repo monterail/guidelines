@@ -13,3 +13,5 @@
 * Avoid rescuing StandardError and Exception
 
   They [should never be rescued](http://stackoverflow.com/questions/10048173/why-is-it-bad-style-to-rescue-exception-e-in-ruby#answer-10048406), if they are raised, we should get notified by getsentry and fix them.
+
+* Use semantic versions for all gems in Gemfile before pushing to production.
