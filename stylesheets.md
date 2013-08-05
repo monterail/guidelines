@@ -9,7 +9,7 @@ under `/styles` URL in development mode. It consists of rendered components with
 
     Don’t use CSS reset.
 
-* Write stylesheets in accordance with [BEM](http://bem.info).
+* **Write stylesheets and html in accordance with [BEM](http://bem.info).**
 
   Our selectors:
   
