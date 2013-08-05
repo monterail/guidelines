@@ -64,6 +64,8 @@
 
 * [Use InnoDB database format instead of MyISAM](http://robots.thoughtbot.com/post/35717411108/a-healthy-bundle)
 
+* Use [lograge](https://github.com/roidrage/lograge) to improve Rails default logging format.
+
 ## Setup generators
 
 ```ruby
