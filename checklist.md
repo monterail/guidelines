@@ -19,3 +19,7 @@ This document contains things which you **always should** check on specific stat
 * Setup process monitor (e.g. monit)
 * If using devise, set correct "from" email address
 * [prepare maintenance screens for server errors and configure http servers / proxies](http://codetunes.com/2012/11/21/custom-maintenance-page-for-nginx)
+
+When maintaining project on staging and/or production
+
+* Use LOW_PRIORITY update for MySQL for long-lasting queries on production
