@@ -15,3 +15,47 @@
   They [should never be rescued](http://stackoverflow.com/questions/10048173/why-is-it-bad-style-to-rescue-exception-e-in-ruby#answer-10048406), if they are raised, we should get notified by getsentry and fix them.
 
 * Use semantic versions for all gems in Gemfile before pushing to production.
+
+* Don't overuse one letter variables unless it is very short block, repeating variable or exception.
+
+Acceptable:
+
+```ruby
+[1,2,3].map{ |e| e + 1 }
+```
+
+```ruby
+rescue Exception => e
+  # ...
+end
+```
+
+```ruby
+user.tap do |u|
+  u.uid   = user_hash['uid']
+  u.email = user_hash['email']
+  u.name  = user_hash['name']
+  u.save!
+end
+```
+
+Not acceptable:
+
+```ruby
+if a = variant.address
+  [a.country_code, a.state || a.city].join("-")
+end
+```
+
+```ruby
+array.inject({}) do |h, e|
+  h[foo] = e.bar
+  h
+end
+```
+
+```ruby
+def process_text(s)
+  # ...
+end
+```
