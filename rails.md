@@ -216,3 +216,13 @@ end
 ```
 
 This will store rendered json in redis, plain json, as string, as you should it should always do. Notice where is to_json and raw: true option. And you get HTTP cache headers for free.
+
+## Mongodb
+
+Remember to include
+
+```ruby
+gem "bson_ext"
+```
+
+when using mongodb (you know, for speed)
