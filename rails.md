@@ -102,6 +102,7 @@ gem 'devise-async'
 gem 'decent_exposure'
 gem 'schema_plus'
 gem 'coffee-rails-source-maps'
+gem 'no_more_pending_migrations'
 
 group :assets do
   gem 'rails-timeago', '~> 2.0'
