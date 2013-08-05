@@ -104,6 +104,10 @@ gem 'schema_plus'
 gem 'coffee-rails-source-maps'
 gem 'no_more_pending_migrations'
 
+group :test do
+  # gem 'rspec-fire' # anytime you use mocks or stubs
+end
+
 group :assets do
   gem 'rails-timeago', '~> 2.0'
 end
