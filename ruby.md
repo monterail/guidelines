@@ -16,6 +16,23 @@
 
 * Use semantic versions for all gems in Gemfile before pushing to production.
 
+* Try to avoid calling self explicitly on reads
+  
+  Prefer
+
+  ```ruby
+  def pay_with_balance?
+    has_payment? && balance > 0 && payment_applied > 0
+  end
+  ```
+  over
+
+  ```ruby
+  def pay_with_balance?
+    self.has_payment? && self.balance > 0 && self.payment_applied > 0
+  end
+  ```
+
 * Don't overuse one letter variables unless it is very short block, repeating variable or exception.
 
 Acceptable:
