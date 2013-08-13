@@ -99,7 +99,7 @@ class CreateComments < ActiveRecord::Migration
 end
 ```
 
-## Required gems and configurations for new Rails applications
+## Suggested gems for Rails applications
 
 ```ruby
 gem 'yajl-ruby', require: 'yajl'
