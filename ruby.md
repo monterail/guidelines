@@ -17,7 +17,7 @@
 * Use semantic versions for all gems in Gemfile before pushing to production.
 
 * Try to avoid calling self explicitly on reads
-  
+
   Prefer
 
   ```ruby
@@ -75,4 +75,12 @@ end
 def process_text(s)
   # ...
 end
+```
+
+## Testing
+
+* use a [new expectation syntax](http://myronmars.to/n/dev-blog/2012/06/rspecs-new-expectation-syntax) when using RSpec (see [issue](https://github.com/monterail/guidelines/issues/170)):
+
+```ruby
+it { expect(something).to be_valid }
 ```
