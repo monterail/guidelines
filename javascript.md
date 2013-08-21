@@ -45,7 +45,7 @@ and for long list of dependencies use
 Note that the body is indented more than with single line syntax (due to coffee rules)
 
 
-#### Pass Rails env as factory
+#### Pass Rails env as Angular constant
 
 application_helper.rb
 ```ruby
@@ -57,7 +57,7 @@ module ApplicationHelper
     }.to_json
 
     <<-EOS
-    this.app.factory("env", function(){
+    this.app.constant("envConfig", function(){
       return #{data}
     })
     EOS
@@ -75,8 +75,8 @@ Then you can simple include env module and get the value.
 
 ```coffee
 @app.controller "MyCtrl", [
-  "$scope", "env",
-  ($scope, env) ->
-    $scope.something = env.foo + env.bar_baz_foo
+  "$scope", "envConfig",
+  ($scope, envConfig) ->
+    $scope.something = envConfig.foo + envConfig.bar_baz_foo
 ]
 ```
