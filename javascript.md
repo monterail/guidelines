@@ -43,3 +43,32 @@ and for long list of dependencies use
 ```
 
 Note that the body is indented more than with single line syntax (due to coffee rules)
+
+
+#### Setup XSRF-TOKEN cookie in Rails for angular CSRF protection
+
+Official doc says: http://docs.angularjs.org/api/ng.$http
+
+```
+Since only JavaScript that runs on your domain could read the cookie, your server can be assured that the XHR came from JavaScript running on your domain.
+To take advantage of this (CSRF Protection), your server needs to set a token in a JavaScript readable session cookie called XSRF-TOKEN on first HTTP GET request.
+On subsequent non-GET requests the server can verify that the cookie matches X-XSRF-TOKEN HTTP header.
+```
+
+Add simply this code in Rails, Angular make the rest.
+
+```ruby
+class ApplicationController < ActionController::Base
+  protect_from_forgery
+  after_filter  :set_csrf_cookie_for_ng
+
+  def set_csrf_cookie_for_ng
+    cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
+  end
+
+  protected
+    def verified_request?
+      super || form_authenticity_token == request.headers['X_XSRF_TOKEN']
+    end
+end
+```
