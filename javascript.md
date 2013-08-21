@@ -43,3 +43,41 @@ and for long list of dependencies use
 ```
 
 Note that the body is indented more than with single line syntax (due to coffee rules)
+
+
+#### Pass Rails env as Angular constant
+
+application_helper.rb
+```ruby
+class ApplicationController < ActionController::Base
+  def js_env
+    data = {
+      :foo => Figaro.env.foo,
+      :bar_baz_foo => Figaro.env.bar_baz_foo,
+    }.to_json
+
+    <<-EOS
+    this.app.constant("envConfig", function(){
+      return #{data}
+    })
+    EOS
+  end
+  helper_method :js_env
+end
+```
+
+application.html.slim
+```slim
+script
+  == js_env
+```
+
+Then you can simple include env module and get the value.
+
+```coffee
+@app.controller "MyCtrl", [
+  "$scope", "envConfig",
+  ($scope, envConfig) ->
+    $scope.something = envConfig.foo + envConfig.bar_baz_foo
+]
+```
