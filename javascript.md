@@ -43,3 +43,40 @@ and for long list of dependencies use
 ```
 
 Note that the body is indented more than with single line syntax (due to coffee rules)
+
+
+#### Pass Rails env as factory
+
+application_helper.rb
+```ruby
+module ApplicationHelper
+  def js_env
+    data = {
+      :foo => Figaro.env.foo,
+      :bar_baz_foo => Figaro.env.bar_baz_foo,
+    }.to_json
+
+    <<-EOS
+    this.app.factory("env", function(){
+      return #{data}
+    })
+    EOS
+  end
+end
+```
+
+application.html.slim
+```slim
+script
+  == js_env
+```
+
+Then you can simple include env module and get the value.
+
+```coffee
+@app.controller "MyCtrl", [
+  "$scope", "env",
+  ($scope, env) ->
+    $scope.something = env.foo + env.bar_baz_foo
+]
+```
