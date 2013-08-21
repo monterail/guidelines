@@ -49,7 +49,7 @@ Note that the body is indented more than with single line syntax (due to coffee 
 
 application_helper.rb
 ```ruby
-module ApplicationHelper
+class ApplicationController < ActionController::Base
   def js_env
     data = {
       :foo => Figaro.env.foo,
@@ -62,6 +62,7 @@ module ApplicationHelper
     })
     EOS
   end
+  helper_method :js_env
 end
 ```
 
