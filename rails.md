@@ -150,7 +150,7 @@ Rails.application.config.session_store :redis_store, :redis_server => { :namespa
 ```
 
 
-### Rack cache
+## Rack cache
 
 ```ruby
 # config/environments/production.rb
@@ -160,7 +160,7 @@ config.action_dispatch.rack_cache = {
 }
 ```
 
-### Sidekiq
+## Sidekiq
 
 ```ruby
 # config/initializers/sidekiq.rb
@@ -173,7 +173,7 @@ Sidekiq.configure_client do |config|
 end
 ```
 
-### Faye server
+## Faye server
 
 ```ruby
 # faye.ru
@@ -202,7 +202,7 @@ config.sass.line_comments = false
 ```
 
 
-### Redis
+## Redis
 
 Use `raw: true` option when using redis as a cache store.
 
