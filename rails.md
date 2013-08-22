@@ -240,3 +240,13 @@ gem "bson_ext"
 ```
 
 when using mongodb (you know, for speed)
+
+
+## Add environment tag in Raven config
+
+```ruby
+Raven.configure do |config|
+  config.dsn = 'https://some-dsn-here'
+  config.tags = { environment: Rails.env }
+end
+```
