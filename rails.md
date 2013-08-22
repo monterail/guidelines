@@ -263,3 +263,24 @@ Files that should have samples:
 * `config/mongoid.yml` - if using mongo...
 * `config/application.yml` - for [lovely cat](https://github.com/laserlemon/figaro#does-figaro-have-a-mascot)
 * `config/settings.*.yml`, `config/settings/*.yml` madness - rails_config you bustard
+
+
+## Remember to set reserved subdomains
+
+```ruby
+RESERVED_SUBDOMAINS = %w(
+  about abuse account accounts admin admins administrator
+  administrators anonymous assets billing billings board calendar
+  contact copyright e-mail email example feedback forum
+  hostmaster image images inbox index invite jabber legal
+  launchpad manage media messages mobile official payment
+  picture pictures policy portal postmaster press privacy
+  private profile search sitemap staff stage staging static
+  stats status support teams username usernames users webmail
+  webmaster login use jars main data user img css stylesheets
+  cdn gallery info system www
+)
+
+validates :domain, presence: true,
+                   subdomain: { reserved: RESERVED_SUBDOMAINS }
+```
