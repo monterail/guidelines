@@ -250,3 +250,16 @@ Raven.configure do |config|
   config.tags = { environment: Rails.env }
 end
 ```
+
+## Configuration files
+
+Add sample configuration.yml file to repository and write about it in README. The file should be named using the following convention:
+
+`FILE_NAME.EXT` -> `FILE_NAME.sample.EXT`, so `database.yml` becomes `database.sample.yml`. This is better than `FILE_NAME.EXT.example` because it keeps the file extension in place.
+
+Files that should have samples:
+
+* `config/database.yml` - obvious
+* `config/mongoid.yml` - if using mongo...
+* `config/application.yml` - for [lovely cat](https://github.com/laserlemon/figaro#does-figaro-have-a-mascot)
+* `config/settings.*.yml`, `config/settings/*.yml` madness - rails_config you bustard
