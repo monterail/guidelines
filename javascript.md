@@ -57,9 +57,7 @@ class ApplicationController < ActionController::Base
     }.to_json
 
     <<-EOS
-    this.app.constant("envConfig", function(){
-      return #{data}
-    })
+    this.app.constant("envConfig", #{data})
     EOS
   end
   helper_method :js_env
