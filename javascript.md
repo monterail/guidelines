@@ -79,3 +79,14 @@ Then you can simple include env module and get the value.
     $scope.something = envConfig.foo + envConfig.bar_baz_foo
 ]
 ```
+
+#### Inject CSRF token
+
+```coffee
+for meta in document.getElementsByTagName('meta')
+  if meta.name.toLowerCase() == 'csrf-token' && meta.content
+    angular.element(document).ready () =>
+      @app.config ['$httpProvider', (provider) ->
+        provider.defaults.headers.common['X-CSRF-Token'] = meta.content
+      ]
+```
