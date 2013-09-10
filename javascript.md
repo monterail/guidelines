@@ -85,8 +85,10 @@ Then you can simple include env module and get the value.
 #### Inject CSRF token
 
 ```coffee
-angular.element(document).ready () =>
-  @app.config ["$httpProvider", (provider) ->
-    provider.defaults.headers.common['X-CSRF-Token'] = angular.element('meta[name="csrf-token"]').attr('content')
-  ]
+for meta in document.getElementsByTagName('meta')
+  if meta.name.toLowerCase() == 'csrf-token' && meta.content
+    angular.element(document).ready () =>
+      @app.config ['$httpProvider', (provider) ->
+        provider.defaults.headers.common['X-CSRF-Token'] = meta.content
+      ]
 ```
