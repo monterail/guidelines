@@ -14,4 +14,6 @@
 
     Especially in Slim templates.
 
+* **Use `//` instead of `http://` for images, script or iframes. This will make life much easier if someday you decide to use https for site.
+
 If possible, document new markup proposals in our [styleguide](https://github.com/monterail/boilerplate-rails).
