@@ -7,6 +7,7 @@ According to [this issue](https://github.com/monterail/rules/issues/25) we agree
 * The idea is subscribed persons would be obligated to comment. We will mention them in such cases.
 * Final decision for merging is for CTO.
 * It's of course possible for non-declared person to participate. That list would help us determine if issue is ready to be accepted or it needs more discussion / time (for example if everyone would vote "no opinion").
+* If you have **no opinion** do not hesitate to tell that. At least you will leave a note that you read an issue.
 
 ## Merging
 
