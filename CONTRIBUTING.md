@@ -8,6 +8,12 @@ According to [this issue](https://github.com/monterail/rules/issues/25) we agree
 * Final decision for merging is for CTO.
 * It's of course possible for non-declared person to participate. That list would help us determine if issue is ready to be accepted or it needs more discussion / time (for example if everyone would vote "no opinion").
 
+## Merging
+
+You can simply prepare [closing commits](https://help.github.com/articles/closing-issues-via-commit-messages) if issue is clear for every who participated in the discussion. Otherwise transform issue into [pull-request](https://github.com/github/hub#git-pull-request) which allows to verify agreement on the topic.
+
+## Participants
+
 Here is current list of tags along their participants:
 
 * #ruby - @jandudulski, @sheerun, @chytreg, @teamon, @szajbus, @Ostrzy, @jcieslar, @tallica
