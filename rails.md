@@ -72,7 +72,7 @@
 ## How to choose database
 
 * If you think about using mysql - use postgresql
-* If you think about using mongodo - think again, spend more time thinking if you really need mongodb features, if not - use postgres
+* If you think about using mongodb - think again, spend more time thinking if you really need mongodb features, if not - use postgres
 
 ## Setup generators
 
