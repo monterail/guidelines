@@ -69,6 +69,11 @@
 * If you want your model to be compatible with ActiveModel, `include ActiveModel::Model` in Rails 4,
   and `include ActiveAttr::Model` in Rails 3. If not, use `Virtus` instead
 
+## How to choose database
+
+* If you think about using mysql - use postgresql
+* If you think about using mongodb - think again, spend more time thinking if you really need mongodb features, if not - use postgres
+
 ## Setup generators
 
 ```ruby
