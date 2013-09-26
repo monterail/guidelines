@@ -12,7 +12,7 @@ under `/styles` URL in development mode. It consists of rendered components with
 * **Write stylesheets and html in accordance with [BEM](http://bem.info).**
 
   Our selectors:
-  
+
   ```
   .block {}
   .block__element {}
@@ -46,7 +46,7 @@ under `/styles` URL in development mode. It consists of rendered components with
 * **Try to add CSS properties instead of removing them.**
 
     If you need to remove styles that were applied too early, consider different scoping, usage of mixins or refactoring.
-    
+
 * **Never use data URI with properties that might be vendor-prefixed.**
 
     [The explanation](https://github.com/monterail/guidelines/issues/146).
@@ -67,6 +67,10 @@ under `/styles` URL in development mode. It consists of rendered components with
 * **Use `create`, `delete` and `update` for naming classes in CSS**
 
     Instead of `modified`, `removed`, `added` etc. It makes back-end guys’ life easier.
+
+* **When using Sass, take advantage of the `rgba(#hex, alpha)` format.
+
+    Apart from being shorter than `rgba(r, g, b, alpha)`, it’s a small step towards better code maintainability.
 
 ## Proper SCSS formatting
 
