@@ -84,3 +84,5 @@ end
 ```ruby
 it { expect(something).to be_valid }
 ```
+
+* Use Node.js instead of therubyracer for execjs runtime
