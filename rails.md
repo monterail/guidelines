@@ -319,3 +319,8 @@ config.action_controller.perform_caching = true
 ```
 
 Rails will automagicly add `Rack::Cache` middleware to the top of stack. This will cause request with cache headers to be cached which can break e.g. authentication when you want to send cache headers but also always require http basic auth. It is also much better to use nginx or varnish as cache in case auth is not an issue. See [this pull request](https://github.com/rails/rails/pull/7838) for reference.
+
+## localeapp pull policy
+
+- When using `localeapp pull` always do that on the same branch (preferebly `master`).
+- Do not commit translation files in feature branches. If you do you gonna have a baaaad time when merging it to master.
