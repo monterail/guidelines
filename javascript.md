@@ -45,7 +45,6 @@ and for long list of dependencies use
 
 Note that the body is indented more than with single line syntax (due to coffee rules)
 
-
 #### Pass Rails env as Angular constant
 
 application_helper.rb
@@ -91,3 +90,8 @@ for meta in document.getElementsByTagName('meta')
         provider.defaults.headers.common['X-CSRF-Token'] = meta.content
       ]
 ```
+
+### Optimalization
+
+* Consider using [bindonce directive](https://github.com/Pasvaz/bindonce) to optimize number of `$watch`es. Highly recommended in bigger, long-running projects.
+
