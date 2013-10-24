@@ -1,6 +1,6 @@
 # Rails guidelines
 
-* Put the ruby version it uses in the README.md file.
+* If app is running on ruby 2.0 put the ruby version in `Gemfile` else just put the ruby version it uses in the README.md file.
 
 * [Use service objects for decomposing application](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)
   Try not to use for example observers or filters.
