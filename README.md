@@ -14,6 +14,7 @@ Feel free to fork, comment and add your own.
 * [CSS](https://github.com/monterail/guidelines/blob/master/stylesheets.md)
 * [HTML](https://github.com/monterail/guidelines/blob/master/html.md)
 * [Git](https://github.com/monterail/guidelines/blob/master/git.md)
+* [Open Source](https://github.com/monterail/guidelines/blob/master/open_source.md)
 
 ## Extras
 
