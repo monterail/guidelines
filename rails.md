@@ -289,3 +289,8 @@ RESERVED_SUBDOMAINS = %w(
 validates :domain, presence: true,
                    subdomain: { reserved: RESERVED_SUBDOMAINS }
 ```
+
+## Devise
+
+Avoid switching from `DELETE` to `GET` for signout. It should be considered as a potential [security hole](http://homakov.blogspot.com/2012/04/csrf-afterparty-must-read-rules.html).
+
