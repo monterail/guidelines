@@ -69,6 +69,8 @@
 * If you want your model to be compatible with ActiveModel, `include ActiveModel::Model` in Rails 4,
   and `include ActiveAttr::Model` in Rails 3. If not, use `Virtus` instead
 
+* Add `db/schema.rb` to `.gitignore`
+
 ## How to choose database
 
 * If you think about using mysql - use postgresql
