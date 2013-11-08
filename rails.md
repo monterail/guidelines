@@ -309,3 +309,13 @@ gem "ssl_routes", :github => "sheerun/ssl_routes"
 ```
 
 Bus factor++
+
+## Disable Rack::Cache for rails < 4
+
+For apps running rails version < 4 set
+
+```ruby
+config.action_controller.perform_caching = true
+```
+
+Rails will automagicly add `Rack::Cache` middleware to the top of stack. This will cause request with cache headers to be cached which can break e.g. authentication when you want to send cache headers but also always require http basic auth. It is also much better to use nginx or varnish as cache in case auth is not an issue. See [this pull request](https://github.com/rails/rails/pull/7838) for reference.
