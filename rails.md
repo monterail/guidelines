@@ -71,6 +71,8 @@
 
 * Add `db/schema.rb` to `.gitignore`
 
+* Use single file extension for default cases. Instead of `file.html.slim`, `file.css.sass`, `file.js.coffee` use `file.slim`, `file.sass`, `file.coffee`
+
 ## How to choose database
 
 * If you think about using mysql - use postgresql
