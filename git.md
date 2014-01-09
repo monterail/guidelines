@@ -10,6 +10,8 @@
   (it's the only form that can be used for commit messages like "fix: statistic on home page polluted by google bot")
 * Begin git messages from big letter. Don't use dot at the end.
   Sample: `fix: Very important thing, closes #42`
+* Use `[no review]` tag in description for commits that don't need code review.
+  (pulling transaltions from localeapp, debug logging, automatically generated commits)
 
 ## Successfull branching model
 
