@@ -124,6 +124,12 @@ When your work is production-ready merge it to the `master` branch:
     git checkout master
     git merge --no-ff dev # or release branch if used
 
+### Fixing future branch
+  1. Type `rebase -i master` on feature branch
+  2. Marking fix commits as `fixup`, and moving them just above commit they fix.
+  3. Marking commits with bad messages with `reword`
+  4. Resolving merge conflicts, adding files to index, and typing `git rebase --continue`
+
 ## Rules
 
 * Never ever commit directly to `dev` or `master` branches!
@@ -155,3 +161,5 @@ When your work is production-ready merge it to the `master` branch:
 * When deploying on staging multiple features, use throw-away `staging` branch.
 
   Also, enable the [`rerere` git feature](http://git-scm.com/2010/03/08/rerere.html), to remember and replay resolved merge conflicts.
+
+* Feature branch is ready for merge if there won't be any conflicts when doing merge to master.
