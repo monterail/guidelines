@@ -1,0 +1,171 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Ask for sudo access
+sudo -v
+
+DEFAULT_SHELL=`which zsh`
+HOST_NAME="$USER.dev"
+BONJOUR_NAME="$USER-mac"
+
+CURRENT_SHELL="$(dscl . -read /Users/$USER UserShell | cut -d " " -f 2)"
+if test "$CURRENT_SHELL" != $DEFAULT_SHELL; then
+  echo "Changing default shell to $DEFAULT_SHELL..."
+  sudo chsh -s "$DEFAULT_SHELL" "$USER"
+fi
+
+if test "$(sudo scutil --get ComputerName)" != "$HOST_NAME"; then
+  echo "Setting computer name to $HOST_NAME..."
+  sudo scutil --set ComputerName "$HOST_NAME"
+  sudo scutil --set HostName "$HOST_NAME"
+fi
+
+if test "$(sudo scutil --get LocalHostName)" != "$BONJOUR_NAME"; then
+  echo "Setting bonjour host name to $BONJOUR_NAME..."
+  sudo scutil --set LocalHostName "$BONJOUR_NAME"
+fi
+
+# Homebrew
+if !(which brew > /dev/null); then
+  echo 'Installing brew...'
+  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+fi
+
+echo "Updating brew..."
+brew update || true
+
+echo "Running brew doctor..."
+brew doctor || true
+
+if !(brew tap | grep cask > /dev/null); then
+  echo "Tap hombrew-cask"
+  brew tap phinze/homebrew-cask
+fi
+
+brew_cask_install() {
+  for app; do
+    local app_name="$(echo $app | sed 's/-/ /')"
+    if (ls /Applications/ | grep -i "$app_name" > /dev/null) || (brew cask list | grep $app > /dev/null); then
+      echo "Already installed: $app_name"
+    else
+      echo "Installing: $app"
+      brew cask install --appdir="/Applications" $app || true
+    fi
+  done
+}
+
+brew_install() {
+  for app; do
+    if !(brew list | grep $app > /dev/null); then
+      echo "Installing: $app"
+      brew install $app || true
+    fi
+  done
+}
+
+services() {
+  if [ -z $agent ]; then
+    echo "Service: $1 not found"
+  else
+    case "$2" in
+    "start")
+      launchctl load -w $service_path/$agent
+      ;;
+    "stop")
+      launchctl unload $service_path/$agent
+      ;;
+    "reload")
+      launchctl unload $service_path/$agent
+      launchctl load -w $service_path/$agent
+      ;;
+    *)
+      echo "Usage: $0 $1 start|stop|reload"
+      ;;
+    esac
+  fi
+}
+
+# agents name start|stop|reload|install
+agents() {
+  service_path=~/Library/LaunchAgents
+  if [ $2 = 'install' ]; then
+    if (brew --prefix $1 > /dev/null); then
+      ln -sfv $(brew --prefix $1)/*.plist $service_path
+      agent=$(ls -L $service_path | grep $1 | head -n 1)
+      services $1 'start'
+    fi
+  else
+    agent=$(ls -L $service_path | grep $1 | head -n 1)
+    services $1 $2
+  fi
+}
+
+agents_install() {
+  for app; do
+    if !(launchctl list | grep $app > /dev/null); then
+      echo "Installing agent: $app"
+      agents $app install || true
+    fi
+  done
+}
+
+allow_control() {
+  if [[ "$OSTYPE" =~ ^darwin13.*$ ]]; then
+    for app; do
+      APP_ID="$(osascript -e "id of app \"$app\"")"
+      if [[ -n "$APP_ID" ]]; then
+        sudo sqlite3 /Library/Application\ Support/com.apple.TCC/TCC.db "INSERT or REPLACE INTO access values ('kTCCServiceAccessibility', '$APP_ID', 0, 1, 0, NULL);"
+      fi
+    done
+  else
+    echo "allow_control works only on Mavericks"
+  fi
+}
+
+autostart_hidden() {
+  for app; do
+    echo "Autostart: $app"
+    osascript -e "tell application \"System Events\" to make login item at end with properties {path:\"/Applications/$app.app\", hidden:true}" > /dev/null
+  done
+}
+
+run_app() {
+  for app; do
+    if test "$(osascript -e "tell application \"System Events\" to (name of processes) contains \"$app\"")" = "false"; then
+      open -a "$app"
+    fi
+  done
+}
+
+brew_install brew-cask rbenv rbenv-default-gems rbenv-gem-rehash ruby-build \
+  imagemagick redis memcached mongodb mysql postgresql elasticsearch node
+
+agents_install redis memcached mongodb mysql postgresql elasticsearch
+
+# Setup pow
+if !(brew list | grep pow > /dev/null); then
+  echo "Installing: pow"
+  brew install pow
+  mkdir -p ~/Library/Application\ Support/Pow/Hosts
+  ln -sf ~/Library/Application\ Support/Pow/Hosts ~/.pow
+  sudo pow --install-system
+  pow --install-local
+  sudo launchctl load -w /Library/LaunchDaemons/cx.pow.firewall.plist
+  launchctl load -w ~/Library/LaunchAgents/cx.pow.powd.plist
+fi
+
+brew_cask_install caffeine dropbox f-lux heroku-toolbelt \
+  firefox google-chrome harvest hipchat iterm2 sequel-pro \
+  virtualbox alfred spectacle sublime-text
+
+echo "Allow control"
+allow_control Spectacle
+
+autostart_hidden Spectacle Caffeine Flux Dropbox 'Alfred 2'
+
+echo "Run default applications"
+defaults write com.lightheadsw.Caffeine SuppressLaunchMessage 1
+run_app Spectacle Caffeine Flux Dropbox 'Alfred 2'
+
+exit 0

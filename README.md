@@ -10,7 +10,7 @@ Feel free to fork, comment and add your own.
 
 * [Ruby](https://github.com/monterail/guidelines/blob/master/ruby.md)
 * [Ruby on Rails](https://github.com/monterail/guidelines/blob/master/rails.md)
-* [JavaScript](https://github.com/monterail/guidelines/blob/master/javascript.md) 
+* [JavaScript](https://github.com/monterail/guidelines/blob/master/javascript.md)
 * [CSS](https://github.com/monterail/guidelines/blob/master/stylesheets.md)
 * [HTML](https://github.com/monterail/guidelines/blob/master/html.md)
 * [Git](https://github.com/monterail/guidelines/blob/master/git.md)
@@ -21,6 +21,7 @@ Feel free to fork, comment and add your own.
 * [Checklists](https://github.com/monterail/guidelines/blob/master/checklist.md)
 * [Tools](https://github.com/monterail/guidelines/blob/master/tools.md)
 * [Gems](https://github.com/monterail/guidelines/blob/master/gems.md)
+* [Mac](https://github.com/monterail/guidelines/blob/master/mac.md)
 
 ## License
 
