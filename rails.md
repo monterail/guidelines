@@ -73,6 +73,14 @@
 
 * Use single file extension for default cases. Instead of `file.html.slim`, `file.css.sass`, `file.js.coffee` use `file.slim`, `file.sass`, `file.coffee`
 
+* Use `\A` and `\z` to validate user input instead of `^` and `$`
+
+```
+username = "<script>alert(1)</script>\nsheerun"
+!!username.match(/^[a-z]+$/)   # => true
+!!username.match(/\A[a-z]+\z/) # => false
+```
+
 ## How to choose database
 
 * If you think about using mysql - use postgresql
