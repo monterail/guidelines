@@ -326,3 +326,22 @@ Rails will automagicly add `Rack::Cache` middleware to the top of stack. This wi
 
 - When using `localeapp pull` always do that on the same branch (preferebly `master`).
 - Do not commit translation files in feature branches. If you do you gonna have a baaaad time when merging it to master.
+
+## roar
+
+Prevent weird bugs when using roar representers modules with `extend`.
+
+```ruby
+# config/initializers/roar.rb
+
+# When accidentally `extend`ing `nil` singleton with 
+# representer module it will be added to every `nil` 
+# (since it's a singleton). 
+# Representers override various methods that will cause bugs
+# in weird places until next restart of ruby process
+class NilClass
+  def extend(*args)
+    raise ArgumentError.new("Can't extend nil:NilClass")
+  end
+end
+```
