@@ -1,5 +1,7 @@
 # Rails guidelines
 
+* Follow [12 factor](http://12factor.net/) rules during whole development process.
+
 * If app is running on ruby 2.0 put the ruby version in `Gemfile` else just put the ruby version it uses in the README.md file.
 
 * [Use service objects for decomposing application](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)
@@ -342,9 +344,9 @@ Prevent weird bugs when using roar representers modules with `extend`.
 ```ruby
 # config/initializers/roar.rb
 
-# When accidentally `extend`ing `nil` singleton with 
-# representer module it will be added to every `nil` 
-# (since it's a singleton). 
+# When accidentally `extend`ing `nil` singleton with
+# representer module it will be added to every `nil`
+# (since it's a singleton).
 # Representers override various methods that will cause bugs
 # in weird places until next restart of ruby process
 class NilClass
