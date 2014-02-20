@@ -11,6 +11,7 @@ Feel free to fork, comment and add your own.
 * [General](general.md)
 * [Ruby](ruby.md)
 * [Ruby on Rails](rails.md)
+* [Angular](angular.md)
 * [JavaScript](javascript.md)
 * [CSS](stylesheets.md)
 * [HTML](html.md)
