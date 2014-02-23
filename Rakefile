@@ -35,7 +35,7 @@ SECTIONS = [
 # * [Mac](mac.md)
 
 def content(file)
-  File.read(File.join("sections/#{file}.md"))
+  File.read(File.join("#{file}.md"))
 end
 
 def header(title)
