@@ -9,6 +9,13 @@
 
 * Group gems in [meaningful groups](https://gist.github.com/teamon/69a31a132ce18825f003) (not alphabetically).
 
+* When using an unofficial version of a gem (from a fork or different branch/revision) always include a short comment explaining the reasons. The idea is to know when the declaration can be switched back to using official version. E.g.
+
+  ```ruby
+  # We need feature X that is available only in this branch
+  gem 'activeadmin', github: 'gregbell/active_admin', branch: 'master'
+  ```
+
 * Use CoffeeScript instead of plain JavaScript.
 
 * When making time-based statistic use the midnight of next day as upper limit.
