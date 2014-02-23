@@ -356,7 +356,7 @@ end
 
 ## Sentry
 
-Override sentry log level to distinguish between production and other (e.g. staging) envoronments
+Override sentry log level to distinguish between production and other (e.g. staging) environments
 
 ```ruby
 # config/initializers/raven.rb
