@@ -355,3 +355,21 @@ class NilClass
   end
 end
 ```
+
+## Sentry
+
+Override sentry log level to distinguish between production and other (e.g. staging) environments
+
+```ruby
+# config/initializers/raven.rb
+class Raven::Event
+  class << self
+    def from_exception_with_level_override(exc, options = {}, &block)
+      options[:level] ||= ENV["SENTRY_LOG_LEVEL"]
+      from_exception_without_level_override(exc, options, &block)
+    end
+
+    alias_method_chain :from_exception, :level_override
+  end
+end
+```
