@@ -18,11 +18,11 @@ You can simply prepare [closing commits](https://help.github.com/articles/closin
 Here is current list of tags along their participants:
 
 * #ruby - @jandudulski, @sheerun, @chytreg, @teamon, @szajbus, @Ostrzy, @jcieslar, @tallica
-* #js - @jandudulski, @sheerun, @chytreg, @szajbus, @porada, @Ostrzy, @tallica
-* #git - @jandudulski, @sheerun, @teamon, @szajbus, @Ostrzy, @porada, @jcieslar
-* #html - @jandudulski, @sheerun, @porada, @venticco, @Ostrzy, @michlask, @tallica
-* #unix - @jandudulski, @sheerun, @teamon, @szajbus, @porada, @jcieslar, @dmilith, @tallica
-* #css - @jandudulski, @sheerun, @porada, @venticco, @michlask, @tallica
-* #design -  @jandudulski, @sheerun,@venticco, @szymo, @porada
+* #js - @jandudulski, @sheerun, @chytreg, @szajbus, @Ostrzy, @tallica
+* #git - @jandudulski, @sheerun, @teamon, @szajbus, @Ostrzy, @jcieslar
+* #html - @jandudulski, @sheerun, @venticco, @Ostrzy, @michlask, @tallica
+* #unix - @jandudulski, @sheerun, @teamon, @szajbus, @jcieslar, @dmilith, @tallica
+* #css - @jandudulski, @sheerun, @venticco, @michlask, @tallica
+* #design - @jandudulski, @sheerun, @venticco, @szymo
 
 Pull requests, issues, and comments from third party are welcome too!
