@@ -1,165 +1,115 @@
-# Git guidelines
+## Master branch
 
-* Leave the campground cleaner than you found it.
-* [Configure your editor](https://gist.github.com/4451806) to automatically strip trailing whitespaces.
-* Feature branch: `feature/name`
-* Hotfix branch: `hotfix/name` or `hotfix/bugid` (from ticket system like redmine)
-* Realease branch: `release/version`
-* Multi word branch name: `really-long-branch-name`
-* Use `fix: ` prefix for fix commits. Don't use any other form of the "fix" word.
-  (it's the only form that can be used for commit messages like "fix: statistic on home page polluted by google bot")
-* Begin git messages from big letter. Don't use dot at the end.
-  Sample: `fix: Very important thing, closes #42`
-* Use `[no review]` tag in description for commits that don't need code review.
-  (pulling transaltions from localeapp, debug logging, automatically generated commits)
+The `master` branch should be kept stable at all times.
 
-## Successfull branching model
+Master reflects code currently running on production.
 
-Basically we inherit from [successful git branch model](http://nvie.com/posts/a-successful-git-branching-model/) AKA *git flow* so we strongly recommend reading it first if you have not already.
+## Commit messages
 
-### Basic flow
+We use following format for our commit messages:
 
-When you are working on a new feature create a new branch named `feature/name` from `dev` branch. Separate words with dashes:
+```
+[JIRA] Capitalized, short (50 chars or less) summary
 
-    git checkout -b feature/my-new-tiny-feature dev
+More detailed explanatory text, if necessary.
 
-If you want to share your work with others push your topic branch to the remote server:
-
-    git push -u origin feature/my-new-tiny-feature
-
-On the other hand if you want to fetch others work from remote server use:
-
-    git fetch origin
-    git checkout -b feature/my-new-tiny-feature origin/feature/my-new-tiny-feature
-
-When the work is finished merge it into `dev` branch:
-
-    git checkout dev
-    git merge --no-ff feature/my-new-tiny-feature
-
-## Flow using [git up](https://github.com/aanand/git-up), [git-flow](https://github.com/nvie/gitflow) and [hub](https://github.com/defunkt/hub) tools
-
-Say you want to contribute to the Docrails project
-
-First, install appropriate tools:
-
-    brew install git git-flow hub
-    gem install git-up
-    hub alias # do what it says
-
-Configure them:
-
-```bash
-git config --global git-up.bundler.check true
-git config --global git-up.bundler.autoinstall true
-git config --global git-up.fetch.all true
-git config --global git-up.rebase.arguments --preserve-merges
+[skip ci] [no review] [accepts eecafe123]
 ```
 
-Then clone repository you want and start new feature:
+1. Summary is maximally 80 characters long, from capital letter, no dot at the end
+2. We append ID of issue in issue tracker at the end of summary
+3. Next lines are description explaining the details
+4. At the very end we use tags for code integration and code review tools.
 
-    git clone lifo/docrails
-    git flow feature start my_feature
+If commit is for some reason not assigned to any ticket, we use following tags:
 
-Do your changes, and test them on updated repository:
+* `[fix]`: Changes fixing code not assigned to issue
+* `[docs]`: Changes of documentation, not affecting code
+* `[style]`: Changes that do not affect the meaning of the code
+* `[refactor]`: Changes that affect code, but not behavior of app
+* `[perf]`: Changes that improve performance
+* `[test]`: Adding missing tests
+* `[chore]`: Other, usually boring or repeating tasks
 
-    git up # fetches and merges/rebases all remote changes
-    git flow feature rebase my_feature
+## Commiting and pushing
 
-Now, publish feature and open pull reqeust:
+We apply "leave the campground cleaner than you found it" rule for the code we commit.
 
-    git flow feature publish my_feature
-    git pull-request
+We don't commit code with [trailing whitespaces](https://gist.github.com/4451806) or no new line at the end.
 
-If someone asks you in pull request to do some changes:
+We make sure all tests pass before pushing any code.
 
-    git commit -m "fixes"
-    git push
+If pushing fails because remote is not in sync, we use `git pull --rebase` command.
 
-Now you can close feature (but you don't have to):
+If we really need to use `git push --force`, we use it immediately after push, or not at all.
 
-    git feature finish my_feature
+## Coding features
 
-### Ugly [bugs](http://vladstudio.deviantart.com/art/A-bug-142782682)
+We commit directly to `next` branch unless:
 
-Bugs found on `dev` branch should be fixed in the proper feature branch which introduced the bug.
+1. Feature cannot be easily disabled by feature flag
+2. Feature is not going to be released at the end of current sprint
+3. Feature concern code redesign that can affect other developers
 
-Bugs found on `master` branch should be fixed in the `hotfix/bugid` branch:
+If we decide that feature in `next` is not to be released on next deploy, we mark it with [feature toggle](http://martinfowler.com/bliki/FeatureToggle.html)
 
-    git checkout -b hotfix/bugid master
+The feature toggles should span as little code as possible, for example only hiding view through which feature can be accessed.
 
-When finished, merge it to the `master` and `dev` branches:
+We name feature branches prepending "feature/" prefix and using dashes, like: `feature/something-new`.
 
-    git checkout master
-    git merge --no-ff hotfix/bugid
-    git checkout dev
-    git merge --no-ff hotfix/bugid
+If we use Trello in project, we also prepend ID of Trello card, like: `feature/123-something-new`
 
-### Revert changes
-*... AKA "I don't wanna this any more!"*
+Feature branches are branched from `next`, and merged back to `next` after finishing them.
 
-From time to time you might need to revert a feature work which were added to the `dev` or `master` but should not. In such a cases find a merge commit and revert it:
+We use `--no-ff` flag when merging feature branches to `next` (for easy reverts).
 
-    git revert sha1
+Before merging feature branch to `next` we always issue `git rebase -i next` on feature branch and:
 
-You can read more about reverting at [gitready](http://gitready.com/intermediate/2009/03/16/rolling-back-changes-with-revert.html) and [git-scm article](http://git-scm.com/2010/03/02/undoing-merges.html).
+1. Remove all "fix" commits marking them as "fixup"
+2. Move fix commits after commits they fix
+3. Cleanup commit messages marking them as "rename"
+4. We squash “Work in Progress” commits
 
-### [Freeze](http://www.youtube.com/watch?v=qSqnO8iGz9o)
+We make sure all tests on feature branch are passing after rebasing.
 
-If your development process needs code freezing create a separate branch named `release/version` from the `dev` branch when needed.
+We remove feature branch from repository after we merge it to `next`.
 
-    git checkout -b release/version dev # or sha1 if you want to freeze from specific point
+## Applying fixes
 
-Any bugs found in a release branch should be fixed directly in release branch. When the freeze is accepted merge it into master and dev.
+Fixes are applied using following rules:
 
-    git checkout master
-    git merge --no-ff release/version
-    git checkout dev
-    git merge --no-ff release/version
+1. Bugs in `master` branch are fixed in `master` and immediately merged to `next` branch.
+2. Bugs in `next` are fixed in `next`, no need to merge to feature branches
+3. Bugs in feature branches are fixed in feature branched and rebased before merge to `next`
 
-### Going live
+Once feature is merged to `next`, all fixes should go to `next`.
 
-When your work is production-ready merge it to the `master` branch:
+## Commit review
 
-    git checkout master
-    git merge --no-ff dev # or release branch if used
+We use internal [GHCR](https://github.com/monterail/ghcr) tool for doing code review.
 
-### Fixing future branch
-  1. Type `rebase -i master` on feature branch
-  2. Marking fix commits as `fixup`, and moving them just above commit they fix.
-  3. Marking commits with bad messages with `reword`
-  4. Resolving merge conflicts, adding files to index, and typing `git rebase --continue`
+We use `[no review]` tag in *description* of commits that don't need code review
+(like pulling translations from localeapp, debug logging, automatically generated commits).
 
-## Rules
+If our commit `xxx` was rejected, we commit fix and add `[accepts xxx]` in *description* of it.
 
-* Never ever commit directly to `dev` or `master` branches!
+## Deploying
 
-* Always commit your fixes to the oldest supported branch that requires them.
-  Then (periodically) merge the integration branches upwards into each other.
+When we decide the `next` branch is to be deployed, we:
 
-  This results is a very controlled flow of fixes. If you notice that you have
-  applied a fix to e.g. master that is also required in develop, you will need
-  to cherry-pick it (using git-cherry-pick(1)) downwards. This will happen a
-  few times and is nothing to worry about unless you do it very frequently.
+1. We make sure everything works as expected on staging and CI
+2. We merge `next` branch to `master` branch
+3. We push code to production
 
-* Merge to downstream only at well-defined points.
+After deployment all feature branches are rebased to current `next`.
 
-  Otherwise, the feature that was merged to suddenly contains more than a single (well-separated) change.
-  The many resulting small merges will greatly clutter up history. Merge if you need stuff commited to
-  develop or master to make feature work or test. For example critical fixes.
+## Git configuration
 
-* Fast-forward, rebase or run git-up before any commit or merge.
+```
+git config --global branch.autosetuprebase always
+git config --global rerere.enabled true
+```
 
-  That is, you should avoid creating avoid merge hell looking like this:
+The autorebase prevents "merge hells" that happend when we `git pull` without `--rebase` flag.
 
-  ![Screen Shot 2013-02-06 at 11 54 24 PM](https://f.cloud.github.com/assets/31995/133685/34e4a9a6-70b0-11e2-8cce-6134cfb4d386.png)
-
-* Once feature is merged to develop, all fixes should go to develop.
-
-  The same way, if feature is released, all fixes should go to master, and merge downstream.
-
-* When deploying on staging multiple features, use throw-away `staging` branch.
-
-  Also, enable the [`rerere` git feature](http://git-scm.com/2010/03/08/rerere.html), to remember and replay resolved merge conflicts.
-
-* Feature branch is ready for merge if there won't be any conflicts when doing merge to master.
+The [`rerere` git feature](http://git-scm.com/2010/03/08/rerere.html) feature remembers our past merge conflicts.
