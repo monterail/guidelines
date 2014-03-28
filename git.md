@@ -9,7 +9,7 @@ Master reflects code currently running on production.
 We use following format for our commit messages:
 
 ```
-[JIRA] Capitalized, short (50 chars or less) summary
+[JIRA-123] Capitalized, short (50 chars or less) summary
 
 More detailed explanatory text, if necessary.
 
