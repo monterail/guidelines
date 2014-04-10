@@ -97,9 +97,11 @@ If our commit `xxx` was rejected, we commit fix and add `[accepts xxx]` in *desc
 
 When we decide the `next` branch is to be deployed, we:
 
-1. We make sure everything works as expected on staging and CI
-2. We merge `next` branch to `master` branch
-3. We push code to production
+1. Rebase `next` branch onto `master` branch
+2. We make sure everything works as expected on staging and CI
+3. We merge `next` branch to `master` branch with `--no-ff` option
+4. We push code to production
+5. We create fresh `next` branch out of `master`
 
 After deployment all feature branches are rebased to current `next`.
 
