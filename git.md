@@ -17,7 +17,7 @@ More detailed explanatory text, if necessary.
 ```
 
 1. Summary is maximally 80 characters long, from capital letter, no dot at the end
-2. We append ID of issue in issue tracker at the end of summary
+2. We prepend ID of an issue in issue tracker at the beginning of summary
 3. Next lines are description explaining the details
 4. At the very end we use tags for code integration and code review tools.
 
