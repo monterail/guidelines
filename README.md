@@ -8,6 +8,7 @@ Feel free to fork, comment and add your own.
 
 ## Guidelines
 
+* [General](general.md)
 * [Ruby](ruby.md)
 * [Ruby on Rails](rails.md)
 * [JavaScript](javascript.md)
