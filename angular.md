@@ -1,118 +1,138 @@
 # Angular.js (+ Rails)
 
-## Use [RAILS ASSETS](https://rails-assets.org/) to include Angular
+## Read [5 tips on how to use AngularJS with Rails that changed how we work](http://codetunes.com/2014/5-tips-on-how-to-use-angularjs-with-rails-that-changed-how-we-work/)
 
-    source 'http://rubygems.org'
-    source 'http://rails-assets.org'
+## Use [rails-assets.org](https://rails-assets.org/) to include Angular
 
-    gem 'ngmin-rails' # solution to minify problem & array syntax
-    gem 'rails-assets-angular'
-    gem 'rails-assets-angular-prevent-default'
-    gem 'rails-assets-angular-ui-router'
+```ruby
+source 'http://rubygems.org'
+source 'http://rails-assets.org'
 
-## Catalogues structure
+gem 'ngmin-rails' # solution to minify problem & array syntax
+gem 'rails-assets-angular'
+gem 'rails-assets-angular-prevent-default'
+gem 'rails-assets-angular-ui-router'
+```
 
-    app
-      - assets
-        - javascripts
-          - controllers
-          - directives
-          - filters
-          - lib
-          - services
-          application.js
-          init.js.coffee
-          router.js.coffee
+## Directory structure
+
+```
+app
+  - assets
+    - javascripts
+      - controllers
+      - directives
+      - filters
+      - lib
+      - services
+      application.js      - only `require` sprockets directives
+      init.coffee         - app initialization and configuration
+      router.coffee       - ui-router routes
+```
 
 then in application.js
 
-    //= require angular
-    //= require angular-prevent-default
+```js
+//= require angular
+//= require angular-prevent-default
 
-    //= require ./init
-    //= require ./router
-    //= require_tree ./lib
-    //= require_tree ./controllers
-    //= require_tree ./directives
-    //= require_tree ./filters
-    //= require_tree ./services
+//= require ./init
+//= require ./router
+//= require_tree ./lib
+//= require_tree ./controllers
+//= require_tree ./directives
+//= require_tree ./filters
+//= require_tree ./services
+```
 
-## Use array notation instead of $inject
+In bigger applications use multiple angular modules like `main`, `admin` and `shared` and nest `controllers`, `services`, `init.coffee` etc under appropriate directory name:
 
-Instead of:
+```
+app
+  - assets
+    - javascripts
+      - admin
+        - controllers
+        init.coffee
+      - main
+        - ...
+        init.coffee
+      - shared
+        ...
+        init.coffee
+      application.js
+```
 
-  ```coffee
-  @MyCtrl = ($scope, $http) ->
-    $scope.foo = 1
 
-  @MyCtrl.$inject = ["$scope", "$http"]
-  ```
+## Help ngmin handle dependencies instead of using array notation or `$inject`
 
-use:
+```coffee
+# init.coffee
+angular.module("myapp", ["ui.router"])
 
-  ```coffee
-  @app.controller "MyCtrl", ["$scope", "$http", ($scope, $http) ->
-    $scope.foo = 1
-  ]
-  ```
+# controllers/main_ctrl.coffee
+angular.module("myapp").controller "MainCtrl", ($scope, MyService) ->
+  # ...
+```
 
-and for long list of dependencies use
+## Common useful settings
 
-  ```coffee
-  @app.controller "MyCtrl", [
-    "$scope", "$http", "$timeout", "$q", "$location",
-    ($scope, $http, $timeout, $q, $location) ->
-      $scope.foo = 1
-  ]
-  ```
 
-Note that the body is indented more than with single line syntax (due to coffee rules)
+### Inject CSRF token
 
-## Pass Rails env as Angular constant
+```coffee
+# init.coffee
+angular.module('myapp').config ['$httpProvider', ($httpProvider) ->
+  $httpProvider.defaults.headers.common['X-CSRF-Token'] =
+    angular.element(document.querySelector('meta[name=csrf-token]')).attr('content')
+]
+```
 
-application_helper.rb
-  ```ruby
-  class ApplicationController < ActionController::Base
-    def js_env
-      data = {
-        :foo => Figaro.env.foo,
-        :bar_baz_foo => Figaro.env.bar_baz_foo,
-      }.to_json
+### Setup template cache
+```coffee
+# init.coffee
+angular.module('myapp').config [
+  '$provide', '$httpProvider', 'Rails',
+  ($provide, $httpProvider, Rails) ->
+    if Rails.env != 'development'
+      $provide.service '$templateCache', ['$angularCacheFactory', ($angularCacheFactory) ->
+        $angularCacheFactory('templateCache', {
+          maxAge: 3600000 * 24 * 7,
+          storageMode: 'localStorage',
+          recycleFreq: 60000
+        })
+      ]
 
-      <<-EOS
-      this.app.constant("envConfig", #{data})
-      EOS
-    end
-    helper_method :js_env
-  end
-  ```
+    $provide.factory 'railsAssetsInterceptor', ['$angularCacheFactory', ($angularCacheFactory) ->
+      request: (config) ->
+        if assetUrl = Rails.templates[config.url]
+          config.url = assetUrl
 
-application.html.slim
-  ```slim
-  script
-    == js_env
-  ```
+        config
+    ]
 
-Then you can simple include env module and get the value.
+    $httpProvider.interceptors.push('railsAssetsInterceptor')
+]
+```
 
-  ```coffee
-  @app.controller "MyCtrl", [
-    "$scope", "envConfig",
-    ($scope, envConfig) ->
-      $scope.something = envConfig.foo + envConfig.bar_baz_foo
-  ]
-  ```
+## Use [angular-translate](https://github.com/angular-translate/angular-translate) for i18n
 
-## Inject CSRF token
+```coffee
+# rails_locales_loader
+angular.module('shared').factory 'railsLocalesLoader', ['$http', ($http) ->
+  (options) ->
+    $http.get("locales/#{options.key}.json").then (response) ->
+      response.data
+    , (error) ->
+      throw options.key
+]
 
-  ```coffee
-  for meta in document.getElementsByTagName('meta')
-    if meta.name.toLowerCase() == 'csrf-token' && meta.content
-      angular.element(document).ready () =>
-        @app.config ['$httpProvider', (provider) ->
-          provider.defaults.headers.common['X-CSRF-Token'] = meta.content
-        ]
-  ```
+# init.coffee
+angular.module('shared').config ['$translateProvider', ($translateProvider) ->
+  $translateProvider.useLoader('railsLocalesLoader')
+  $translateProvider.preferredLanguage('en')
+]
+```
 
 ## Optimalization
 
@@ -122,24 +142,10 @@ Then you can simple include env module and get the value.
 
 [Official Angular guide about IE](http://docs.angularjs.org/guide/ie)
 
-* avoid HTML5 tags and attributes (avoid HTML5 in general)
+* Avoid HTML5 tags and attributes (avoid HTML5 in general)
 
-* avoid custom tags:
+* Avoid custom tags
 
-  ```html
-  <div ui-view="">
-  ```
+  Use `<div ui-view="">` or `<span ui-view="">` instead of `<ui-view>`
 
-  or
-
-  ```html
-  <span ui-view="">
-  ```
-
-  instead of
-
-  ```html
-  <ui-view>
-  ```
-
-* Add id="ng-app" to the root element in conjunction with ng-app attribute
+* Add `id="ng-app"` to the root element in conjunction with `ng-app` attribute
