@@ -14,13 +14,28 @@
 
     Especially in Slim templates.
 
-* **Use `//` instead of `http://` for images, script or iframes. This will make life much easier if someday you decide to use https for site.
+* **Use `//` instead of `http://` for images, script or iframes**.
 
+    This will make life much easier if someday you decide to use https for site.
 
 * Use anchor (`a` HTML tag element) when click should change page url.
 
 * Use `button type="submit"` if click would submit a form.
 
 * Use `button type="button"` for any other click actions (e.g. next page with ajax loading, toggle view etc).
+
+
+* **Use [slim](http://slim-lang.com/) wherever possible.**
+  * Use `(` & `)` for attribute delimiters
+  * Split attributes into multiple lines
+
+    ```slim
+    div(
+      ng-click="f()"
+      ng-class="..."
+      some-other-long-attribute="withLongThingHere"
+    )
+
+    ```
 
 If possible, document new markup proposals in our [styleguide](https://github.com/monterail/boilerplate-rails).
