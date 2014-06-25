@@ -11,3 +11,5 @@
   ```ruby
   every(1.day, at: ['00:00', '04:00', '08:00', ..., '20:00']) { Mailer.perform_async }
   ```
+
+* Add new gems in feature branches (or `next`). Perform big gem updates on `next` branch.
