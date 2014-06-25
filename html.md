@@ -14,6 +14,20 @@
 
     Especially in Slim templates.
 
-* **Use `//` instead of `http://` for images, script or iframes. This will make life much easier if someday you decide to use https for site.
+* **Use [slim](http://slim-lang.com/) wherever possible.**
+  * Use `(` & `)` for attribute delimiters
+  * Split attributes into multiple lines
 
-If possible, document new markup proposals in our [styleguide](https://github.com/monterail/boilerplate-rails).
+    ```slim
+    div(
+      ng-click="f()"
+      ng-class="..."
+      some-other-long-attribute="withLongThingHere"
+    )
+
+    ```
+
+
+* **Use `//` instead of `http://` for images, script or iframes**.
+
+    This will make life much easier if someday you decide to use https for site.
