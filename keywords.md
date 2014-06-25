@@ -48,7 +48,7 @@
 - [mysql][27] - not so cool, better use postgres
     - [amazon RDS][28] - AWS managed mysql
 - [mongodb][29] - document store, be very careful
-- **[redis][30]** - key-value store, good for cache or queues
+- **[redis][30]** - key-value store, good for cache, queues or inter-process communication
 - [memcached][31] - mostly replaced by redis as a cache
 - **[neo4j][32]** - graph database
 - **[elasticsearch][33]** - great search and analytics engine
@@ -93,6 +93,8 @@
 ### Mac
 - [homebrew][56]
 
+### Unix
+- [zsh][57]
 
   [1]: https://www.ruby-lang.org/en/
   [2]: https://rvm.io/
@@ -150,3 +152,4 @@
   [54]: http://aws.amazon.com/ec2/
   [55]: http://aws.amazon.com/cloudfront/
   [56]: http://brew.sh/
+  [57]: http://www.zsh.org/
