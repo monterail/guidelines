@@ -294,7 +294,7 @@ Files that should have samples:
 ```ruby
 RESERVED_SUBDOMAINS = %w(
   about abuse account accounts admin admins administrator
-  administrators anonymous assets billing billings board calendar
+  administrators anonymous api assets billing billings board calendar
   contact copyright e-mail email example feedback forum
   hostmaster image images inbox index invite jabber legal
   launchpad manage media messages mobile official payment
