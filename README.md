@@ -16,6 +16,7 @@ Feel free to fork, comment and add your own.
 * [HTML](html.md)
 * [Git](git.md)
 * [Open Source](open_source.md)
+* [IE](ie.md)
 
 ## Extras
 
