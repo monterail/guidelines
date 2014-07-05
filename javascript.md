@@ -5,6 +5,7 @@
 * [Detect and inform about network issues](http://html5demos.com/offline-events#view-source), especially in SPA
 * Prefer $(this) over $(@) in CoffeeScript.
 * Try to avoid using [date.js](http://www.datejs.com/), use [moment.js](http://momentjs.com/) instead. datejs overwrites native methods and tends to break stuff.
+* Use `camelCase` for variable and function names. The only exception to this rule are JSON properties which are `under_scored`.
 
 ## JavaScript on Rails
 
