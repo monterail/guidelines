@@ -1,0 +1,151 @@
+# Angular.js (+ Rails)
+
+## Read [5 tips on how to use AngularJS with Rails that changed how we work](http://codetunes.com/2014/5-tips-on-how-to-use-angularjs-with-rails-that-changed-how-we-work/)
+
+## Use [rails-assets.org](https://rails-assets.org/) to include Angular
+
+```ruby
+source 'http://rubygems.org'
+source 'http://rails-assets.org'
+
+gem 'ngmin-rails' # solution to minify problem & array syntax
+gem 'rails-assets-angular'
+gem 'rails-assets-angular-prevent-default'
+gem 'rails-assets-angular-ui-router'
+```
+
+## Directory structure
+
+```
+app
+  - assets
+    - javascripts
+      - controllers
+      - directives
+      - filters
+      - lib
+      - services
+      application.js      - only `require` sprockets directives
+      init.coffee         - app initialization and configuration
+      router.coffee       - ui-router routes
+```
+
+then in application.js
+
+```js
+//= require angular
+//= require angular-prevent-default
+
+//= require ./init
+//= require ./router
+//= require_tree ./lib
+//= require_tree ./controllers
+//= require_tree ./directives
+//= require_tree ./filters
+//= require_tree ./services
+```
+
+In bigger applications use multiple angular modules like `main`, `admin` and `shared` and nest `controllers`, `services`, `init.coffee` etc under appropriate directory name:
+
+```
+app
+  - assets
+    - javascripts
+      - admin
+        - controllers
+        init.coffee
+      - main
+        - ...
+        init.coffee
+      - shared
+        ...
+        init.coffee
+      application.js
+```
+
+
+## Help ngmin handle dependencies instead of using array notation or `$inject`
+
+```coffee
+# init.coffee
+angular.module("myapp", ["ui.router"])
+
+# controllers/main_ctrl.coffee
+angular.module("myapp").controller "MainCtrl", ($scope, MyService) ->
+  # ...
+```
+
+## Common useful settings
+
+
+### Inject CSRF token
+
+```coffee
+# init.coffee
+angular.module('myapp').config ['$httpProvider', ($httpProvider) ->
+  $httpProvider.defaults.headers.common['X-CSRF-Token'] =
+    angular.element(document.querySelector('meta[name=csrf-token]')).attr('content')
+]
+```
+
+### Setup template cache
+```coffee
+# init.coffee
+angular.module('myapp').config [
+  '$provide', '$httpProvider', 'Rails',
+  ($provide, $httpProvider, Rails) ->
+    if Rails.env != 'development'
+      $provide.service '$templateCache', ['$angularCacheFactory', ($angularCacheFactory) ->
+        $angularCacheFactory('templateCache', {
+          maxAge: 3600000 * 24 * 7,
+          storageMode: 'localStorage',
+          recycleFreq: 60000
+        })
+      ]
+
+    $provide.factory 'railsAssetsInterceptor', ['$angularCacheFactory', ($angularCacheFactory) ->
+      request: (config) ->
+        if assetUrl = Rails.templates[config.url]
+          config.url = assetUrl
+
+        config
+    ]
+
+    $httpProvider.interceptors.push('railsAssetsInterceptor')
+]
+```
+
+## Use [angular-translate](https://github.com/angular-translate/angular-translate) for i18n
+
+```coffee
+# rails_locales_loader
+angular.module('shared').factory 'railsLocalesLoader', ['$http', ($http) ->
+  (options) ->
+    $http.get("locales/#{options.key}.json").then (response) ->
+      response.data
+    , (error) ->
+      throw options.key
+]
+
+# init.coffee
+angular.module('shared').config ['$translateProvider', ($translateProvider) ->
+  $translateProvider.useLoader('railsLocalesLoader')
+  $translateProvider.preferredLanguage('en')
+]
+```
+
+## Optimalization
+
+* Consider using [bindonce directive](https://github.com/Pasvaz/bindonce) to optimize number of `$watch`es. Highly recommended in bigger, long-running projects.
+
+## IE8 dont's
+
+[Official Angular guide about IE](http://docs.angularjs.org/guide/ie)
+
+* Avoid HTML5 tags and attributes (avoid HTML5 in general)
+
+* Avoid custom tags
+
+  Use `<div ui-view="">` or `<span ui-view="">` instead of `<ui-view>`
+
+* Add `id="ng-app"` to the root element in conjunction with `ng-app` attribute
