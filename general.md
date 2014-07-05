@@ -13,3 +13,10 @@
   ```
 
 * Add new gems in feature branches (or `next`). Perform big gem updates on `next` branch.
+
+* Mark *hackish* places in codebase with `# HACK` tag with obligatory explanation:
+
+    ```ruby
+    # HACK: I did because of reasons
+    x = x + 1 - 1
+    ```
