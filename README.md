@@ -18,6 +18,7 @@ Feel free to fork, comment and add your own.
 * [Git](git.md)
 * [Open Source](open_source.md)
 * [IE](ie.md)
+* [Text Editors](text_editors.md)
 
 ## Extras
 
