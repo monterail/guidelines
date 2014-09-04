@@ -16,6 +16,21 @@
 
 * Use semantic versions for all gems in Gemfile before pushing to production.
 
+* Always define dependent on AR relations. It is often a case that definition of `dependent` wasn't added because someone just forget about that. We should always do:
+
+  ```
+  has_many :objects, dependent: :destroy # when the object is destroyed, destroy will be called on its associated objects
+
+  has_many :object, dependent: :delete_all # when the object is destroyed, all its associated objects will be deleted directly from the database without calling their destroy method (for has_one use :delete)
+
+  has_many :objects, dependent: :nullify # causes the foreign key to be set to NULL. Callbacks are not executed
+
+  has_many :objects, dependent: :restrict_with_exception # causes an exception to be raised if there is an associated record
+
+  has_many :objects, dependent: :restrict_with_error # causes an error to be added to the owner if there is an associated object
+  ```
+  You shouldn't need to use `dependent` on `belongs_to`
+
 
 * Try to avoid calling self explicitly on reads
 
