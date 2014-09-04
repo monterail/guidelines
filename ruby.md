@@ -16,6 +16,7 @@
 
 * Use semantic versions for all gems in Gemfile before pushing to production.
 
+
 * Try to avoid calling self explicitly on reads
 
   Prefer
@@ -76,6 +77,10 @@ def process_text(s)
   # ...
 end
 ```
+
+## Code style
+
+* Do **NOT** indent methods below `private`/`protected` keywords
 
 ## Testing
 
