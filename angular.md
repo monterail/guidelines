@@ -5,8 +5,8 @@
 ## Use [rails-assets.org](https://rails-assets.org/) to include Angular
 
 ```ruby
-source 'http://rubygems.org'
-source 'http://rails-assets.org'
+source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'ngmin-rails' # solution to minify problem & array syntax
 gem 'rails-assets-angular'
