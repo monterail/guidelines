@@ -255,6 +255,13 @@ end
 
 This will store rendered json in redis, plain json, as string, as you should it should always do. Notice where is to_json and raw: true option. And you get HTTP cache headers for free.
 
+----
+According to issue in redis-rails - which don't set expire time properly
+https://github.com/redis-store/redis-rails/issues/10
+
+Please use https://github.com/roidrage/redis-session-store for storing rails session in redis.
+
+
 ## Mongodb
 
 Remember to include

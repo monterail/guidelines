@@ -74,6 +74,24 @@ angular.module("myapp", ["ui.router"])
 angular.module("myapp").controller "MainCtrl", ($scope, MyService) ->
   # ...
 ```
+## Controllers
+
+
+* first params with `$` prefix
+* then params passed from routing (objects)
+* last comes passed services (classes)
+
+So instead of:
+
+```coffee
+angular.module('app').controller 'Something', ($scope, Project, $http, user) ->
+```
+
+it should be:
+
+```coffee
+angular.module('app').controller 'Something', ($scope, $http, user, Project) ->
+```
 
 ## Common useful settings
 
