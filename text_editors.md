@@ -4,8 +4,8 @@
 1. [Obligatory settings](#obligatory-settings)
 2. [Sublime Text](#sublime-text)
 
-####Obligatory Settings
-#####We use 2 spaces indent and also take care about trailing whitespaces
+##Obligatory Settings
+###We use 2 spaces indent and also take care about trailing whitespaces
 
 **Ensure your editor is configured properly:**
 
@@ -41,15 +41,15 @@ Go to preferences / editor and check:
 "trim_automatic_white_space": true
 ```
 
-####Sublime Text
+##Sublime Text
 
-#####Useful resources:
+###Useful resources:
 
 - [Useful keyboard shortcuts](https://gist.github.com/eteanga/1736542)
 - [Unofficial Documentation](http://sublime-text-unofficial-documentation.readthedocs.org/en/latest/index.html)
 - [SublimeText Screencasts](http://code.tutsplus.com/articles/perfect-workflow-in-sublime-text-free-course--net-27293)
 
-#####In order to improve your workflow you may consider using some of extensions listed below:
+###In order to improve your workflow you may consider using some of extensions listed below:
 
 - [Package Control](https://sublime.wbond.net/installation) - helps in installing and managing packages. Absolulety **must have**.
 - [GitGutter](https://github.com/jisaacks/GitGutter) - keeps track of `git diff` stats and shows them inline
