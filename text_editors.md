@@ -68,3 +68,6 @@ Go to preferences / editor and check:
     ![screenshot-ruler](http://blog.ysmood.org/wp-content/uploads/2013/06/CursorRuler.jpg)
 
 
+- [DashDoc](https://github.com/farcaller/DashDoc) - you can look up the word under the cursor or selected text in `Dash` using `ctrl+h` shortcut. *We use Dash in Monterail, ask your PM for license details*
+
+   ![screenshot-dashdoc](http://christophheer.me/static/img/2012-07-30-dash/search_datetime.png)
