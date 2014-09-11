@@ -50,7 +50,7 @@ We commit directly to `next` branch unless:
 1. Feature cannot be easily disabled by feature flag
 2. Feature is not going to be released at the end of current sprint
 3. Feature concern code redesign that can affect other developers
-4. Project use feature branches
+4. Project uses feature branches
 
 If we decide that feature in `next` is not to be released on next deploy, we mark it with [feature toggle](http://martinfowler.com/bliki/FeatureToggle.html)
 
