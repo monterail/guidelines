@@ -83,6 +83,14 @@ Fixes are applied using following rules:
 
 Once feature is merged to `next`, all fixes should go to `next`.
 
+## Global changes like:
+
+1. Localeapp pull
+2. Config/Settings/Env updates
+3. Gems update
+
+Which not affecting to core functions should go direct to branch `staging` or `next` e.g via feature branch.
+
 ## Commit review
 
 We use internal [GHCR](https://github.com/monterail/ghcr) tool for doing code review.
