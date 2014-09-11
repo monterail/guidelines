@@ -50,6 +50,7 @@ We commit directly to `next` branch unless:
 1. Feature cannot be easily disabled by feature flag
 2. Feature is not going to be released at the end of current sprint
 3. Feature concern code redesign that can affect other developers
+4. Project use feature branches
 
 If we decide that feature in `next` is not to be released on next deploy, we mark it with [feature toggle](http://martinfowler.com/bliki/FeatureToggle.html)
 
@@ -57,18 +58,16 @@ The feature toggles should span as little code as possible, for example only hid
 
 We name feature branches prepending "feature/" prefix and using dashes, like: `feature/something-new`.
 
-If we use Trello in project, we also prepend ID of Trello card, like: `feature/123-something-new`
+If we use Trello or JIRA in project, we also prepend ID of Trello card, like: `feature/123-something-new` or JIRA project code and task number `feature/PRO-123-something-new`
 
-Feature branches are branched from `next`, and merged back to `next` after finishing them.
+### Feature branch flow
 
-We use `--no-ff` flag when merging feature branches to `next` (for easy reverts).
+Feature branches are branched only from `next`.
 
-Before merging feature branch to `next` we always issue `git rebase -i next` on feature branch and:
+Before merge feature branch to `next`:
 
-1. Remove all "fix" commits marking them as "fixup"
-2. Move fix commits after commits they fix
-3. Cleanup commit messages marking them as "rename"
-4. We squash “Work in Progress” commits
+1. We always issue `git rebase -i next` on feature branch and
+2. We use `--no-ff` flag when merging feature branches to `next` (for easy reverts).
 
 We make sure all tests on feature branch are passing after rebasing.
 
@@ -79,7 +78,7 @@ We remove feature branch from repository after we merge it to `next`.
 Fixes are applied using following rules:
 
 1. Bugs in `master` branch are fixed in `master` and immediately merged to `next` branch.
-2. Bugs in `next` are fixed in `next`, no need to merge to feature branches
+2. Bugs in `next` are fixed in `next`, rebased to all feature branches
 3. Bugs in feature branches are fixed in feature branched and rebased before merge to `next`
 
 Once feature is merged to `next`, all fixes should go to `next`.
@@ -98,7 +97,7 @@ If our commit `xxx` was rejected, we commit fix and add `[accepts xxx]` in *desc
 When we decide the `next` branch is to be deployed, we:
 
 1. We make sure everything works as expected on staging and CI
-2. We merge `next` branch to `master` branch
+2. We merge `next` branch to `master` branch with flag `--no-ff`
 3. We push code to production
 
 After deployment all feature branches are rebased to current `next`.
