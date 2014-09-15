@@ -33,6 +33,18 @@ More detailed explanatory text, if necessary.
 2. We prepend ID of an issue in issue tracker at the beginning of summary
 3. Next lines are description explaining the details
 4. At the very end we use tags for code integration and code review tools.
+5. Write present-tense, imperative-style commit messages
+
+   **GOOD**:
+   `[JIRA-123] Add currency service`
+
+   **BAD**:
+      `[JIRA-123] Adds currency service`
+
+  **BAD**:
+   `[JIRA-123] Added currency service`
+
+
 
 If commit is for some reason not assigned to any ticket, we use following tags:
 
