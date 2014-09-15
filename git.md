@@ -1,3 +1,16 @@
+# Git Guidelines
+
+###Table of content:
+1. [Master Branch](#master-branch)
+2. [Commit messages](#commit-messages)
+3. [Commiting and pushing](#commiting-and-pushing)
+4. [Coding features](#coding-features)
+5. [Applying fixes](#applying-fixes)
+6. [Commit review](#commit-review)
+7. [Deploying](#deploying)
+8. [Git configuration](#git-configuration)
+
+
 ## Master branch
 
 The `master` branch should be kept stable at all times.
