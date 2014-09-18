@@ -71,3 +71,7 @@ Go to preferences / editor and check:
 - [DashDoc](https://github.com/farcaller/DashDoc) - you can look up the word under the cursor or selected text in `Dash` using `ctrl+h` shortcut. *We use Dash in Monterail, ask your PM for license details*
 
    ![screenshot-dashdoc](http://christophheer.me/static/img/2012-07-30-dash/search_datetime.png)
+
+- [Gist](https://github.com/condemil/Gist) - you can create gists directly from sublime text in just few seconds.
+
+   ![screenshot-gist](http://www.neverstopbuilding.com/images/post-content/gist.png)
