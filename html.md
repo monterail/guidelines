@@ -27,6 +27,23 @@
 
     ```
 
+    * Don't use brackets for one liners
+
+    ```slim
+    div ng-click="f()" ng-class"..."
+    ```
+
+    * Indentations should look like
+
+    ```slim
+    div(
+      ng-click="f()"
+      ng-class="..."
+      some-other-long-attribute="withLongThingHere"
+    )
+      span.nice ng-bind="hello.world"
+    ```
+
 
 * **Use `//` instead of `http://` for images, script or iframes**.
 
