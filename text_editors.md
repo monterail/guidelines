@@ -38,7 +38,10 @@ Go to preferences / editor and check:
 ```
 // Trims white space added by auto_indent when moving the caret off the line.
 "ensure_newline_at_eof_on_save": true,
-"trim_automatic_white_space": true
+"tab_size": 2,
+"translate_tabs_to_spaces": true,
+"trim_automatic_white_space": true,
+"trim_trailing_white_space_on_save": true
 ```
 
 ##Sublime Text
