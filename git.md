@@ -1,21 +1,57 @@
 # Git Guidelines
 
 ###Table of content:
-1. [Master Branch](#master-branch)
-2. [Commit messages](#commit-messages)
-3. [Commiting and pushing](#commiting-and-pushing)
-4. [Coding features](#coding-features)
-5. [Applying fixes](#applying-fixes)
-6. [Commit review](#commit-review)
-7. [Deploying](#deploying)
+1. [The main branches](#the-main-branches)
+2. [Supporting branches](#supporting-branches)
+3. [Commit messages](#commit-messages)
+4. [Commiting and pushing](#commiting-and-pushing)
+5. [Code review](#coder-review)
+6. [Coding](#coding)
 8. [Git configuration](#git-configuration)
 
 
-## Master branch
+## The main branches (required)
+
+Two main branches with an infinite lifetime:
+
+### Master
 
 The `master` branch should be kept stable at all times.
 
 Master reflects code currently running on production.
+
+### Development
+
+Development reflects a state with the latest delivered development changes for
+the next release.
+
+## Supporting branches (optional)
+
+### Feature branches
+
+* May branch off from: `development`
+* Must merge back into: `development` (--no-ff always)
+* Before merge:
+    - check all tests
+    - rebase with latest `development`
+* After merge:
+    - remove feature branch
+* Branch naming convention: anything except `master`, `develop`, `release-*`, or `hotfix-*`
+
+Preferred name convention: prepending "feature/" prefix and using dashes, like: `feature/something-new`.
+If we use Trello or JIRA in project, we also prepend ID of Trello card, like: `feature/123-something-new` or JIRA project code and task number `feature/PRO-123-something-new`
+
+### Release branches
+
+* May branch off from: `development`
+* Must merge back into: `development` and `master` (--no-ff, after merge to `master` tag -a)
+* Branch naming convention: `release-*`
+
+### Hotfix branches
+
+* May branch off from: `master`
+* Must merge back into: `development` and `master` (--no-ff, after merge to `master` tag -a)
+* Branch naming convention: `hotfix-*`
 
 ## Commit messages
 
@@ -25,14 +61,11 @@ We use following format for our commit messages:
 [JIRA-123] Capitalized, short (50 chars or less) summary
 
 More detailed explanatory text, if necessary.
-
-[skip ci] [no review] [accepts eecafe123]
 ```
 
-1. Summary is maximally 80 characters long, from capital letter, no dot at the end
+1. Summary is maximally 50 characters long, from capital letter, no dot at the end
 2. We prepend ID of an issue in issue tracker at the beginning of summary
 3. Next lines are description explaining the details
-4. At the very end we use tags for code integration and code review tools.
 5. Write present-tense, imperative-style commit messages
 
    **GOOD**:
@@ -64,76 +97,22 @@ We don't commit code with [trailing whitespaces](https://gist.github.com/4451806
 
 We make sure all tests pass before pushing any code.
 
-If pushing fails because remote is not in sync, we use `git pull --rebase` command.
+If pushing fails because remote is not in sync, you have to rebase your changes,
+preferred way of doing it is `git rebase --onto new_parent old_parent`.
 
-If we really need to use `git push --force`, we use it immediately after push, or not at all.
+Never use `git push --force` on `master` or `development`, if you want to use it
+on supporting branches make sure that nobody except you is working on that
+branch otherwise do not use it.
 
-## Coding features
+## Code review
 
-We commit directly to `next` branch unless:
+Each commit which will be merge into `master` or `development` have to be
+reviewed, no exception.
 
-1. Feature cannot be easily disabled by feature flag
-2. Feature is not going to be released at the end of current sprint
-3. Feature concern code redesign that can affect other developers
-4. Project uses feature branches
+## Coding
 
-If we decide that feature in `next` is not to be released on next deploy, we mark it with [feature toggle](http://martinfowler.com/bliki/FeatureToggle.html)
-
-The feature toggles should span as little code as possible, for example only hiding view through which feature can be accessed.
-
-We name feature branches prepending "feature/" prefix and using dashes, like: `feature/something-new`.
-
-If we use Trello or JIRA in project, we also prepend ID of Trello card, like: `feature/123-something-new` or JIRA project code and task number `feature/PRO-123-something-new`
-
-### Feature branch flow
-
-Feature branches are branched only from `next`.
-
-Before merge feature branch to `next`:
-
-1. We always issue `git rebase -i next` on feature branch and
-2. We use `--no-ff` flag when merging feature branches to `next` (for easy reverts).
-
-We make sure all tests on feature branch are passing after rebasing.
-
-We remove feature branch from repository after we merge it to `next`.
-
-## Applying fixes
-
-Fixes are applied using following rules:
-
-1. Bugs in `master` branch are fixed in `master` and immediately merged to `next` branch.
-2. Bugs in `next` are fixed in `next`, rebased to all feature branches
-3. Bugs in feature branches are fixed in feature branched and rebased before merge to `next`
-
-Once feature is merged to `next`, all fixes should go to `next`.
-
-## Global changes like:
-
-1. Localeapp pull
-2. Config/Settings/Env updates
-3. Gems update
-
-Which not affecting to core functions should go direct to branch `staging` or `next` e.g via feature branch.
-
-## Commit review
-
-We use internal [GHCR](https://github.com/monterail/ghcr) tool for doing code review.
-
-We use `[no review]` tag in *description* of commits that don't need code review
-(like pulling translations from localeapp, debug logging, automatically generated commits).
-
-If our commit `xxx` was rejected, we commit fix and add `[accepts xxx]` in *description* of it.
-
-## Deploying
-
-When we decide the `next` branch is to be deployed, we:
-
-1. We make sure everything works as expected on staging and CI
-2. We merge `next` branch to `master` branch with flag `--no-ff`
-3. We push code to production
-
-After deployment all feature branches are rebased to current `next`.
+We never commit directly into `master` or `development`
+We use for that purpose supporting branches.
 
 ## Git configuration
 
@@ -142,6 +121,6 @@ git config --global branch.autosetuprebase always
 git config --global rerere.enabled true
 ```
 
-The autorebase prevents "merge hells" that happend when we `git pull` without `--rebase` flag.
+The autorebase prevents "merge hells" that happened when we `git pull` without `--rebase` flag.
 
 The [`rerere` git feature](http://git-scm.com/2010/03/08/rerere.html) feature remembers our past merge conflicts.
