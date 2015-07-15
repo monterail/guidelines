@@ -38,13 +38,13 @@
 
     ```
 
-    * Don't use brackets for one liners
+  * Don't use brackets for one liners
 
     ```slim
     div ng-click="f()" ng-class"..."
     ```
 
-    * Indentations should look like
+  * Indentations should look like
 
     ```slim
     div(
