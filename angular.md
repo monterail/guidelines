@@ -63,6 +63,22 @@ app
       application.js
 ```
 
+## Code style
+
+After stormy debate on weekly dev meeting we agreed to follow this code convention:
+
+```coffee
+angular.module('myapp')
+.service 'ServiceNameVeryLongLongName', (
+  $scope, MyVeryLongServiceName,
+  MyService2, MyService3
+) ->
+
+  method: (param) ->
+    alert(param)
+
+  # ...
+```
 
 ## Help ngmin handle dependencies instead of using array notation or `$inject`
 
@@ -71,7 +87,10 @@ app
 angular.module("myapp", ["ui.router"])
 
 # controllers/main_ctrl.coffee
-angular.module("myapp").controller "MainCtrl", ($scope, MyService) ->
+angular.module("myapp")
+.controller "MainCtrl", (
+  $scope, MyService
+) ->
   # ...
 ```
 ## Controllers
@@ -84,13 +103,19 @@ angular.module("myapp").controller "MainCtrl", ($scope, MyService) ->
 So instead of:
 
 ```coffee
-angular.module('app').controller 'Something', ($scope, Project, $http, user) ->
+angular.module('app')
+.controller 'Something', (
+  $scope, Project, $http, user
+) ->
 ```
 
 it should be:
 
 ```coffee
-angular.module('app').controller 'Something', ($scope, $http, user, Project) ->
+angular.module('app')
+.controller 'Something', (
+  $scope, $http, user, Project
+) ->
 ```
 
 ## Common useful settings
