@@ -36,6 +36,10 @@ be treated as a "standard", please add it below.
 * [letter_opener](https://github.com/ryanb/letter_opener) - see sent emails in browser
 * [rack-livereload](https://github.com/johnbintz/rack-livereload) - autoreload assets & views
 
+## Environment
+
+* [ENVied](https://github.com/eval/envied/) - wrapper for ENV with default values, type coercion, grouping based on RAILS/RACK_ENV and verification for existance of required keys. In plain Ruby file.
+
 ## Frontend
 
 * [coffee-rails-source-maps](https://github.com/markbates/coffee-rails-source-maps) — support for CoffeeScript source maps
@@ -51,7 +55,6 @@ be treated as a "standard", please add it below.
 * [auto_strip_attributes](https://github.com/holli/auto_strip_attributes) - automatically strip whitespaces
 * [carrierwave](https://github.com/jnicklas/carrierwave) - file uploads
 * [decent_exposure](https://github.com/voxdolo/decent_exposure) - helper for creating declarative interfaces in controllers
-* [figaro](https://github.com/laserlemon/figaro) - storing sensible settings in ENV
 * [friendly_id](https://github.com/norman/friendly_id) - slug generation
 
 ## Testing
