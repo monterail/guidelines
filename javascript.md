@@ -6,6 +6,14 @@
 * Prefer $(this) over $(@) in CoffeeScript.
 * Try to avoid using [date.js](http://www.datejs.com/), use [moment.js](http://momentjs.com/) instead. datejs overwrites native methods and tends to break stuff.
 * Use `camelCase` for variable and function names. The only exception to this rule are JSON properties which are `under_scored`.
+* Use trailing commas in **multiline object literails** and **multiline arrays**. If you'd like to add an element you won't left your comma on the previous line. It helps to keep VCS history clean.
+```javascript
+// Bad          // Good         // Bad            // Good
+let arr = [     let arr = [     let obj = {       let obj = {
+  'foo',          'foo',          foo: 'foz',       foo: 'foz',
+  'bar'           'bar',          bar: 'baz'        bar: 'baz',
+];              ];              };                };
+```
 
 ## JavaScript on Rails
 
