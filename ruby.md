@@ -95,6 +95,15 @@ def process_text(s)
 end
 ```
 
+* Use trailing commas in **multiline hashes** and **multiline arrays**. If you'd like to add an element you won't left your comma on the previous line. It helps to keep VCS history clean.
+```javascript
+// Bad          // Good         // Bad            // Good
+arr = [         arr = [         hsh = {           hsh = {
+  'foo',          'foo',          foo: 'foz',       foo: 'foz',
+  'bar'           'bar',          bar: 'baz'        bar: 'baz',
+]               ]               }                 }
+```
+
 ## Code style
 
 * Do **NOT** indent methods below `private`/`protected` keywords
