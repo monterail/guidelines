@@ -96,7 +96,7 @@ end
 ```
 
 * Use trailing commas in **multiline hashes** and **multiline arrays**. If you'd like to add an element you won't left your comma on the previous line. It helps to keep VCS history clean.
-```javascript
+```ruby
 // Bad          // Good         // Bad            // Good
 arr = [         arr = [         hsh = {           hsh = {
   'foo',          'foo',          foo: 'foz',       foo: 'foz',
