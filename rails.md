@@ -1,6 +1,19 @@
 # Rails guidelines
 
-* If app is running on ruby 2.0 put the ruby version in `Gemfile` else just put the ruby version it uses in the README.md file.
+* Don't add Ruby version to Gemfile because it's impossible to say, e.g. use Ruby 2.1 or any higher version. Instead, put preferred ruby version in README.md file.
+
+  In case you use `heroku-build-pack` ruby version in Gemfile is required. You can use ENV to temporarily use another version:
+
+  ```
+  # Gemfile
+  source "https://rubygems.org"
+  gem "bundler", ">= 1.7.0"
+
+  ruby ENV["GEMFILE_RUBY"] || "2.2.2"
+
+  # shell
+  $ export GEMFILE_RUBY=2.1.2; rails s
+  ```
 
 * [Use service objects for decomposing application](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)
   Try not to use for example observers or filters.
