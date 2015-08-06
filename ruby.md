@@ -10,7 +10,7 @@
 
   Use old syntax only when necessary, for example to put non-symbol as a key.
 
-*  Instead of `"` use `'` in `Gemfile`
+* Always use double-quoted strings.
 
 * Avoid rescuing StandardError and Exception
 
