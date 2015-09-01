@@ -194,4 +194,4 @@ angular.module('shared').config ['$translateProvider', ($translateProvider) ->
 * Add `id="ng-app"` to the root element in conjunction with `ng-app` attribute
 
 ## Debuging
-Use [batarang (stable)](https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek) to debug scopes in chrome developer tools( It adds AngularJS tab in chrome developer tools. You have to enable it for particular site and enable debuger in Models section.
+Use [batarang (stable)](https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek) to debug scopes(It adds _AngularJS_ tab in chrome developer tools). You have to enable it for particular site and enable debuger in _Models_ section.
