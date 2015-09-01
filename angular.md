@@ -192,3 +192,6 @@ angular.module('shared').config ['$translateProvider', ($translateProvider) ->
   Use `<div ui-view="">` or `<span ui-view="">` instead of `<ui-view>`
 
 * Add `id="ng-app"` to the root element in conjunction with `ng-app` attribute
+
+## Debuging
+Use [batarang (stable)](https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek) to debug scopes(It adds _AngularJS_ tab in chrome developer tools). You have to enable it for particular site and enable debuger in _Models_ section.
