@@ -1,5 +1,35 @@
 # Ruby guidelines
 
+## Automatic enforcement with [Rubocop](https://github.com/bbatsov/rubocop)
+
+To help us enforce similar style between project everyone should use rubocop from now on
+
+https://gist.github.com/Ostrzy/c3debe7a47ccdf920591
+
+Just save this to 
+```
+~/.rubocop.yml
+```
+Or add `.rubocop.yml` straight to project root folder( then it can be customized a little )
+
+There are several plugins to editors that help you lint/autocorrect code with rubocop:
+* ATOM
+ * [Linter Rubocop](https://atom.io/packages/linter-rubocop)
+ * [Rubocop Auto Correct](https://atom.io/packages/rubocop-auto-correct)
+* SUBLIME
+ * [Sublime Linter Rubocop](https://github.com/SublimeLinter/SublimeLinter-rubocop)
+
+! Remember that you can use `(bundle exec) rubocop -a` which automatically fixes some cops violations.
+
+Adding rubocop to [circleCi](https://circleci.com/) is best used with pre test commit hook in [`circle.yml`](https://circleci.com/docs/config-sample) file in project root folder.
+```
+test:
+   pre:
+     - bundle exec rubocop
+```
+
+## Rules
+
 * Consider using `Hash#fetch` instead of `Hash#[]`.
 
   The first one throws exception where it fails to read a key.
