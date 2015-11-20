@@ -398,3 +398,30 @@ class Raven::Event
   end
 end
 ```
+
+## ENVied
+
+ENVied ensure presence and type of app's ENV-variables. To make the bootstraping of the app a quick process, it allows to assign default values to them.
+
+'Easily bootstrap' is quite the opposite of 'fail-fast when not all ENV-variables are present', hence it should be explicitly stated when defaults values are allowed:
+
+```ruby
+# Envfile
+development_or_test = ->{ ENV.fetch("RACK_ENV", "development").match(/development|test/) }
+enable_defaults!(&development_or_test)
+
+variable :HOST, :string, default: 'host.dev'
+variable :SENTRY_DSN, :string, default: ''
+
+variable :SSL_ENABLED, :boolean, default: false
+
+variable :API_KEY, :string, default: "api_key"
+variable :CONSUMER_KEY, :string, default: "consumer_key"
+
+group :production do
+  variable :FORCE_SSL, :boolean
+end
+```
+The config enables the defaults in development or test environments, but still fail-fast in any other stage if any required ENV-variable is not set up.
+
+Without the fallback to `development` in `development_or_test` rake tasks won't work.
