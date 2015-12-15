@@ -63,7 +63,7 @@ then in application.js
 
 View directives(components) should be modular by design and preferably use isolated scope(all dependencies passed explicitly through scope attrs).
 
-You can use [script similar to this one](https://gist.github.com/Machiaweliczny/9a8307b8437f4f452504) to create them easy like this:
+You can use [script similar to this one](https://gist.github.com/Machiaweliczny/888b3fb2a344234785c9) to create them easy like this:
 ```
 ruby dir.rb app/assets/javascripts/main/components/dashboard/ directiveName scopeAttr1 scopAttr2
 ```
