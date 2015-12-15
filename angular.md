@@ -20,11 +20,26 @@ gem 'rails-assets-angular-ui-router'
 app
   - assets
     - javascripts
-      - controllers
-      - directives
-      - filters
+      - main
+        - filters
+        - controllers
+        - services
+        - compontents # view 'E' directives(view components) 
+          - header
+          - dashboard
+          - leaderboard
+      - admin
+        - filters
+        - controllers
+        - services
+        - components
+          - statistics
+          - manage
+      - shared
+        - directives # mostly 'A' directives
+        - services
+        - filters
       - lib
-      - services
       application.js      - only `require` sprockets directives
       init.coffee         - app initialization and configuration
       router.coffee       - ui-router routes
@@ -39,28 +54,18 @@ then in application.js
 //= require ./init
 //= require ./router
 //= require_tree ./lib
-//= require_tree ./controllers
-//= require_tree ./directives
-//= require_tree ./filters
-//= require_tree ./services
+//= require_tree ./main
+//= require_tree ./admin
+//= require_tree ./shared
 ```
 
-In bigger applications use multiple angular modules like `main`, `admin` and `shared` and nest `controllers`, `services`, `init.coffee` etc under appropriate directory name:
+## View directives / components
 
+View directives(components) should be modular by design and preferably use isolated scope(all dependencies passed explicitly through scope attrs).
+
+You can use [script similar to this one](https://gist.github.com/Machiaweliczny/9a8307b8437f4f452504) to create them easy like this:
 ```
-app
-  - assets
-    - javascripts
-      - admin
-        - controllers
-        init.coffee
-      - main
-        - ...
-        init.coffee
-      - shared
-        ...
-        init.coffee
-      application.js
+ruby dir.rb app/assets/javascripts/main/components/dashboard/ directiveName scopeAttr1 scopAttr2
 ```
 
 ## Code style
