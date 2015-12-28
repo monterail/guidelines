@@ -47,17 +47,16 @@ Go to preferences / editor and check:
 
 *Atom config*
 
-```
 * Install [Whitespace](https://atom.io/packages/whitespace) package
-* To configure press CMD + SHIFT + P -> Open Your Config
-
+* To configure press `CMD + SHIFT + P` -> Open Your Config
+```
 '.slim.text':
   whitespace:
     removeTrailingWhitespace: true
-
+```
 For controlling last, empty line at the end of document
 ![screenshot-whitespace](images/atom-whitespace.png)
-```
+
 
 ##Sublime Text
 
@@ -139,4 +138,4 @@ For controlling last, empty line at the end of document
 - [git-blame](https://atom.io/packages/git-blame) - toggle git-blame annotations in the gutter of Atom editor.
 - [git-history](https://atom.io/packages/git-history) - View previous versions of any file known to git.
 - [circle-ci](https://atom.io/packages/circle-ci) - adds build status from Circle CI for the current branch of the current project to the Atom UI.
-- [ruby-bundler](https://atom.io/packages/ruby-bundler) - control bundler from Atom. Run `bundle install` directly from Atom with `ALT-CMD-B`
+- [ruby-bundler](https://atom.io/packages/ruby-bundler) - control bundler from Atom. Run `bundle install` directly from Atom with `ALT + CMD + B`
