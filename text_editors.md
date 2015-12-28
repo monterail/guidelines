@@ -3,6 +3,7 @@
 ###Table of content:
 1. [Obligatory settings](#obligatory-settings)
 2. [Sublime Text](#sublime-text)
+3. [Atom](#atom)
 
 ##Obligatory Settings
 ###We use 2 spaces indent and also take care about trailing whitespaces
@@ -44,6 +45,20 @@ Go to preferences / editor and check:
 "trim_trailing_white_space_on_save": true
 ```
 
+*Atom config*
+
+```
+* Install [Whitespace](https://atom.io/packages/whitespace) package
+* To configure press CMD + SHIFT + P -> Open Your Config
+
+'.slim.text':
+  whitespace:
+    removeTrailingWhitespace: true
+
+For controlling last, empty line at the end of document
+![screenshot-whitespace](images/atom-whitespace.png)
+```
+
 ##Sublime Text
 
 ###Useful resources:
@@ -78,3 +93,50 @@ Go to preferences / editor and check:
 - [Gist](https://github.com/condemil/Gist) - you can create gists directly from sublime text in just few seconds.
 
    ![screenshot-gist](http://www.neverstopbuilding.com/images/post-content/gist.png)
+
+##Atom
+
+###Useful resources:
+
+- [Documentation](https://atom.io/docs)
+- [Useful keyboard shortcuts](https://bugsnag.com/blog/atom-editor-cheat-sheet)
+
+###Terminal commands:
+
+- `apm list` - list of installed packages
+- `apm install PACKAGENAME` - package install
+- `apm uninstall PACKAGENAME` - package uninstall
+- `apm list --installed --bare > package-list.txt` - creates list of installed packages
+- `apm install --packages-file package-list.txt` - packages installation from file
+
+###Useful packages for FE
+
+- [autocomplete-sass](https://atom.io/packages/autocomplete-sass) - CSS property name and value autocompletions for SASS.
+- [pigments](https://atom.io/packages/pigments) - a package to display colors in project and files.
+
+###Useful packages for BE
+
+- [language-elixir](https://atom.io/packages/language-elixir) - Elixir language support.
+- [linter-rubocop](https://atom.io/packages/linter-rubocop) - linter based on rubocop settings.
+- [rubocop-auto-correct](https://atom.io/packages/rubocop-auto-correct) - auto-correct ruby source code by using rubocop.
+- [cucumber](https://atom.io/packages/cucumber) - Cucumber support.
+
+###Useful packages for everyone
+
+- [tabs-to-spaces](https://atom.io/packages/tabs-to-spaces) - Provides the ability to convert between leading tabs and spaces in a document
+- [todo-show](https://atom.io/packages/todo-show) - finds all the TODOs, FIXMEs, CHANGEDs, etc. in project.
+- [terminal-status](https://atom.io/packages/terminal-status) - a terminal interface and status icon.
+- [minimap](https://atom.io/packages/minimap) - displays a preview of the full source code on the right side of editor.
+- [indent-guide-improved](https://atom.io/packages/indent-guide-improved) - draws indent guide more correctly and understandably.
+- [linter](https://atom.io/packages/linter), [linter-coffeescript](https://atom.io/packages/linter-coffeescript), [linter-slim](https://atom.io/packages/linter-slim), [linter-haml](https://atom.io/packages/linter-haml) - inline helper for syntax errors and so on.
+- [rulerz](https://atom.io/packages/rulerz) - a package to mark each of your cursors with a vertical ruler.
+- [language-haml](https://atom.io/packages/language-haml), [language-jade](https://atom.io/packages/language-jade), [language-slim](https://atom.io/packages/language-slim) - languages support.
+- [angularjs](https://atom.io/packages/angularjs) - adds syntax highlighting and snippets to AngularJS.
+- [highlight-line](https://atom.io/packages/highlight-line) - highlights the current line in the editor.
+- [seti-icons](https://atom.io/packages/seti-icons) - the file extentions icons provided by Seti UI theme.
+- [git-plus](https://atom.io/packages/git-plus) - make commits and other git things without the terminal.
+- [merge-conflicts](https://atom.io/packages/merge-conflicts) - resolve git conflicts within Atom.
+- [git-blame](https://atom.io/packages/git-blame) - toggle git-blame annotations in the gutter of Atom editor.
+- [git-history](https://atom.io/packages/git-history) - View previous versions of any file known to git.
+- [circle-ci](https://atom.io/packages/circle-ci) - adds build status from Circle CI for the current branch of the current project to the Atom UI.
+- [ruby-bundler](https://atom.io/packages/ruby-bundler) - control bundler from Atom. Run `bundle install` directly from Atom with `ALT-CMD-B`
