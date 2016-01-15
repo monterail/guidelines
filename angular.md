@@ -68,6 +68,10 @@ You can use [script similar to this one](https://gist.github.com/Machiaweliczny/
 ruby dir.rb app/assets/javascripts/main/components/dashboard/ directiveName scopeAttr1 scopAttr2
 ```
 
+## Html templates
+
+Templates should contain as little logic as possible. Don't create templates that produce much different html depending on context provided. Consider splitting it into two different templates. A little repetition is better than too much logic in templates.
+
 ## Code style
 
 After stormy debate on weekly dev meeting we agreed to follow this code convention:
