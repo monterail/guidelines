@@ -102,40 +102,40 @@ For controlling last, empty line at the end of document
 
 ###Terminal commands:
 
-- `apm list` - list of installed packages
-- `apm install PACKAGENAME` - package install
-- `apm uninstall PACKAGENAME` - package uninstall
-- `apm list --installed --bare > package-list.txt` - creates list of installed packages
-- `apm install --packages-file package-list.txt` - packages installation from file
+- `apm list` - List of installed packages
+- `apm install PACKAGENAME` - Package install
+- `apm uninstall PACKAGENAME` - Package uninstall
+- `apm list --installed --bare > package-list.txt` - Creates list of installed packages
+- `apm install --packages-file package-list.txt` - Packages installation from file
 
 ###Useful packages for FE
 
 - [autocomplete-sass](https://atom.io/packages/autocomplete-sass) - CSS property name and value autocompletions for SASS.
-- [pigments](https://atom.io/packages/pigments) - a package to display colors in project and files.
+- [pigments](https://atom.io/packages/pigments) - A package to display colors in project and files.
 
 ###Useful packages for BE
 
 - [language-elixir](https://atom.io/packages/language-elixir) - Elixir language support.
-- [linter-rubocop](https://atom.io/packages/linter-rubocop) - linter based on rubocop settings.
-- [rubocop-auto-correct](https://atom.io/packages/rubocop-auto-correct) - auto-correct ruby source code by using rubocop.
+- [linter-rubocop](https://atom.io/packages/linter-rubocop) - Linter based on rubocop settings.
+- [rubocop-auto-correct](https://atom.io/packages/rubocop-auto-correct) - Auto-correct ruby source code by using rubocop.
 - [cucumber](https://atom.io/packages/cucumber) - Cucumber support.
 
 ###Useful packages for everyone
 
 - [tabs-to-spaces](https://atom.io/packages/tabs-to-spaces) - Provides the ability to convert between leading tabs and spaces in a document
-- [todo-show](https://atom.io/packages/todo-show) - finds all the TODOs, FIXMEs, CHANGEDs, etc. in project.
-- [terminal-status](https://atom.io/packages/terminal-status) - a terminal interface and status icon.
-- [minimap](https://atom.io/packages/minimap) - displays a preview of the full source code on the right side of editor.
-- [indent-guide-improved](https://atom.io/packages/indent-guide-improved) - draws indent guide more correctly and understandably.
-- [linter](https://atom.io/packages/linter), [linter-coffeescript](https://atom.io/packages/linter-coffeescript), [linter-slim](https://atom.io/packages/linter-slim), [linter-haml](https://atom.io/packages/linter-haml) - inline helper for syntax errors and so on.
-- [rulerz](https://atom.io/packages/rulerz) - a package to mark each of your cursors with a vertical ruler.
-- [language-haml](https://atom.io/packages/language-haml), [language-jade](https://atom.io/packages/language-jade), [language-slim](https://atom.io/packages/language-slim) - languages support.
-- [angularjs](https://atom.io/packages/angularjs) - adds syntax highlighting and snippets to AngularJS.
-- [highlight-line](https://atom.io/packages/highlight-line) - highlights the current line in the editor.
-- [seti-icons](https://atom.io/packages/seti-icons) - the file extentions icons provided by Seti UI theme.
-- [git-plus](https://atom.io/packages/git-plus) - make commits and other git things without the terminal.
-- [merge-conflicts](https://atom.io/packages/merge-conflicts) - resolve git conflicts within Atom.
-- [git-blame](https://atom.io/packages/git-blame) - toggle git-blame annotations in the gutter of Atom editor.
+- [todo-show](https://atom.io/packages/todo-show) - Finds all the TODOs, FIXMEs, CHANGEDs, etc. in project.
+- [terminal-status](https://atom.io/packages/terminal-status) - A terminal interface and status icon.
+- [minimap](https://atom.io/packages/minimap) - Displays a preview of the full source code on the right side of editor.
+- [indent-guide-improved](https://atom.io/packages/indent-guide-improved) - Draws indent guide more correctly and understandably.
+- [linter](https://atom.io/packages/linter), [linter-coffeescript](https://atom.io/packages/linter-coffeescript), [linter-slim](https://atom.io/packages/linter-slim), [linter-haml](https://atom.io/packages/linter-haml) - Inline helper for syntax errors and so on.
+- [rulerz](https://atom.io/packages/rulerz) - A package to mark each of your cursors with a vertical ruler.
+- [language-haml](https://atom.io/packages/language-haml), [language-jade](https://atom.io/packages/language-jade), [language-slim](https://atom.io/packages/language-slim) - Languages support.
+- [angularjs](https://atom.io/packages/angularjs) - Adds syntax highlighting and snippets to AngularJS.
+- [highlight-line](https://atom.io/packages/highlight-line) - Highlights the current line in the editor.
+- [seti-icons](https://atom.io/packages/seti-icons) - The file extentions icons provided by Seti UI theme.
+- [git-plus](https://atom.io/packages/git-plus) - Make commits and other git things without the terminal.
+- [merge-conflicts](https://atom.io/packages/merge-conflicts) - Resolve git conflicts within Atom.
+- [git-blame](https://atom.io/packages/git-blame) - Toggle git-blame annotations in the gutter of Atom editor.
 - [git-history](https://atom.io/packages/git-history) - View previous versions of any file known to git.
-- [circle-ci](https://atom.io/packages/circle-ci) - adds build status from Circle CI for the current branch of the current project to the Atom UI.
-- [ruby-bundler](https://atom.io/packages/ruby-bundler) - control bundler from Atom. Run `bundle install` directly from Atom with `ALT + CMD + B`
+- [circle-ci](https://atom.io/packages/circle-ci) - Adds build status from Circle CI for the current branch of the current project to the Atom UI.
+- [ruby-bundler](https://atom.io/packages/ruby-bundler) - Control bundler from Atom. Run `bundle install` directly from Atom with `ALT + CMD + B`
