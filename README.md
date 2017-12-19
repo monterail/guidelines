@@ -11,8 +11,7 @@ Feel free to fork, comment and add your own.
 * [General](general.md)
 * [Ruby](ruby.md)
 * [Ruby on Rails](rails.md)
-* [Angular](angular.md)
-* [JavaScript](javascript.md)
+* [JavaScript](javascript/README.md)
 * [CSS](stylesheets.md)
 * [HTML](html.md)
 * [Git](git.md)
@@ -27,7 +26,3 @@ Feel free to fork, comment and add your own.
 * [Gems](gems.md)
 * [Mac](mac.md)
 * [Keywords](keywords.md)
-
-## License
-
-This repository is MIT-licensed.
