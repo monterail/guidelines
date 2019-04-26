@@ -1,12 +1,12 @@
 ## Stores
-[Google Play](https://play.google.com/apps/publish/)
-[Apple developper account](https://developer.apple.com/account/)
+[Google Play](https://play.google.com/apps/publish/)<br/>
+[Apple developper account](https://developer.apple.com/account/)<br/>
 [Itunes connect (AppStore connect)](https://itunesconnect.apple.com)
 
 ## App Identifier (applicationId - Android, iOS App ID)
-This ID uniquely identifies your app on the device and in Google Play Store/App Store. Also on device you can have installed only one instance of app with particular ID.
-[Apple reference](https://developer.android.com/studio/build/application-id)
-[Android reference](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/AppID.html)
+This ID uniquely identifies your app on the device and in Google Play Store/App Store. Also on device you can have installed only one instance of app with particular ID.<br/>
+[Apple reference](https://developer.android.com/studio/build/application-id)<br/>
+[Android reference](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/AppID.html)<br/>
 
 ## Certificates
 Apple certificates are used to signing app. Development certificates are created automatically when you build app in xCode. Production certificate are created in apple developer account.
