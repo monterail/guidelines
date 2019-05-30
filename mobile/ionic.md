@@ -1,9 +1,8 @@
 ## Ionic
-### Native Components
----
-#### General
+## Native Components
+### General
 Ionic accesses native mobile components using it's own integration with Cordova called `Ionic Native`. Plenty of Cordova plugins have their own corresponding `Ionic Native` plugin and those available can be found [on this documentation page](https://ionicframework.com/docs/native/overview). Every integration has it's own entry with installation guide, plugin's usage example and sometimes (depending on platform) configuration entries that need to be set in order to get appropriate permissions. If you are using Angular remember to add the Ionic Native plugin into `AppModule` providers.
-#### Camera/Media Library
+### Camera/Media Library
 Camera can be accessed using Cordova's plugin called `cordova-plugin-camera` and `Ionic Native` plugin, which can be installed using package manager from `@ionic-native/camera`.
 
 This plugin also requires two configuration entries to be set (for iOS platform) - `NSCameraUsageDescription` and `NSPhotoLibraryUsageDescription`.
@@ -56,7 +55,7 @@ readFile(file: IFile): void {
 }
 ```
 
-#### Background fetch
+### Background fetch
 
 Background fetch is an plugin, which wakes mobile app every 15 minutes and provides 30s of background running-time.
 Due to limitations there is no way to increase the 15 minute interval. The mobile operating system will throttle the rate this process occures based on usage patterns. (i.e. if user didn't use phone for a long time it will perform background fetch less frequent)
@@ -86,7 +85,7 @@ You don't need to call `start()` on the plugin, because the `config()` function 
 
 It is important to call `finish()` at the end of success callback, because if you exceed 30s of background time the application will be terminated.
 
-#### Push notifications
+### Push notifications
 To use Push notifications you need to install Cordova plugin (`phonegap-plugin-push`) and Ionic Native plugin (`@ionic-native/push`) and setup the plugin:
 * Ask user for permissions
 ```

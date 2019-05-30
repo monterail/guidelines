@@ -86,6 +86,7 @@ function getForm() {
       reject(error);
     }
   })
+}
 ```
 #### Alternatively you can use Google's Workbox. Using this toolbox the background sync can be setup in two ways:
 * By creating `Background Sync` plugin and then assigning it to any route that matches our regular expression:
