@@ -2,6 +2,8 @@
 ## Native Components
 ### General
 Ionic accesses native mobile components using it's own integration with Cordova called `Ionic Native`. Plenty of Cordova plugins have their own corresponding `Ionic Native` plugin and those available can be found [on this documentation page](https://ionicframework.com/docs/native/overview). Every integration has it's own entry with installation guide, plugin's usage example and sometimes (depending on platform) configuration entries that need to be set in order to get appropriate permissions. If you are using Angular remember to add the Ionic Native plugin into `AppModule` providers.
+
+That implementation may soon change, as Ionic's team is working on Capacitor - their own take on Native API. It is very similar to Cordova and it's design supports many Cordova plugins (some are incompatible). It also changes the workflow, as it requires more manual work, i.e. directly modyfing multiple configuration files instead of having single `config.xml` file.
 ### Camera/Media Library
 Camera can be accessed using Cordova's plugin called `cordova-plugin-camera` and `Ionic Native` plugin, which can be installed using package manager from `@ionic-native/camera`.
 
