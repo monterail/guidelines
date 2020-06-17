@@ -1,4 +1,4 @@
-# [Monterail.com](http://monterail.com) development guidelines
+# [DEPRECATED] [Monterail.com](http://monterail.com) development guidelines
 
 ### Hi there.
 
